@@ -1,0 +1,7 @@
+# Name, Type, Subtype, Offset, Size
+nvs,      data, nvs,     0x9000,   0x5000
+otadata,  data, ota,     0xe000,   0x2000
+home,     app,  factory, 0x10000,  0xf0000
+app_a,    app,  ota_0,   0x100000, 0x300000
+app_b,    app,  ota_1,   0x400000, 0x300000
+homecfg,  data, nvs,     0x700000, 0x6000

@@ -1,0 +1,14 @@
+build/
+build-*/
+build-host/
+dist/
+managed_components/
+sdkconfig.old
+__pycache__/
+*.pyc
+.DS_Store
+._*
+.env
+.env.*
+.venv/
+venv/

@@ -1,0 +1,2484 @@
+ESP-IDF v5.4.2 source and header notices
+
+Original copyright/license comment blocks, retained verbatim.
+Sources follow the archive-extraction map; headers follow compiler dependency logs.
+Linker garbage collection can remove optional code; this is a conservative notice inventory.
+
+========================================================================
+Source: components/app_update/esp_ota_ops.c, components/app_update/include/esp_ota_ops.h, components/bootloader_support/src/esp_image_format.c, components/bootloader_support/src/flash_encrypt.c, components/driver/i2c/i2c.c, components/esp_common/include/esp_attr.h, components/esp_driver_gpio/src/gpio.c, components/esp_driver_ledc/include/driver/ledc.h, components/esp_driver_ledc/src/ledc.c, components/esp_driver_spi/src/gpspi/spi_common.c, components/esp_hw_support/include/esp_private/regi2c_ctrl.h, components/esp_hw_support/include/esp_sleep.h, components/esp_hw_support/port/esp32s3/include/soc/rtc.h, components/esp_hw_support/port/esp32s3/rtc_clk.c, components/esp_hw_support/port/esp32s3/rtc_sleep.c, components/esp_hw_support/port/esp32s3/rtc_time.c, components/esp_hw_support/sleep_console.c, components/esp_hw_support/sleep_gpio.c, components/esp_hw_support/sleep_modes.c, components/esp_rom/patches/esp_rom_spiflash.c, components/esp_system/panic.c, components/esp_system/port/cpu_start.c, components/esp_system/port/panic_handler.c, components/esp_system/port/soc/esp32s3/clk.c, components/esp_wifi/include/esp_wifi_types_generic.h, components/hal/esp32s3/include/hal/gpio_ll.h, components/hal/esp32s3/include/hal/rtc_io_ll.h, components/hal/esp32s3/include/hal/spi_flash_encrypted_ll.h, components/hal/esp32s3/include/hal/touch_sensor_ll.h, components/hal/i2c_hal.c, components/hal/include/hal/gpio_hal.h, components/hal/include/hal/i2c_types.h, components/hal/include/hal/rtc_io_hal.h, components/hal/include/hal/touch_sensor_types.h, components/hal/include/hal/uart_hal.h, components/heap/heap_caps_base.c, components/newlib/time.c, components/spi_flash/cache_utils.c, components/spi_flash/include/esp_private/cache_utils.h, components/spi_flash/spi_flash_chip_generic.c
+
+/*
+ * SPDX-FileCopyrightText: 2015-2025 Espressif Systems (Shanghai) CO LTD
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+========================================================================
+Source: components/bootloader_support/bootloader_flash/include/bootloader_flash.h, components/bootloader_support/bootloader_flash/include/bootloader_flash_override.h, components/efuse/esp32s3/include/esp_efuse_rtc_calib.h, components/esp_hw_support/include/hal/soc_hal.h, components/esp_hw_support/include/hal/soc_ll.h, components/hal/esp32s3/include/hal/memprot_ll.h, components/hal/hmac_hal.c, components/hal/include/hal/brownout_hal.h, components/hal/include/hal/hmac_hal.h, components/hal/include/hal/sha_types.h, components/hal/include/hal/systimer_types.h, components/mbedtls/port/include/md/esp_md.h, components/mbedtls/port/sha/dma/esp_sha_gdma_impl.c, components/newlib/priv_include/esp_time_impl.h, components/soc/esp32s3/include/soc/memprot_defs.h, components/soc/esp32s3/interrupts.c, components/spi_flash/include/spi_flash_override.h, components/xtensa/include/xt_instr_macros.h, components/xtensa/include/xt_utils.h
+
+/*
+ * SPDX-FileCopyrightText: 2020-2022 Espressif Systems (Shanghai) CO LTD
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+========================================================================
+Source: components/bootloader_support/bootloader_flash/include/bootloader_flash_config.h, components/esp_system/include/esp_private/system_internal.h, components/mbedtls/port/esp_mem.c, components/mbedtls/port/include/esp_mem.h, components/newlib/platform_include/pthread.h, components/newlib/platform_include/sys/poll.h, components/newlib/platform_include/sys/random.h, components/newlib/platform_include/sys/termios.h, components/newlib/platform_include/sys/unistd.h, components/newlib/platform_include/sys/utime.h, components/newlib/platform_include/time.h, components/newlib/random.c, components/soc/esp32s3/gpio_periph.c, components/soc/esp32s3/rtc_io_periph.c, components/soc/include/soc/rtc_periph.h
+
+/*
+ * SPDX-FileCopyrightText: 2018-2022 Espressif Systems (Shanghai) CO LTD
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+========================================================================
+Source: components/bootloader_support/bootloader_flash/include/bootloader_flash_priv.h, components/bootloader_support/bootloader_flash/src/bootloader_flash.c, components/bootloader_support/include/esp_app_format.h, components/bootloader_support/include/esp_flash_encrypt.h, components/bootloader_support/include/esp_flash_partitions.h, components/bootloader_support/include/esp_secure_boot.h, components/bootloader_support/private_include/bootloader_soc.h, components/bootloader_support/src/bootloader_init.c, components/cxx/cxx_guards.cpp, components/esp_common/include/esp_macros.h, components/esp_driver_gpio/include/driver/gpio.h, components/esp_driver_gpio/include/esp_private/gpio.h, components/esp_driver_sdmmc/include/driver/sdmmc_host.h, components/esp_driver_sdmmc/src/sdmmc_host.c, components/esp_driver_sdmmc/src/sdmmc_internal.h, components/esp_driver_sdmmc/src/sdmmc_transaction.c, components/esp_driver_sdspi/include/driver/sdspi_host.h, components/esp_driver_sdspi/src/sdspi_host.c, components/esp_driver_spi/src/gpspi/spi_master.c, components/esp_driver_usb_serial_jtag/src/usb_serial_jtag_vfs.c, components/esp_http_client/include/esp_http_client.h, components/esp_hw_support/include/esp_intr_alloc.h, components/esp_hw_support/include/esp_private/periph_ctrl.h, components/esp_hw_support/include/esp_private/sleep_modem.h, components/esp_hw_support/include/spinlock.h, components/esp_hw_support/intr_alloc.c, components/esp_hw_support/periph_ctrl.c, components/esp_hw_support/sleep_modem.c, components/esp_hw_support/spi_bus_lock.c, components/esp_netif/include/esp_netif_defaults.h, components/esp_netif/include/esp_netif_types.h, components/esp_partition/include/esp_partition.h, components/esp_partition/partition.c, components/esp_partition/partition_target.c, components/esp_rom/esp32s3/include/esp32s3/rom/rsa_pss.h, components/esp_rom/esp32s3/include/esp32s3/rom/sha.h, components/esp_security/src/esp_hmac.c, components/esp_system/crosscore_int.c, components/esp_system/esp_err.c, components/esp_system/esp_ipc.c, components/esp_system/freertos_hooks.c, components/esp_system/include/esp_freertos_hooks.h, components/esp_system/include/esp_ipc.h, components/esp_system/include/esp_private/esp_task_wdt_impl.h, components/esp_system/include/esp_private/startup_internal.h, components/esp_system/include/esp_system.h, components/esp_system/int_wdt.c, components/esp_system/port/arch/xtensa/panic_arch.c, components/esp_system/port/brownout.c, components/esp_system/port/include/esp_clk_internal.h, components/esp_system/startup.c, components/esp_system/startup_funcs.c, components/esp_system/task_wdt/task_wdt.c, components/esp_system/task_wdt/task_wdt_impl_timergroup.c, components/esp_vfs_console/include/esp_private/esp_vfs_cdcacm.h, components/esp_vfs_console/include/esp_vfs_cdcacm.h, components/esp_vfs_console/vfs_console.c, components/esp_wifi/include/esp_private/wifi.h, components/esp_wifi/include/esp_private/wifi_types.h, components/esp_wifi/include/esp_wifi.h, components/fatfs/vfs/esp_vfs_fat.h, components/fatfs/vfs/vfs_fat.c, components/fatfs/vfs/vfs_fat_sdmmc.c, components/freertos/esp_additions/freertos_tasks_c_additions.h, components/freertos/esp_additions/include/esp_private/freertos_debug.h, components/hal/esp32s3/include/hal/adc_ll.h, components/hal/esp32s3/include/hal/clk_tree_ll.h, components/hal/esp32s3/include/hal/spimem_flash_ll.h, components/hal/esp32s3/include/hal/touch_sensor_hal.h, components/hal/esp32s3/include/hal/uart_ll.h, components/hal/esp32s3/touch_sensor_hal.c, components/hal/gpio_hal.c, components/hal/include/hal/i2c_hal.h, components/hal/include/hal/spi_hal.h, components/hal/spi_flash_hal.c, components/hal/spi_flash_hal_iram.c, components/hal/spi_hal.c, components/hal/spi_hal_iram.c, components/heap/heap_caps.c, components/heap/heap_caps_init.c, components/heap/heap_private.h, components/heap/include/multi_heap.h, components/heap/multi_heap.c, components/log/include/esp_log.h, components/log/include/esp_log_color.h, components/log/include/esp_log_timestamp.h, components/log/src/buffer/log_buffers.c, components/log/src/log_level/tag_log_level/cache/log_binary_heap.c, components/log/src/log_level/tag_log_level/linked_list/log_linked_list.c, components/log/src/log_level/tag_log_level/tag_log_level.c, components/log/src/os/log_lock.c, components/log/src/os/log_timestamp.c, components/log/src/os/log_write.c, components/newlib/heap.c, components/newlib/locks.c, components/newlib/newlib_init.c, components/newlib/platform_include/sys/dirent.h, components/newlib/stdatomic.c, components/newlib/syscalls.c, components/nvs_flash/include/nvs.h, components/nvs_flash/src/nvs_api.cpp, components/nvs_flash/src/nvs_page.cpp, components/nvs_flash/src/nvs_page.hpp, components/nvs_flash/src/nvs_partition_manager.cpp, components/nvs_flash/src/nvs_platform.hpp, components/nvs_flash/src/nvs_storage.cpp, components/nvs_flash/src/nvs_storage.hpp, components/nvs_flash/src/nvs_types.cpp, components/nvs_flash/src/nvs_types.hpp, components/sdmmc/include/sdmmc_cmd.h, components/sdmmc/sdmmc_cmd.c, components/soc/esp32s3/i2c_periph.c, components/soc/esp32s3/include/soc/spi_pins.h, components/soc/esp32s3/register/soc/rtc_cntl_reg.h, components/soc/esp32s3/register/soc/sdmmc_reg.h, components/soc/esp32s3/register/soc/sdmmc_struct.h, components/soc/include/soc/sdmmc_periph.h, components/soc/include/soc/spi_periph.h, components/spi_flash/esp_flash_api.c, components/spi_flash/esp_flash_spi_init.c, components/spi_flash/flash_mmap.c, components/spi_flash/flash_ops.c, components/spi_flash/include/esp_flash.h, components/spi_flash/include/esp_flash_internal.h, components/spi_flash/spi_flash_chip_mxic.c, components/spi_flash/spi_flash_os_func_app.c, components/spi_flash/spi_flash_os_func_noos.c, components/vfs/include/esp_vfs.h, components/vfs/include/esp_vfs_dev.h, components/vfs/private_include/esp_vfs_private.h, components/vfs/vfs.c
+
+/*
+ * SPDX-FileCopyrightText: 2015-2024 Espressif Systems (Shanghai) CO LTD
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+========================================================================
+Source: components/bootloader_support/bootloader_flash/include/esp_private/bootloader_flash_internal.h, components/bootloader_support/bootloader_flash/src/bootloader_flash_config_esp32s3.c, components/bootloader_support/private_include/bootloader_console.h, components/bootloader_support/src/bootloader_common_loader.c, components/bootloader_support/src/bootloader_console.c, components/bootloader_support/src/bootloader_mem.c, components/bootloader_support/src/esp32s3/bootloader_esp32s3.c, components/esp_hw_support/cpu.c, components/esp_hw_support/dma/include/esp_private/gdma.h, components/esp_hw_support/include/esp_fault.h, components/esp_hw_support/include/esp_private/adc_share_hw_ctrl.h, components/esp_hw_support/port/esp32s3/esp_memprot.c, components/esp_hw_support/regi2c_ctrl.c, components/hal/esp32s3/include/hal/aes_ll.h, components/hal/esp32s3/include/hal/gdma_ll.h, components/hal/esp32s3/include/hal/ledc_ll.h, components/hal/esp32s3/include/hal/rtc_cntl_ll.h, components/hal/esp32s3/include/hal/sha_ll.h, components/hal/gdma_hal_top.c, components/hal/include/hal/dma_types.h, components/hal/include/hal/ldo_types.h, components/hal/include/hal/rtc_hal.h, components/mbedtls/port/aes/dma/esp_aes_gdma_impl.c, components/mbedtls/port/aes/dma/include/esp_aes_dma_priv.h, components/mbedtls/port/sha/dma/include/esp_sha_dma_priv.h, components/newlib/platform_include/sys/reent.h, components/newlib/port/esp_time_impl.c, components/soc/esp32s3/include/soc/ext_mem_defs.h, components/soc/esp32s3/include/soc/usb_pins.h, components/soc/include/soc/gdma_periph.h, components/soc/include/soc/temperature_sensor_periph.h, components/spi_flash/spi_flash_hpm_enable.c, components/wpa_supplicant/esp_supplicant/include/esp_dpp.h
+
+/*
+ * SPDX-FileCopyrightText: 2020-2024 Espressif Systems (Shanghai) CO LTD
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+========================================================================
+Source: components/bootloader_support/bootloader_flash/include/flash_qio_mode.h, components/bootloader_support/include/esp_image_format.h, components/bootloader_support/private_include/bootloader_config.h, components/esp_common/include/esp_err.h, components/esp_driver_sdspi/src/sdspi_crc.c, components/esp_driver_sdspi/src/sdspi_crc.h, components/esp_driver_sdspi/src/sdspi_private.h, components/esp_driver_sdspi/src/sdspi_transaction.c, components/esp_hw_support/include/esp_hmac.h, components/esp_hw_support/include/esp_interface.h, components/esp_hw_support/include/esp_private/esp_clk.h, components/esp_hw_support/include/esp_private/sleep_gpio.h, components/esp_hw_support/include/soc/esp32s3/rtc.h, components/esp_netif/include/esp_netif_ip_addr.h, components/esp_system/port/include/private/esp_private/brownout.h, components/fatfs/diskio/diskio_sdmmc.c, components/hal/esp32s3/include/hal/mwdt_ll.h, components/hal/include/hal/memprot_types.h, components/mbedtls/port/include/mbedtls/bignum.h, components/soc/esp32s3/include/soc/regi2c_bbpll.h, components/soc/esp32s3/include/soc/regi2c_dig_reg.h, components/soc/esp32s3/include/soc/regi2c_lp_bias.h, components/soc/esp32s3/include/soc/regi2c_ulp.h, components/soc/esp32s3/include/soc/soc_pins.h, components/soc/esp32s3/include/soc/touch_sensor_pins.h, components/soc/esp32s3/register/soc/rtc_cntl_struct.h, components/soc/esp32s3/register/soc/sens_struct.h, components/spi_flash/include/spi_flash_chip_th.h, components/spi_flash/spi_flash_chip_drivers.c, components/spi_flash/spi_flash_chip_th.c
+
+/*
+ * SPDX-FileCopyrightText: 2015-2021 Espressif Systems (Shanghai) CO LTD
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+========================================================================
+Source: components/bootloader_support/include/bootloader_clock.h, components/efuse/src/esp_efuse_fields.c, components/esp_timer/src/system_time.c, components/fatfs/diskio/diskio_sdmmc.h, components/heap/include/esp_heap_caps_init.h, components/newlib/platform_include/assert.h, components/pthread/pthread_cond_var.c, components/pthread/pthread_internal.h, components/soc/esp32s3/include/soc/gpio_sig_map.h, components/soc/esp32s3/include/soc/interrupt_reg.h, components/soc/esp32s3/register/soc/i2s_reg.h, components/soc/esp32s3/register/soc/usb_serial_jtag_reg.h
+
+/*
+ * SPDX-FileCopyrightText: 2017-2022 Espressif Systems (Shanghai) CO LTD
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+========================================================================
+Source: components/bootloader_support/include/bootloader_common.h, components/bootloader_support/private_include/bootloader_init.h, components/bootloader_support/private_include/bootloader_utility.h, components/bootloader_support/src/bootloader_common.c, components/bootloader_support/src/bootloader_utility.c, components/esp_common/src/esp_err_to_name.c, components/esp_event/include/esp_event.h, components/esp_event/include/esp_event_base.h, components/esp_http_server/include/esp_http_server.h, components/esp_rom/esp32s3/include/esp32s3/rom/hmac.h, components/esp_system/port/soc/esp32s3/reset_reason.c, components/fatfs/vfs/vfs_fat_internal.h, components/newlib/platform_include/errno.h, components/newlib/platform_include/net/if.h, components/newlib/platform_include/sys/select.h, components/pthread/include/esp_pthread.h, components/pthread/pthread.c
+
+/*
+ * SPDX-FileCopyrightText: 2018-2024 Espressif Systems (Shanghai) CO LTD
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+========================================================================
+Source: components/bootloader_support/include/bootloader_mem.h, components/bootloader_support/src/bootloader_console_loader.c, components/bootloader_support/src/bootloader_panic.c, components/bootloader_support/src/bootloader_random_esp32s3.c, components/bootloader_support/src/esp32s3/bootloader_sha.c, components/efuse/esp32s3/include/esp_efuse_chip.h, components/efuse/esp32s3/private_include/esp_efuse_utility.h, components/esp_hw_support/include/esp_ds_err.h, components/esp_hw_support/port/esp_memprot_conv.c, components/esp_rom/esp32s3/esp_rom_caps.h, components/esp_system/port/include/port/panic_funcs.h, components/soc/esp32s3/gdma_periph.c, components/soc/esp32s3/include/soc/hwcrypto_reg.h, components/soc/esp32s3/include/soc/regi2c_brownout.h
+
+/*
+ * SPDX-FileCopyrightText: 2020-2021 Espressif Systems (Shanghai) CO LTD
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+========================================================================
+Source: components/bootloader_support/include/bootloader_memory_utils.h, components/esp_hw_support/esp_memory_utils.c, components/esp_hw_support/include/esp_memory_utils.h, components/hal/include/hal/mmu_hal.h
+
+/*
+ * SPDX-FileCopyrightText: 2010-2025 Espressif Systems (Shanghai) CO LTD
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+========================================================================
+Source: components/bootloader_support/include/bootloader_random.h, components/esp_rom/esp32s3/include/esp32s3/rom/spi_flash.h
+
+/*
+ * SPDX-FileCopyrightText: 2010-2021 Espressif Systems (Shanghai) CO LTD
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+========================================================================
+Source: components/bootloader_support/include/bootloader_util.h
+
+/*
+ * SPDX-FileCopyrightText: 2018-2021 Espressif Systems (Shanghai) CO LTD
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+========================================================================
+Source: components/bootloader_support/private_include/bootloader_sha.h, components/bootloader_support/src/bootloader_clock_init.c, components/efuse/esp32s3/esp_efuse_table.c, components/efuse/esp32s3/esp_efuse_utility.c, components/efuse/esp32s3/include/esp_efuse_table.h, components/efuse/include/esp_efuse.h, components/efuse/private_include/esp_efuse_utility.h, components/efuse/src/efuse_controller/keys/with_key_purposes/esp_efuse_api_key.c, components/efuse/src/esp_efuse_api.c, components/efuse/src/esp_efuse_startup.c, components/efuse/src/esp_efuse_utility.c, components/esp_https_ota/include/esp_https_ota.h, components/esp_timer/include/esp_timer.h, components/esp_wifi/include/esp_mesh.h, components/esp_wifi/include/esp_wifi_crypto_types.h, components/freertos/port_systick.c, components/pthread/pthread_local_storage.c, components/soc/esp32s3/register/soc/apb_saradc_reg.h, components/soc/esp32s3/register/soc/assist_debug_reg.h, components/soc/esp32s3/register/soc/extmem_reg.h, components/soc/esp32s3/register/soc/gdma_reg.h, components/soc/esp32s3/register/soc/gpio_reg.h, components/soc/esp32s3/register/soc/interrupt_core0_reg.h, components/soc/esp32s3/register/soc/interrupt_core1_reg.h, components/soc/esp32s3/register/soc/ledc_reg.h, components/soc/esp32s3/register/soc/ledc_struct.h, components/soc/esp32s3/register/soc/rtc_io_reg.h, components/soc/esp32s3/register/soc/rtc_io_struct.h, components/soc/esp32s3/register/soc/sens_reg.h, components/soc/esp32s3/register/soc/sensitive_reg.h, components/soc/esp32s3/register/soc/spi_mem_reg.h, components/soc/esp32s3/register/soc/spi_mem_struct.h, components/soc/esp32s3/register/soc/spi_reg.h, components/soc/esp32s3/register/soc/spi_struct.h, components/soc/esp32s3/register/soc/system_reg.h, components/soc/esp32s3/register/soc/system_struct.h, components/soc/esp32s3/register/soc/usb_serial_jtag_struct.h
+
+/*
+ * SPDX-FileCopyrightText: 2017-2024 Espressif Systems (Shanghai) CO LTD
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+========================================================================
+Source: components/bootloader_support/src/bootloader_random.c, components/esp_rom/esp32s3/include/esp32s3/rom/ets_sys.h, components/esp_rom/esp32s3/include/esp32s3/rom/uart.h, components/esp_rom/include/esp_rom_gpio.h, components/hal/include/hal/mmu_types.h, components/heap/include/heap_memory_layout.h
+
+/*
+ * SPDX-FileCopyrightText: 2010-2023 Espressif Systems (Shanghai) CO LTD
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+========================================================================
+Source: components/bootloader_support/src/esp32s3/bootloader_soc.c, components/esp_driver_gpio/src/rtc_io.c, components/esp_hw_support/adc_share_hw_ctrl.c, components/esp_hw_support/port/esp32s3/mspi_timing_tuning_configs.h, components/esp_mm/heap_align_hw.c, components/esp_netif/include/esp_netif.h, components/esp_wifi/include/esp_now.h, components/hal/include/hal/ledc_hal.h, components/hal/include/hal/touch_sensor_hal.h, components/hal/ledc_hal.c, components/hal/ledc_hal_iram.c, components/heap/include/esp_heap_caps.h, components/heap/port/esp32s3/memory_layout.c, components/log/src/noos/log_timestamp.c, components/mbedtls/port/include/sha/sha_dma.h, components/soc/esp32s3/include/soc/soc_caps.h, components/soc/include/soc/i2c_periph.h, components/soc/include/soc/ledc_periph.h, components/soc/include/soc/rtc_cntl_periph.h, components/soc/include/soc/rtc_io_periph.h, components/soc/include/soc/timer_periph.h, components/soc/include/soc/touch_sensor_periph.h, components/soc/include/soc/uart_periph.h, components/soc/include/soc/wdt_periph.h, components/spi_flash/include/esp_private/spi_flash_os.h
+
+/*
+ * SPDX-FileCopyrightText: 2019-2024 Espressif Systems (Shanghai) CO LTD
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+========================================================================
+Source: components/bootloader_support/src/flash_partitions.c, components/esp_driver_gpio/include/driver/rtc_io.h, components/esp_hw_support/esp_clk.c, components/esp_hw_support/include/esp_private/sleep_console.h, components/esp_rom/esp32s3/include/esp32s3/rom/cache.h, components/esp_rom/esp32s3/include/esp32s3/rom/libc_stubs.h, components/esp_system/include/esp_debug_helpers.h, components/esp_system/include/esp_ipc_isr.h, components/esp_system/include/esp_private/panic_internal.h, components/esp_system/include/esp_task_wdt.h, components/esp_system/port/arch/xtensa/debug_helpers.c, components/esp_system/port/include/private/esp_private/cache_err_int.h, components/hal/esp32s3/include/hal/clk_gate_ll.h, components/hal/esp32s3/include/hal/hmac_ll.h, components/hal/esp32s3/include/hal/spi_flash_ll.h, components/hal/esp32s3/include/hal/spi_ll.h, components/hal/i2c_hal_iram.c, components/hal/include/hal/esp_flash_err.h, components/hal/include/hal/gpio_types.h, components/hal/include/hal/sha_hal.h, components/hal/include/hal/uart_types.h, components/hal/rtc_io_hal.c, components/hal/spi_flash_hal_gpspi.c, components/hal/touch_sensor_hal.c, components/heap/multi_heap_internal.h, components/heap/multi_heap_platform.h, components/newlib/platform_include/esp_newlib.h, components/newlib/reent_init.c, components/nvs_flash/include/nvs_flash.h, components/nvs_flash/src/nvs_handle_simple.cpp, components/nvs_flash/src/nvs_pagemanager.cpp, components/soc/esp32s3/include/soc/gpio_num.h, components/soc/esp32s3/include/soc/gpio_pins.h, components/soc/esp32s3/include/soc/periph_defs.h, components/soc/esp32s3/include/soc/regi2c_defs.h, components/soc/esp32s3/sdmmc_periph.c, components/soc/esp32s3/spi_periph.c, components/spi_flash/include/esp_spi_flash_counters.h, components/spi_flash/include/spi_flash_chip_driver.h, components/spi_flash/spi_flash_chip_winbond.c
+
+/*
+ * SPDX-FileCopyrightText: 2015-2023 Espressif Systems (Shanghai) CO LTD
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+========================================================================
+Source: components/bootloader_support/src/idf/bootloader_sha.c, components/efuse/esp32s3/esp_efuse_fields.c, components/esp_system/port/arch/xtensa/esp_ipc_isr_handler.S, components/esp_system/port/arch/xtensa/esp_ipc_isr_routines.S, components/freertos/port_systick.h, components/soc/esp32s3/register/soc/apb_saradc_struct.h, components/soc/esp32s3/register/soc/gdma_struct.h, components/soc/esp32s3/register/soc/gpio_struct.h, components/soc/esp32s3/register/soc/io_mux_reg.h
+
+/*
+ * SPDX-FileCopyrightText: 2017-2021 Espressif Systems (Shanghai) CO LTD
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+========================================================================
+Source: components/cxx/cxx_exception_stubs.cpp, components/esp_common/include/esp_check.h, components/esp_driver_usb_serial_jtag/include/driver/esp_private/usb_serial_jtag_vfs.h, components/esp_driver_usb_serial_jtag/include/driver/usb_serial_jtag.h, components/esp_driver_usb_serial_jtag/include/driver/usb_serial_jtag_vfs.h, components/esp_hw_support/include/esp_chip_info.h, components/esp_hw_support/include/esp_random.h, components/esp_lcd/include/esp_lcd_io_i2c.h, components/esp_lcd/include/esp_lcd_io_i80.h, components/esp_lcd/include/esp_lcd_io_spi.h, components/esp_lcd/include/esp_lcd_panel_io.h, components/esp_lcd/include/esp_lcd_types.h, components/freertos/port_common.c, components/hal/efuse_hal.c, components/hal/esp32s3/include/hal/timer_ll.h, components/hal/esp32s3/include/hal/usb_serial_jtag_ll.h, components/hal/include/hal/efuse_hal.h, components/hal/include/hal/lcd_hal.h, components/hal/include/hal/lcd_types.h, components/hal/include/hal/temperature_sensor_types.h, components/mbedtls/port/crypto_shared_gdma/esp_crypto_shared_gdma.c, components/mbedtls/port/include/esp_crypto_shared_gdma.h, components/newlib/assert.c, components/pthread/pthread_rwlock.c, components/soc/esp32s3/register/soc/i2c_reg.h, components/soc/esp32s3/register/soc/i2c_struct.h, components/soc/esp32s3/register/soc/systimer_struct.h, components/soc/esp32s3/register/soc/timer_group_reg.h, components/soc/esp32s3/register/soc/uart_reg.h, components/soc/esp32s3/register/soc/uart_struct.h, components/soc/include/soc/chip_revision.h, components/vfs/include/esp_vfs_usb_serial_jtag.h
+
+/*
+ * SPDX-FileCopyrightText: 2021-2024 Espressif Systems (Shanghai) CO LTD
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+========================================================================
+Source: components/cxx/cxx_init.cpp, components/esp_driver_spi/include/esp_private/spi_master_internal.h, components/esp_driver_usb_serial_jtag/include/driver/usb_serial_jtag_select.h, components/esp_hw_support/port/esp32s3/esp_cpu_intr.c, components/esp_rom/include/esp_rom_libc_stubs.h, components/esp_security/src/esp32s3/esp_crypto_clk.h, components/esp_security/src/esp_security_priv.h, components/esp_system/include/esp_private/esp_ipc.h, components/esp_timer/src/esp_timer_init.c, components/esp_wifi/include/esp_wifi_types.h, components/hal/esp32s3/include/hal/cpu_utility_ll.h, components/hal/esp32s3/include/hal/crosscore_int_ll.h, components/hal/include/hal/sd_types.h, components/hal/include/hal/usb_serial_jtag_types.h, components/log/include/esp_private/log_lock.h, components/newlib/priv_include/esp_stdatomic.h, components/nvs_flash/src/nvs_platform.cpp, components/sdmmc/include/sd_pwr_ctrl.h, components/sdmmc/include/sd_pwr_ctrl_by_on_chip_ldo.h, components/sdmmc/include/sd_pwr_ctrl_interface.h, components/sdmmc/sd_pwr_ctrl/sd_pwr_ctrl.c, components/vfs/include/esp_private/nullfs.h, components/vfs/include/esp_vfs_null.h, components/vfs/include/esp_vfs_ops.h, components/vfs/nullfs.c
+
+/*
+ * SPDX-FileCopyrightText: 2024 Espressif Systems (Shanghai) CO LTD
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+========================================================================
+Source: components/driver/i2c/include/driver/i2c.h, components/esp_common/include/esp_assert.h, components/esp_hw_support/port/esp32s3/rtc_clk_init.c, components/esp_hw_support/port/esp32s3/rtc_init.c, components/esp_phy/src/phy_override.c, components/esp_rom/esp32s3/include/esp32s3/rom/efuse.h, components/esp_system/esp_system.c, components/esp_system/include/esp_private/crosscore_int.h, components/esp_system/include/esp_private/esp_int_wdt.h, components/esp_system/include/esp_private/esp_ipc_isr.h, components/esp_system/include/esp_private/esp_task_wdt.h, components/esp_system/port/soc/esp32s3/highint_hdl.S, components/esp_wifi/include/esp_smartconfig.h, components/hal/esp32s3/include/hal/gpspi_flash_ll.h, components/hal/esp32s3/include/hal/regi2c_ctrl_ll.h, components/hal/esp32s3/include/hal/rwdt_ll.h, components/hal/include/hal/spi_types.h, components/hal/include/hal/wdt_hal.h, components/hal/include/hal/wdt_types.h, components/hal/platform_port/include/hal/log.h, components/hal/platform_port/include/hal/regi2c_ctrl.h, components/heap/multi_heap_config.h, components/mbedtls/port/include/mbedtls/ecp.h, components/newlib/abort.c, components/newlib/platform_include/sys/ioctl.h, components/nvs_flash/src/compressed_enum_table.hpp, components/nvs_flash/src/intrusive_list.h, components/nvs_flash/src/nvs.hpp, components/nvs_flash/src/nvs_handle_simple.hpp, components/nvs_flash/src/nvs_item_hash_list.hpp, components/nvs_flash/src/nvs_partition_manager.hpp, components/spi_flash/flash_brownout_hook.c, components/spi_flash/include/esp_flash_spi_init.h, components/spi_flash/include/memspi_host_driver.h, components/spi_flash/include/spi_flash/spi_flash_defs.h, components/spi_flash/include/spi_flash_mmap.h, components/spi_flash/memspi_host_driver.c, components/spi_flash/spi_flash_chip_gd.c, components/spi_flash/spi_flash_chip_mxic_opi.c, components/wear_levelling/include/wear_levelling.h
+
+/*
+ * SPDX-FileCopyrightText: 2015-2022 Espressif Systems (Shanghai) CO LTD
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+========================================================================
+Source: components/efuse/esp32s3/esp_efuse_rtc_calib.c, components/esp_rom/esp32s3/include/esp32s3/rom/rom_layout.h, components/hal/brownout_hal.c, components/hal/esp32s3/include/hal/ds_ll.h, components/hal/esp32s3/include/hal/mpu_ll.h, components/hal/esp32s3/include/hal/temperature_sensor_ll.h, components/hal/include/hal/adc_types.h, components/hal/include/hal/aes_types.h, components/hal/include/hal/gdma_hal.h, components/hal/include/hal/gdma_hal_ahb.h, components/hal/include/hal/gdma_hal_axi.h, components/hal/include/hal/mpu_hal.h, components/hal/include/hal/mpu_types.h, components/hal/include/hal/systimer_hal.h, components/hal/mpu_hal.c, components/hal/sha_hal.c, components/soc/esp32s3/include/soc/gdma_channel.h, components/soc/esp32s3/include/soc/mmu.h
+
+/*
+ * SPDX-FileCopyrightText: 2020-2023 Espressif Systems (Shanghai) CO LTD
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+========================================================================
+Source: components/esp-tls/esp_tls_errors.h
+
+/*
+ * SPDX-FileCopyrightText: 2021-22 Espressif Systems (Shanghai) CO LTD
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+========================================================================
+Source: components/esp_app_format/esp_app_desc.c, components/esp_bootloader_format/esp_bootloader_desc.c, components/esp_driver_gpio/include/driver/gpio_etm.h, components/esp_hw_support/include/esp_etm.h, components/esp_hw_support/include/esp_private/sleep_cpu.h, components/esp_hw_support/include/esp_private/sleep_retention.h, components/esp_hw_support/sar_periph_ctrl_common.c, components/esp_security/src/esp_crypto_lock.c, components/esp_system/include/esp_private/critical_section.h, components/freertos/app_startup.c, components/hal/gdma_hal_ahb_v1.c, components/newlib/platform_include/sys/lock.h, components/nvs_flash/private_include/nvs_constants.h, components/nvs_flash/src/nvs_memory_management.hpp, components/soc/esp32s3/include/soc/clk_tree_defs.h, components/soc/include/soc/regdma.h
+
+/*
+ * SPDX-FileCopyrightText: 2022-2024 Espressif Systems (Shanghai) CO LTD
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+========================================================================
+Source: components/esp_app_format/include/esp_app_desc.h, components/esp_bootloader_format/include/esp_bootloader_desc.h, components/esp_driver_sdmmc/include/driver/sdmmc_defs.h, components/esp_hw_support/include/esp_private/sar_periph_ctrl.h, components/esp_hw_support/port/esp32s3/sar_periph_ctrl.c, components/esp_hw_support/sleep_event.c, components/esp_mm/include/esp_cache.h, components/esp_mm/include/esp_mmu_map.h, components/esp_mm/include/esp_private/esp_mmu_map_private.h, components/esp_mm/port/esp32s3/ext_mem_layout.c, components/esp_rom/patches/esp_rom_cache_esp32s2_esp32s3.c, components/esp_rom/patches/esp_rom_cache_writeback_esp32s3.S, components/hal/esp32s3/include/hal/cache_ll.h, components/hal/esp32s3/include/hal/mmu_ll.h, components/hal/esp32s3/include/hal/sar_ctrl_ll.h, components/hal/include/hal/gdma_types.h, components/lwip/port/include/sockets_ext.h
+
+/*
+ * SPDX-FileCopyrightText: 2022-2023 Espressif Systems (Shanghai) CO LTD
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+========================================================================
+Source: components/esp_common/include/esp_bit_defs.h, components/esp_common/include/esp_types.h, components/esp_rom/esp32s3/include/esp32s3/rom/gpio.h, components/esp_rom/esp32s3/include/esp32s3/rom/lldesc.h, components/esp_rom/include/esp_rom_efuse.h, components/esp_rom/include/esp_rom_md5.h, components/hal/include/hal/adc_types_private.h, components/hal/include/hal/cache_types.h, components/hal/include/hal/spi_flash_types.h, components/heap/include/soc/soc_memory_layout.h, components/soc/dport_access_common.c, components/soc/esp32s3/include/soc/adc_channel.h, components/soc/esp32s3/include/soc/dport_access.h, components/soc/esp32s3/include/soc/rtc_io_channel.h, components/soc/esp32s3/include/soc/uart_channel.h, components/soc/include/soc/lldesc.h
+
+/*
+ * SPDX-FileCopyrightText: 2010-2022 Espressif Systems (Shanghai) CO LTD
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+========================================================================
+Source: components/esp_common/include/esp_compiler.h, components/esp_hw_support/hw_random.c, components/esp_hw_support/rtc_module.c
+
+/*
+ * SPDX-FileCopyrightText: 2016-2024 Espressif Systems (Shanghai) CO LTD
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+========================================================================
+Source: components/esp_common/include/esp_idf_version.h, components/esp_rom/esp32s3/include/esp32s3/rom/apb_backup_dma.h, components/esp_rom/esp32s3/include/esp32s3/rom/rtc.h, components/esp_system/port/soc/esp32s3/apb_backup_dma.c, components/hal/include/hal/ledc_types.h, components/spi_flash/esp32s3/opi_flash_private.h, components/spi_flash/esp32s3/spi_flash_oct_flash_init.c
+
+/*
+ * SPDX-FileCopyrightText: 2019-2021 Espressif Systems (Shanghai) CO LTD
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+========================================================================
+Source: components/esp_driver_gpio/include/driver/lp_io.h, components/esp_driver_sdmmc/include/driver/sdmmc_types.h, components/esp_hw_support/include/esp_clk_tree.h, components/esp_hw_support/include/esp_intr_types.h, components/esp_hw_support/include/esp_private/esp_crypto_lock_internal.h, components/esp_hw_support/include/esp_private/mspi_timing_types.h, components/esp_hw_support/include/esp_private/sleep_event.h, components/esp_hw_support/include/esp_private/spi_share_hw_ctrl.h, components/esp_hw_support/mspi_timing_by_dqs.h, components/esp_hw_support/port/esp32s3/cpu_region_protect.c, components/esp_hw_support/port/esp_clk_tree_common.c, components/esp_hw_support/spi_share_hw_ctrl.c, components/esp_mm/include/esp_private/esp_cache_esp32_private.h, components/esp_system/port/arch/xtensa/esp_ipc_isr_port.c, components/esp_system/port/include/private/esp_private/esp_ipc_isr_port.h, components/esp_timer/src/esp_timer_impl_common.c, components/freertos/esp_additions/include/esp_private/freertos_idf_additions_priv.h, components/hal/esp32s3/clk_tree_hal.c, components/hal/esp32s3/include/hal/mspi_timing_tuning_ll.h, components/hal/include/hal/ds_types.h, components/hal/include/hal/hmac_types.h, components/hal/include/hal/sdmmc_hal.h, components/hal/sdmmc_hal.c, components/newlib/platform_include/semaphore.h, components/nvs_sec_provider/include/nvs_sec_provider.h
+
+/*
+ * SPDX-FileCopyrightText: 2023 Espressif Systems (Shanghai) CO LTD
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+========================================================================
+Source: components/esp_driver_i2c/include/driver/i2c_master.h, components/esp_driver_i2c/include/driver/i2c_types.h, components/esp_hw_support/dma/esp_dma_utils.c, components/esp_hw_support/dma/include/esp_private/esp_dma_utils.h, components/esp_mm/esp_cache.c, components/esp_mm/include/esp_private/esp_cache_private.h, components/esp_ringbuf/include/freertos/ringbuf.h, components/freertos/esp_additions/idf_additions.c, components/hal/esp32s3/include/hal/sdmmc_ll.h, components/mbedtls/port/aes/include/esp_aes_internal.h
+
+/*
+ * SPDX-FileCopyrightText: 2023-2025 Espressif Systems (Shanghai) CO LTD
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+========================================================================
+Source: components/esp_driver_sdmmc/include/driver/sdmmc_default_configs.h, components/esp_driver_spi/include/esp_private/spi_dma.h, components/esp_driver_uart/include/driver/esp_private/uart_vfs.h, components/esp_driver_usb_serial_jtag/src/usb_serial_jtag_connection_monitor.c, components/esp_hw_support/dma/include/esp_dma_utils.h, components/esp_hw_support/esp_gpio_reserve.c, components/esp_hw_support/include/esp_crypto_lock.h, components/esp_hw_support/include/esp_private/esp_clk_tree_common.h, components/esp_hw_support/include/esp_private/esp_gpio_reserve.h, components/esp_hw_support/ldo/include/esp_ldo_regulator.h, components/esp_hw_support/lowpower/port/esp32s3/sleep_cpu.c, components/esp_hw_support/mspi_timing_by_mspi_delay.h, components/esp_hw_support/port/esp32s3/esp_clk_tree.c, components/esp_ringbuf/ringbuf.c, components/esp_system/port/include/private/esp_private/image_process.h, components/esp_wifi/include/local/esp_wifi_types_native.h, components/freertos/config/include/freertos/FreeRTOSConfig.h, components/freertos/config/xtensa/include/freertos/FreeRTOSConfig_arch.h, components/freertos/esp_additions/include/freertos/idf_additions.h, components/freertos/heap_idf.c, components/hal/esp32s3/include/hal/brownout_ll.h, components/hal/include/hal/clk_tree_hal.h, components/hal/include/hal/color_types.h, components/hal/include/hal/hal_utils.h, components/hal/include/hal/mipi_dsi_types.h, components/hal/include/hal/psdet_types.h, components/log/include/esp_log_buffer.h, components/log/include/esp_log_level.h, components/log/include/esp_private/log_level.h, components/log/include/esp_private/log_util.h, components/log/src/log_level/log_level.c, components/log/src/log_level/tag_log_level/cache/log_cache.h, components/log/src/log_level/tag_log_level/linked_list/log_linked_list.h, components/log/src/util.c, components/mbedtls/port/include/esp_crypto_dma.h, components/mbedtls/port/include/mbedtls/gcm.h, components/newlib/getentropy.c, components/nvs_sec_provider/nvs_sec_provider.c, components/pthread/pthread_semaphore.c
+
+/*
+ * SPDX-FileCopyrightText: 2023-2024 Espressif Systems (Shanghai) CO LTD
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+========================================================================
+Source: components/esp_driver_spi/include/driver/spi_common.h, components/esp_driver_spi/include/driver/spi_master.h, components/esp_driver_spi/include/esp_private/spi_common_internal.h, components/esp_rom/include/esp_rom_sys.h, components/esp_rom/include/esp_rom_uart.h, components/esp_rom/patches/esp_rom_sys.c, components/esp_rom/patches/esp_rom_uart.c, components/hal/include/hal/spi_flash_hal.h, components/soc/esp32s3/include/soc/clkout_channel.h, components/soc/esp32s3/include/soc/soc.h
+
+/*
+ * SPDX-FileCopyrightText: 2010-2024 Espressif Systems (Shanghai) CO LTD
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+========================================================================
+Source: components/esp_driver_usb_serial_jtag/src/usb_serial_jtag.c, components/hal/include/hal/spi_flash_encrypt_hal.h, components/hal/mmu_hal.c, components/hal/spi_flash_encrypt_hal_iram.c
+
+/*
+ * SPDX-FileCopyrightText: 2021-2025 Espressif Systems (Shanghai) CO LTD
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+========================================================================
+Source: components/esp_hw_support/clk_ctrl_os.c, components/esp_hw_support/dma/gdma.c, components/esp_hw_support/include/clk_ctrl_os.h, components/esp_hw_support/include/esp_cpu.h, components/hal/aes_hal.c, components/hal/esp32s3/include/hal/i2c_ll.h, components/hal/include/hal/aes_hal.h
+
+/*
+ * SPDX-FileCopyrightText: 2020-2025 Espressif Systems (Shanghai) CO LTD
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+========================================================================
+Source: components/esp_hw_support/clk_utils.c, components/esp_hw_support/include/esp_private/esp_clk_utils.h
+
+/*
+ * SPDX-FileCopyrightText: 2025 Espressif Systems (Shanghai) CO LTD
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+========================================================================
+Source: components/esp_hw_support/dma/gdma_priv.h, components/esp_hw_support/include/esp_private/esp_sleep_internal.h, components/esp_hw_support/include/esp_private/io_mux.h, components/esp_hw_support/include/esp_private/rtc_clk.h, components/esp_hw_support/include/esp_private/systimer.h, components/esp_hw_support/port/esp32s3/io_mux.c, components/esp_mm/esp_mmu_map.c, components/esp_system/port/esp_system_chip.c
+
+/*
+ * SPDX-FileCopyrightText: 2022-2025 Espressif Systems (Shanghai) CO LTD
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+========================================================================
+Source: components/esp_hw_support/include/esp_memprot.h, components/esp_hw_support/include/esp_private/esp_memprot_internal.h, components/esp_hw_support/include/soc/esp32s3/soc_memprot_types.h, components/esp_mm/ext_mem_layout.h, components/esp_rom/esp32s3/include/esp32s3/rom/secure_boot.h, components/esp_system/port/soc/esp32s3/cache_err_int.c, components/hal/esp32s3/include/hal/efuse_hal.h, components/hal/esp32s3/include/hal/efuse_ll.h, components/hal/include/hal/adc_hal_common.h, components/hal/include/hal/timer_hal.h, components/hal/platform_port/include/hal/assert.h, components/lwip/port/include/sntp/sntp_get_set_time.h, components/soc/esp32s3/register/soc/reg_base.h
+
+/*
+ * SPDX-FileCopyrightText: 2021-2022 Espressif Systems (Shanghai) CO LTD
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+========================================================================
+Source: components/esp_hw_support/include/esp_memprot_err.h
+
+/*
+ * SPDX-FileCopyrightText: 2021-2022 Espressif Systems (Shanghai) CO LTD
+*
+* SPDX-License-Identifier: Apache-2.0
+*/
+
+========================================================================
+Source: components/esp_hw_support/include/esp_memprot_types.h, components/esp_rom/include/esp_rom_spiflash.h, components/esp_rom/include/esp_rom_spiflash_defs.h, components/esp_system/include/esp_xt_wdt.h, components/soc/esp32s3/include/soc/dport_reg.h, components/soc/esp32s3/include/soc/tracemem_config.h, components/xtensa/include/esp_cpu_utils.h
+
+/*
+ * SPDX-FileCopyrightText: 2021 Espressif Systems (Shanghai) CO LTD
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+========================================================================
+Source: components/esp_hw_support/include/esp_memprot_types.h
+
+/**
+ * @brief Memory operation/permission type recognized by PMS
+ */
+
+========================================================================
+Source: components/esp_hw_support/include/esp_private/esp_memprot_internal.h
+
+/**
+ * @brief Sets permissions for given PMS Area
+ *
+ * @param area_type PMS area type
+ * @param flags combination of MEMPROT_OP_* defines
+ * @param core Target CPU/Core ID (see *_CPU_NUM defs in soc.h). Can be NULL on 1-CPU systems
+ *
+ * @return ESP_OK on success
+ *         ESP_ERR_MEMPROT_MEMORY_TYPE_INVALID on invalid mem_type
+ */
+
+========================================================================
+Source: components/esp_hw_support/include/esp_private/esp_memprot_internal.h
+
+/**
+ * @brief Gets current permissions for given PMS Area
+ *
+ * @param area_type PMS area type
+ * @param[out] flags combination of MEMPROT_OP_* defines
+ * @param core Target CPU/Core ID (see *_CPU_NUM defs in soc.h). Can be NULL on 1-CPU systems
+ *
+ * @return ESP_OK on success
+ *         ESP_ERR_MEMPROT_MEMORY_TYPE_INVALID on invalid mem_type
+ *         ESP_ERR_INVALID_ARG on invalid flags pointer
+ */
+
+========================================================================
+Source: components/esp_hw_support/include/esp_private/mspi_timing_config.h, components/esp_hw_support/port/esp32s3/mspi_timing_config.c, components/esp_wifi/include/esp_wifi_default.h, components/hal/adc_hal_common.c, components/hal/esp32s3/rtc_cntl_hal.c, components/hal/include/hal/rtc_io_types.h, components/nvs_flash/src/nvs_partition.cpp, components/nvs_flash/src/nvs_partition.hpp, components/nvs_flash/src/partition.hpp, components/wpa_supplicant/esp_supplicant/include/esp_wps.h
+
+/*
+ * SPDX-FileCopyrightText: 2019-2023 Espressif Systems (Shanghai) CO LTD
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+========================================================================
+Source: components/esp_hw_support/include/esp_private/mspi_timing_tuning.h, components/esp_rom/esp32s3/include/esp32s3/rom/usb/chip_usb_dw_wrapper.h, components/esp_rom/esp32s3/include/esp32s3/rom/usb/usb_persist.h, components/esp_rom/patches/esp_rom_efuse.c, components/esp_system/include/esp_task.h, components/nvs_flash/src/nvs_encrypted_partition.cpp, components/soc/esp32s3/include/soc/regi2c_saradc.h, components/soc/esp32s3/temperature_sensor_periph.c, components/soc/include/soc/adc_periph.h, components/soc/include/soc/efuse_periph.h, components/spi_flash/esp32s3/opi_flash_cmd_format_mxic.h
+
+/*
+ * SPDX-FileCopyrightText: 2019-2022 Espressif Systems (Shanghai) CO LTD
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+========================================================================
+Source: components/esp_hw_support/include/esp_private/rtc_ctrl.h
+
+/*
+ * SPDX-FileCopyrightText: 2016-2021 Espressif Systems (Shanghai) CO LTD
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+========================================================================
+Source: components/esp_hw_support/include/esp_private/sleep_usb.h, components/esp_security/src/init.c, components/mbedtls/port/aes/dma/esp_aes_dma_core.c
+
+/*
+ * SPDX-FileCopyrightText: 2024-2025 Espressif Systems (Shanghai) CO LTD
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+========================================================================
+Source: components/esp_hw_support/mspi_timing_tuning.c, components/esp_system/include/esp_private/usb_console.h
+
+/*
+ * SPDX-FileCopyrightText: 2019-2025 Espressif Systems (Shanghai) CO LTD
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+========================================================================
+Source: components/esp_hw_support/port/esp32s3/chip_info.c
+
+/*
+ * SPDX-FileCopyrightText: 2013-2021 Espressif Systems (Shanghai) CO LTD
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+========================================================================
+Source: components/esp_hw_support/port/esp32s3/esp_memprot.c
+
+//set permissions
+
+========================================================================
+Source: components/esp_hw_support/port/esp32s3/esp_memprot.c
+
+//split address and area permissions are locked by the same PMS register
+
+========================================================================
+Source: components/esp_hw_support/port/esp32s3/systimer.c, components/esp_rom/include/esp_rom_lldesc.h, components/esp_rom/include/esp_rom_regi2c.h, components/lwip/include/lwip/sockets.h, components/newlib/platform_include/sys/time.h, components/newlib/pthread.c, components/nvs_flash/private_include/nvs_internal.h, components/xtensa/include/xtensa/semihosting.h
+
+/*
+ * SPDX-FileCopyrightText: 2022 Espressif Systems (Shanghai) CO LTD
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+========================================================================
+Source: components/esp_hw_support/port/include/esp_hw_log.h
+
+/*
+ * SPDX-FileCopyrightText: 2016-2022 Espressif Systems (Shanghai) CO LTD
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+========================================================================
+Source: components/esp_lcd/include/esp_lcd_panel_ops.h, components/esp_vfs_console/include/esp_vfs_console.h, components/hal/cache_hal.c, components/hal/esp32s3/efuse_hal.c, components/hal/esp32s3/include/hal/systimer_ll.h, components/hal/include/hal/cache_hal.h, components/hal/include/hal/timer_types.h, components/hal/platform_port/include/hal/misc.h, components/hal/systimer_hal.c
+
+/*
+ * SPDX-FileCopyrightText: 2021-2023 Espressif Systems (Shanghai) CO LTD
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+========================================================================
+Source: components/esp_pm/include/esp_pm.h, components/esp_pm/include/esp_private/pm_impl.h
+
+/*
+ * SPDX-FileCopyrightText: 2016-2023 Espressif Systems (Shanghai) CO LTD
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+========================================================================
+Source: components/esp_rom/esp32s3/include/esp32s3/rom/opi_flash.h
+
+/*
+ * copyright (c) Espressif System 2019
+ *
+ */
+
+========================================================================
+Source: components/esp_rom/esp32s3/include/esp32s3/rom/opi_flash.h
+
+/**
+ * @brief Start a spi user command sequence
+ * @param spi_num spi port
+ * @param rx_buf buffer pointer to receive data
+ * @param rx_len receive data length in byte
+ * @param cs_en_mask decide which cs to use, 0 for cs0, 1 for cs1
+ * @param is_write_erase to indicate whether this is a write or erase operation, since the CPU would check permission
+ */
+
+========================================================================
+Source: components/esp_rom/esp32s3/include/esp32s3/rom/usb/cdc_acm.h
+
+/*
+ * SPDX-FileCopyrightText: 2015, 2016 Intel Corporation.
+ *
+ * SPDX-License-Identifier: BSD-3-Clause
+ */
+
+========================================================================
+Source: components/esp_rom/esp32s3/include/esp32s3/rom/usb/usb_dc.h
+
+/*
+ * SPDX-FileCopyrightText: 2016 Intel Corporation
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+========================================================================
+Source: components/esp_rom/include/esp_rom_crc.h, components/soc/esp32s3/include/soc/bb_reg.h, components/soc/esp32s3/include/soc/wdev_reg.h
+
+// Copyright 2010-2020 Espressif Systems (Shanghai) PTE LTD
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//     http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
+========================================================================
+Source: components/esp_system/port/arch/xtensa/debug_helpers_asm.S, components/hal/spi_flash_hal_common.inc, components/spi_flash/include/spi_flash_chip_gd.h, components/spi_flash/include/spi_flash_chip_generic.h, components/spi_flash/include/spi_flash_chip_issi.h, components/spi_flash/include/spi_flash_chip_mxic.h, components/spi_flash/spi_flash_chip_issi.c
+
+// Copyright 2015-2019 Espressif Systems (Shanghai) PTE LTD
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//     http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
+========================================================================
+Source: components/esp_system/port/esp_ipc_isr.c, components/esp_wifi/include/esp_mesh_internal.h
+
+/*
+ * SPDX-FileCopyrightText: 2017-2023 Espressif Systems (Shanghai) CO LTD
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+========================================================================
+Source: components/esp_system/port/soc/esp32s3/system_internal.c
+
+/*
+ * SPDX-FileCopyrightText: 2018-2025 Espressif Systems (Shanghai) CO LTD
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+========================================================================
+Source: components/esp_system/ubsan.c
+
+// Copyright (c) 2016, Linaro Limited
+// Modified for HelenOS use by Jiří Zárevúcky.
+// Adaptations for ESP-IDF Copyright (c) 2020 Espressif Systems (Shanghai) Co. Ltd.
+//
+// Redistribution and use in source and binary forms, with or without
+// modification, are permitted provided that the following conditions are met:
+//
+// 1. Redistributions of source code must retain the above copyright notice,
+// this list of conditions and the following disclaimer.
+//
+// 2. Redistributions in binary form must reproduce the above copyright notice,
+// this list of conditions and the following disclaimer in the documentation
+// and/or other materials provided with the distribution.
+//
+// THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+// AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+// IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+// ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE
+// LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+// CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+// SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+// INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+// CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+// ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+// POSSIBILITY OF SUCH DAMAGE.
+
+========================================================================
+Source: components/esp_timer/include/esp_private/esp_timer_private.h, components/esp_timer/private_include/esp_timer_impl.h, components/esp_timer/src/esp_timer_impl_systimer.c
+
+/*
+ * SPDX-FileCopyrightText: 2017-2025 Espressif Systems (Shanghai) CO LTD
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+========================================================================
+Source: components/fatfs/diskio/diskio.c
+
+/* ESP-IDF port Copyright 2016-2025 Espressif Systems (Shanghai) PTE LTD */
+
+========================================================================
+Source: components/fatfs/diskio/diskio_impl.h
+
+// Copyright 2017-2019 Espressif Systems (Shanghai) PTE LTD
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//     http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
+========================================================================
+Source: components/fatfs/src/ff.c
+
+/*----------------------------------------------------------------------------/
+/  FatFs - Generic FAT Filesystem Module  R0.15 w/patch2                      /
+/-----------------------------------------------------------------------------/
+/
+/ Copyright (C) 2022, ChaN, all right reserved.
+/
+/ FatFs module is an open source software. Redistribution and use of FatFs in
+/ source and binary forms, with or without modification, are permitted provided
+/ that the following condition is met:
+/
+/ 1. Redistributions of source code must retain the above copyright notice,
+/    this condition and the following disclaimer.
+/
+/ This software is provided by the copyright holder and contributors "AS IS"
+/ and any warranties related to this software are DISCLAIMED.
+/ The copyright owner or contributors be NOT LIABLE for any damages caused
+/ by use of this software.
+/
+/----------------------------------------------------------------------------*/
+
+========================================================================
+Source: components/fatfs/src/ff.h
+
+/*----------------------------------------------------------------------------/
+/  FatFs - Generic FAT Filesystem module  R0.15                               /
+/-----------------------------------------------------------------------------/
+/
+/ Copyright (C) 2022, ChaN, all right reserved.
+/
+/ FatFs module is an open source software. Redistribution and use of FatFs in
+/ source and binary forms, with or without modification, are permitted provided
+/ that the following condition is met:
+
+/ 1. Redistributions of source code must retain the above copyright notice,
+/    this condition and the following disclaimer.
+/
+/ This software is provided by the copyright holder and contributors "AS IS"
+/ and any warranties related to this software are DISCLAIMED.
+/ The copyright owner or contributors be NOT LIABLE for any damages caused
+/ by use of this software.
+/
+/----------------------------------------------------------------------------*/
+
+========================================================================
+Source: components/fatfs/src/ffunicode.c
+
+/*
+/ Copyright (C) 2022, ChaN, all right reserved.
+/
+/ FatFs module is an open source software. Redistribution and use of FatFs in
+/ source and binary forms, with or without modification, are permitted provided
+/ that the following condition is met:
+/
+/ 1. Redistributions of source code must retain the above copyright notice,
+/    this condition and the following disclaimer.
+/
+/ This software is provided by the copyright holder and contributors "AS IS"
+/ and any warranties related to this software are DISCLAIMED.
+/ The copyright owner or contributors be NOT LIABLE for any damages caused
+/ by use of this software.
+*/
+
+========================================================================
+Source: components/freertos/FreeRTOS-Kernel/include/freertos/FreeRTOS.h, components/freertos/FreeRTOS-Kernel/include/freertos/deprecated_definitions.h, components/freertos/FreeRTOS-Kernel/include/freertos/event_groups.h, components/freertos/FreeRTOS-Kernel/include/freertos/list.h, components/freertos/FreeRTOS-Kernel/include/freertos/message_buffer.h, components/freertos/FreeRTOS-Kernel/include/freertos/mpu_wrappers.h, components/freertos/FreeRTOS-Kernel/include/freertos/portable.h, components/freertos/FreeRTOS-Kernel/include/freertos/projdefs.h, components/freertos/FreeRTOS-Kernel/include/freertos/queue.h, components/freertos/FreeRTOS-Kernel/include/freertos/semphr.h, components/freertos/FreeRTOS-Kernel/include/freertos/stack_macros.h, components/freertos/FreeRTOS-Kernel/include/freertos/stream_buffer.h, components/freertos/FreeRTOS-Kernel/include/freertos/timers.h, components/freertos/FreeRTOS-Kernel/list.c, components/freertos/FreeRTOS-Kernel/queue.c
+
+/*
+ * FreeRTOS Kernel V10.5.1 (ESP-IDF SMP modified)
+ * Copyright (C) 2021 Amazon.com, Inc. or its affiliates.  All Rights Reserved.
+ *
+ * SPDX-FileCopyrightText: 2021 Amazon.com, Inc. or its affiliates
+ *
+ * SPDX-License-Identifier: MIT
+ *
+ * SPDX-FileContributor: 2023 Espressif Systems (Shanghai) CO LTD
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy of
+ * this software and associated documentation files (the "Software"), to deal in
+ * the Software without restriction, including without limitation the rights to
+ * use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of
+ * the Software, and to permit persons to whom the Software is furnished to do so,
+ * subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
+ * FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
+ * COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
+ * IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+ * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ *
+ * https://www.FreeRTOS.org
+ * https://github.com/FreeRTOS
+ *
+ */
+
+========================================================================
+Source: components/freertos/FreeRTOS-Kernel/include/freertos/projdefs.h, components/lwip/lwip/src/include/lwip/errno.h
+
+/* Permission denied */
+
+========================================================================
+Source: components/freertos/FreeRTOS-Kernel/include/freertos/task.h, components/freertos/FreeRTOS-Kernel/stream_buffer.c, components/freertos/FreeRTOS-Kernel/tasks.c
+
+/*
+ * FreeRTOS Kernel V10.5.1 (ESP-IDF SMP modified)
+ * Copyright (C) 2021 Amazon.com, Inc. or its affiliates.  All Rights Reserved.
+ *
+ * SPDX-FileCopyrightText: 2021 Amazon.com, Inc. or its affiliates
+ *
+ * SPDX-License-Identifier: MIT
+ *
+ * SPDX-FileContributor: 2023-2024 Espressif Systems (Shanghai) CO LTD
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy of
+ * this software and associated documentation files (the "Software"), to deal in
+ * the Software without restriction, including without limitation the rights to
+ * use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of
+ * the Software, and to permit persons to whom the Software is furnished to do so,
+ * subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
+ * FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
+ * COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
+ * IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+ * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ *
+ * https://www.FreeRTOS.org
+ * https://github.com/FreeRTOS
+ *
+ */
+
+========================================================================
+Source: components/freertos/FreeRTOS-Kernel/include/freertos/task.h
+
+/**
+ *
+ * Only available when configSUPPORT_DYNAMIC_ALLOCATION is set to 1.
+ *
+ * xTaskCreateRestricted() should only be used in systems that include an MPU
+ * implementation.
+ *
+ * Create a new task and add it to the list of tasks that are ready to run.
+ * The function parameters define the memory regions and associated access
+ * permissions allocated to the task.
+ *
+ * See xTaskCreateRestrictedStatic() for a version that does not use any
+ * dynamic memory allocation.
+ *
+ * @param pxTaskDefinition Pointer to a structure that contains a member
+ * for each of the normal xTaskCreate() parameters (see the xTaskCreate() API
+ * documentation) plus an optional stack buffer and the memory region
+ * definitions.
+ *
+ * @param pxCreatedTask Used to pass back a handle by which the created task
+ * can be referenced.
+ *
+ * @return pdPASS if the task was successfully created and added to a ready
+ * list, otherwise an error code defined in the file projdefs.h
+ *
+ * Example usage:
+ * @code{c}
+ * // Create an TaskParameters_t structure that defines the task to be created.
+ * static const TaskParameters_t xCheckTaskParameters =
+ * {
+ *  vATask,     // pvTaskCode - the function that implements the task.
+ *  "ATask",    // pcName - just a text name for the task to assist debugging.
+ *  100,        // usStackDepth - the stack size DEFINED IN BYTES.
+ *  NULL,       // pvParameters - passed into the task function as the function parameters.
+ *  ( 1UL | portPRIVILEGE_BIT ),// uxPriority - task priority, set the portPRIVILEGE_BIT if the task should run in a privileged state.
+ *  cStackBuffer,// puxStackBuffer - the buffer to be used as the task stack.
+ *
+ *  // xRegions - Allocate up to three separate memory regions for access by
+ *  // the task, with appropriate access permissions.  Different processors have
+ *  // different memory alignment requirements - refer to the FreeRTOS documentation
+ *  // for full information.
+ *  {
+ *      // Base address                 Length  Parameters
+ *      { cReadWriteArray,              32,     portMPU_REGION_READ_WRITE },
+ *      { cReadOnlyArray,               32,     portMPU_REGION_READ_ONLY },
+ *      { cPrivilegedOnlyAccessArray,   128,    portMPU_REGION_PRIVILEGED_READ_WRITE }
+ *  }
+ * };
+ *
+ * int main( void )
+ * {
+ * TaskHandle_t xHandle;
+ *
+ *  // Create a task from the const structure defined above.  The task handle
+ *  // is requested (the second parameter is not NULL) but in this case just for
+ *  // demonstration purposes as its not actually used.
+ *  xTaskCreateRestricted( &xRegTest1Parameters, &xHandle );
+ *
+ *  // Start the scheduler.
+ *  vTaskStartScheduler();
+ *
+ *  // Will only get here if there was insufficient memory to create the idle
+ *  // and/or timer task.
+ *  for( ;; );
+ * }
+ * @endcode
+ * \ingroup Tasks
+ */
+
+========================================================================
+Source: components/freertos/FreeRTOS-Kernel/include/freertos/task.h
+
+/**
+ *
+ * Only available when configSUPPORT_STATIC_ALLOCATION is set to 1.
+ *
+ * xTaskCreateRestrictedStatic() should only be used in systems that include an
+ * MPU implementation.
+ *
+ * Internally, within the FreeRTOS implementation, tasks use two blocks of
+ * memory.  The first block is used to hold the task's data structures.  The
+ * second block is used by the task as its stack.  If a task is created using
+ * xTaskCreateRestricted() then the stack is provided by the application writer,
+ * and the memory used to hold the task's data structure is automatically
+ * dynamically allocated inside the xTaskCreateRestricted() function.  If a task
+ * is created using xTaskCreateRestrictedStatic() then the application writer
+ * must provide the memory used to hold the task's data structures too.
+ * xTaskCreateRestrictedStatic() therefore allows a memory protected task to be
+ * created without using any dynamic memory allocation.
+ *
+ * @param pxTaskDefinition Pointer to a structure that contains a member
+ * for each of the normal xTaskCreate() parameters (see the xTaskCreate() API
+ * documentation) plus an optional stack buffer and the memory region
+ * definitions.  If configSUPPORT_STATIC_ALLOCATION is set to 1 the structure
+ * contains an additional member, which is used to point to a variable of type
+ * StaticTask_t - which is then used to hold the task's data structure.
+ *
+ * @param pxCreatedTask Used to pass back a handle by which the created task
+ * can be referenced.
+ *
+ * @return pdPASS if the task was successfully created and added to a ready
+ * list, otherwise an error code defined in the file projdefs.h
+ *
+ * Example usage:
+ * @code{c}
+ * // Create an TaskParameters_t structure that defines the task to be created.
+ * // The StaticTask_t variable is only included in the structure when
+ * // configSUPPORT_STATIC_ALLOCATION is set to 1.  The PRIVILEGED_DATA macro can
+ * // be used to force the variable into the RTOS kernel's privileged data area.
+ * static PRIVILEGED_DATA StaticTask_t xTaskBuffer;
+ * static const TaskParameters_t xCheckTaskParameters =
+ * {
+ *  vATask,     // pvTaskCode - the function that implements the task.
+ *  "ATask",    // pcName - just a text name for the task to assist debugging.
+ *  100,        // usStackDepth - the stack size DEFINED IN BYTES.
+ *  NULL,       // pvParameters - passed into the task function as the function parameters.
+ *  ( 1UL | portPRIVILEGE_BIT ),// uxPriority - task priority, set the portPRIVILEGE_BIT if the task should run in a privileged state.
+ *  cStackBuffer,// puxStackBuffer - the buffer to be used as the task stack.
+ *
+ *  // xRegions - Allocate up to three separate memory regions for access by
+ *  // the task, with appropriate access permissions.  Different processors have
+ *  // different memory alignment requirements - refer to the FreeRTOS documentation
+ *  // for full information.
+ *  {
+ *      // Base address                 Length  Parameters
+ *      { cReadWriteArray,              32,     portMPU_REGION_READ_WRITE },
+ *      { cReadOnlyArray,               32,     portMPU_REGION_READ_ONLY },
+ *      { cPrivilegedOnlyAccessArray,   128,    portMPU_REGION_PRIVILEGED_READ_WRITE }
+ *  }
+ *
+ *  &xTaskBuffer; // Holds the task's data structure.
+ * };
+ *
+ * int main( void )
+ * {
+ * TaskHandle_t xHandle;
+ *
+ *  // Create a task from the const structure defined above.  The task handle
+ *  // is requested (the second parameter is not NULL) but in this case just for
+ *  // demonstration purposes as its not actually used.
+ *  xTaskCreateRestrictedStatic( &xRegTest1Parameters, &xHandle );
+ *
+ *  // Start the scheduler.
+ *  vTaskStartScheduler();
+ *
+ *  // Will only get here if there was insufficient memory to create the idle
+ *  // and/or timer task.
+ *  for( ;; );
+ * }
+ * @endcode
+ * \ingroup Tasks
+ */
+
+========================================================================
+Source: components/freertos/FreeRTOS-Kernel/portable/xtensa/include/freertos/portbenchmark.h, components/freertos/FreeRTOS-Kernel/portable/xtensa/include/freertos/xtensa_rtos.h, components/xtensa/include/xtensa_api.h, components/xtensa/include/xtensa_config.h, components/xtensa/include/xtensa_context.h, components/xtensa/xtensa_context.S, components/xtensa/xtensa_intr_asm.S
+
+/*
+ * SPDX-FileCopyrightText: 2015-2019 Cadence Design Systems, Inc.
+ *
+ * SPDX-License-Identifier: MIT
+ *
+ * SPDX-FileContributor: 2016-2022 Espressif Systems (Shanghai) CO LTD
+ */
+
+========================================================================
+Source: components/freertos/FreeRTOS-Kernel/portable/xtensa/include/freertos/portbenchmark.h, components/freertos/FreeRTOS-Kernel/portable/xtensa/include/freertos/xtensa_rtos.h, components/freertos/FreeRTOS-Kernel/portable/xtensa/portasm.S, components/xtensa/include/xtensa_config.h, components/xtensa/include/xtensa_context.h, components/xtensa/xtensa_context.S, components/xtensa/xtensa_intr.c, components/xtensa/xtensa_intr_asm.S, components/xtensa/xtensa_vectors.S
+
+/*
+ * Copyright (c) 2015-2019 Cadence Design Systems, Inc.
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining
+ * a copy of this software and associated documentation files (the
+ * "Software"), to deal in the Software without restriction, including
+ * without limitation the rights to use, copy, modify, merge, publish,
+ * distribute, sublicense, and/or sell copies of the Software, and to
+ * permit persons to whom the Software is furnished to do so, subject to
+ * the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included
+ * in all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+ * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+ * IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+ * CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+ * TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+ * SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ */
+
+========================================================================
+Source: components/freertos/FreeRTOS-Kernel/portable/xtensa/include/freertos/portmacro.h, components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c
+
+/*
+ * FreeRTOS Kernel V10.5.1
+ * Copyright (C) 2015-2019 Cadence Design Systems, Inc.
+ * Copyright (C) 2021 Amazon.com, Inc. or its affiliates.  All Rights Reserved.
+ *
+ * SPDX-FileCopyrightText: 2015-2019 Cadence Design Systems, Inc
+ * SPDX-FileCopyrightText: 2021 Amazon.com, Inc. or its affiliates
+ *
+ * SPDX-License-Identifier: MIT
+ *
+ * SPDX-FileContributor: 2023-2024 Espressif Systems (Shanghai) CO LTD
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy of
+ * this software and associated documentation files (the "Software"), to deal in
+ * the Software without restriction, including without limitation the rights to
+ * use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of
+ * the Software, and to permit persons to whom the Software is furnished to do so,
+ * subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
+ * FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
+ * COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
+ * IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+ * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ *
+ * https://www.FreeRTOS.org
+ * https://github.com/FreeRTOS
+ *
+ */
+
+========================================================================
+Source: components/freertos/FreeRTOS-Kernel/portable/xtensa/portasm.S, components/xtensa/xtensa_vectors.S
+
+/*
+ * SPDX-FileCopyrightText: 2015-2019 Cadence Design Systems, Inc.
+ *
+ * SPDX-License-Identifier: MIT
+ *
+ * SPDX-FileContributor: 2016-2023 Espressif Systems (Shanghai) CO LTD
+ */
+
+========================================================================
+Source: components/hal/esp32s3/include/hal/brownout_ll.h
+
+// give BOD mode1 control permission to the software
+
+========================================================================
+Source: components/hal/esp32s3/include/hal/memprot_ll.h, components/hal/esp32s3/include/hal/memprot_ll.h, components/hal/esp32s3/include/hal/memprot_ll.h
+
+// permission settings
+
+========================================================================
+Source: components/hal/esp32s3/include/hal/memprot_ll.h, components/hal/esp32s3/include/hal/memprot_ll.h, components/hal/esp32s3/include/hal/memprot_ll.h
+
+// permission violation status
+
+========================================================================
+Source: components/heap/port/memory_layout_utils.c, components/soc/esp32s3/include/soc/interrupts.h
+
+/*
+ * SPDX-FileCopyrightText: 2018-2023 Espressif Systems (Shanghai) CO LTD
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+========================================================================
+Source: components/heap/tlsf/include/tlsf.h, components/heap/tlsf/tlsf.c, components/heap/tlsf/tlsf_block_functions.h
+
+/*
+ * SPDX-FileCopyrightText: 2006-2016 Matthew Conte
+ *
+ * SPDX-License-Identifier: BSD-3-Clause
+ */
+
+========================================================================
+Source: components/heap/tlsf/tlsf_control_functions.h
+
+/*
+ * SPDX-FileCopyrightText: 2024 Matthew Conte
+ *
+ * SPDX-License-Identifier: BSD-3-Clause
+ */
+
+========================================================================
+Source: components/http_parser/http_parser.h
+
+/* Copyright Joyent, Inc. and other Node contributors. All rights reserved.
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to
+ * deal in the Software without restriction, including without limitation the
+ * rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+ * sell copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+ * FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+ * IN THE SOFTWARE.
+ */
+
+========================================================================
+Source: components/lwip/include/apps/esp_ping.h, components/nvs_flash/src/nvs_item_hash_list.cpp, components/nvs_flash/src/nvs_pagemanager.hpp
+
+// Copyright 2015-2016 Espressif Systems (Shanghai) PTE LTD
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+
+========================================================================
+Source: components/lwip/include/apps/esp_ping.h, components/nvs_flash/src/nvs_item_hash_list.cpp, components/nvs_flash/src/nvs_pagemanager.hpp, components/soc/esp32s3/include/soc/sdmmc_pins.h, components/xtensa/esp32s3/include/xtensa/config/extreg.h
+
+//     http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
+========================================================================
+Source: components/lwip/lwip/src/include/lwip/arch.h, components/lwip/lwip/src/include/lwip/debug.h, components/lwip/lwip/src/include/lwip/def.h, components/lwip/lwip/src/include/lwip/err.h, components/lwip/lwip/src/include/lwip/errno.h, components/lwip/lwip/src/include/lwip/inet.h, components/lwip/lwip/src/include/lwip/ip4_addr.h, components/lwip/lwip/src/include/lwip/ip_addr.h, components/lwip/lwip/src/include/lwip/mem.h, components/lwip/lwip/src/include/lwip/memp.h, components/lwip/lwip/src/include/lwip/netif.h, components/lwip/lwip/src/include/lwip/opt.h, components/lwip/lwip/src/include/lwip/pbuf.h, components/lwip/lwip/src/include/lwip/priv/memp_priv.h, components/lwip/lwip/src/include/lwip/sockets.h, components/lwip/lwip/src/include/lwip/stats.h
+
+/*
+ * Copyright (c) 2001-2004 Swedish Institute of Computer Science.
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without modification,
+ * are permitted provided that the following conditions are met:
+ *
+ * 1. Redistributions of source code must retain the above copyright notice,
+ *    this list of conditions and the following disclaimer.
+ * 2. Redistributions in binary form must reproduce the above copyright notice,
+ *    this list of conditions and the following disclaimer in the documentation
+ *    and/or other materials provided with the distribution.
+ * 3. The name of the author may not be used to endorse or promote products
+ *    derived from this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND ANY EXPRESS OR IMPLIED
+ * WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+ * MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT
+ * SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+ * EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT
+ * OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+ * INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+ * CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING
+ * IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY
+ * OF SUCH DAMAGE.
+ *
+ * This file is part of the lwIP TCP/IP stack.
+ *
+ * Author: Adam Dunkels <adam@sics.se>
+ *
+ */
+
+========================================================================
+Source: components/lwip/lwip/src/include/lwip/if_api.h
+
+/*
+ * Copyright (c) 2017 Joel Cunningham, Garmin International, Inc. <joel.cunningham@garmin.com>
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without modification,
+ * are permitted provided that the following conditions are met:
+ *
+ * 1. Redistributions of source code must retain the above copyright notice,
+ *    this list of conditions and the following disclaimer.
+ * 2. Redistributions in binary form must reproduce the above copyright notice,
+ *    this list of conditions and the following disclaimer in the documentation
+ *    and/or other materials provided with the distribution.
+ * 3. The name of the author may not be used to endorse or promote products
+ *    derived from this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND ANY EXPRESS OR IMPLIED
+ * WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+ * MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT
+ * SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+ * EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT
+ * OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+ * INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+ * CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING
+ * IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY
+ * OF SUCH DAMAGE.
+ *
+ * This file is part of the lwIP TCP/IP stack.
+ *
+ * Author: Joel Cunningham <joel.cunningham@me.com>
+ *
+ */
+
+========================================================================
+Source: components/lwip/lwip/src/include/lwip/ip6_addr.h
+
+/*
+ * Copyright (c) 2010 Inico Technologies Ltd.
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without modification,
+ * are permitted provided that the following conditions are met:
+ *
+ * 1. Redistributions of source code must retain the above copyright notice,
+ *    this list of conditions and the following disclaimer.
+ * 2. Redistributions in binary form must reproduce the above copyright notice,
+ *    this list of conditions and the following disclaimer in the documentation
+ *    and/or other materials provided with the distribution.
+ * 3. The name of the author may not be used to endorse or promote products
+ *    derived from this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND ANY EXPRESS OR IMPLIED
+ * WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+ * MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT
+ * SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+ * EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT
+ * OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+ * INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+ * CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING
+ * IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY
+ * OF SUCH DAMAGE.
+ *
+ * This file is part of the lwIP TCP/IP stack.
+ *
+ * Author: Ivan Delamer <delamer@inicotech.com>
+ *
+ * Structs and macros for handling IPv6 addresses.
+ *
+ * Please coordinate changes and requests with Ivan Delamer
+ * <delamer@inicotech.com>
+ */
+
+========================================================================
+Source: components/lwip/lwip/src/include/lwip/ip6_zone.h
+
+/*
+ * Copyright (c) 2017 The MINIX 3 Project.
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without modification,
+ * are permitted provided that the following conditions are met:
+ *
+ * 1. Redistributions of source code must retain the above copyright notice,
+ *    this list of conditions and the following disclaimer.
+ * 2. Redistributions in binary form must reproduce the above copyright notice,
+ *    this list of conditions and the following disclaimer in the documentation
+ *    and/or other materials provided with the distribution.
+ * 3. The name of the author may not be used to endorse or promote products
+ *    derived from this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND ANY EXPRESS OR IMPLIED
+ * WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+ * MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT
+ * SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+ * EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT
+ * OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+ * INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+ * CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING
+ * IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY
+ * OF SUCH DAMAGE.
+ *
+ * This file is part of the lwIP TCP/IP stack.
+ *
+ * Author: David van Moolenbroek <david@minix3.org>
+ *
+ */
+
+========================================================================
+Source: components/lwip/lwip/src/include/lwip/priv/mem_priv.h
+
+/*
+ * Copyright (c) 2018 Swedish Institute of Computer Science.
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without modification,
+ * are permitted provided that the following conditions are met:
+ *
+ * 1. Redistributions of source code must retain the above copyright notice,
+ *    this list of conditions and the following disclaimer.
+ * 2. Redistributions in binary form must reproduce the above copyright notice,
+ *    this list of conditions and the following disclaimer in the documentation
+ *    and/or other materials provided with the distribution.
+ * 3. The name of the author may not be used to endorse or promote products
+ *    derived from this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND ANY EXPRESS OR IMPLIED
+ * WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+ * MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT
+ * SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+ * EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT
+ * OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+ * INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+ * CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING
+ * IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY
+ * OF SUCH DAMAGE.
+ *
+ * This file is part of the lwIP TCP/IP stack.
+ *
+ * Author: Simon Goldschmidt <goldsimon@gmx.de>
+ *
+ */
+
+========================================================================
+Source: components/lwip/port/esp32xx/include/arch/cc.h
+
+/*
+ * SPDX-FileCopyrightText: 2001 Swedish Institute of Computer Science
+ *
+ * SPDX-License-Identifier: BSD-3-Clause
+ *
+ * SPDX-FileContributor: 2018-2022 Espressif Systems (Shanghai) CO LTD
+ */
+
+========================================================================
+Source: components/lwip/port/esp32xx/include/sys/socket.h
+
+/*
+ * SPDX-FileCopyrightText: 2001-2004 Swedish Institute of Computer Science
+ *
+ * SPDX-License-Identifier: BSD-3-Clause
+ *
+ * SPDX-FileContributor: 2018-2022 Espressif Systems (Shanghai) CO LTD
+ */
+
+========================================================================
+Source: components/lwip/port/freertos/include/arch/sys_arch.h
+
+/*
+ * SPDX-FileCopyrightText: 2001-2003 Swedish Institute of Computer Science
+ *
+ * SPDX-License-Identifier: BSD-3-Clause
+ *
+ * SPDX-FileContributor: 2018-2024 Espressif Systems (Shanghai) CO LTD
+ */
+
+========================================================================
+Source: components/lwip/port/include/lwipopts.h
+
+/*
+ * SPDX-FileCopyrightText: 2001-2003 Swedish Institute of Computer Science
+ *
+ * SPDX-License-Identifier: BSD-3-Clause
+ *
+ * SPDX-FileContributor: 2015-2024 Espressif Systems (Shanghai) CO LTD
+ */
+
+========================================================================
+Source: components/mbedtls/mbedtls/include/mbedtls/aes.h, components/mbedtls/mbedtls/include/mbedtls/asn1.h, components/mbedtls/mbedtls/include/mbedtls/bignum.h, components/mbedtls/mbedtls/include/mbedtls/build_info.h, components/mbedtls/mbedtls/include/mbedtls/ccm.h, components/mbedtls/mbedtls/include/mbedtls/chacha20.h, components/mbedtls/mbedtls/include/mbedtls/chachapoly.h, components/mbedtls/mbedtls/include/mbedtls/check_config.h, components/mbedtls/mbedtls/include/mbedtls/cipher.h, components/mbedtls/mbedtls/include/mbedtls/cmac.h, components/mbedtls/mbedtls/include/mbedtls/config_adjust_legacy_crypto.h, components/mbedtls/mbedtls/include/mbedtls/config_adjust_psa_from_legacy.h, components/mbedtls/mbedtls/include/mbedtls/config_adjust_psa_superset_legacy.h, components/mbedtls/mbedtls/include/mbedtls/config_adjust_ssl.h, components/mbedtls/mbedtls/include/mbedtls/config_adjust_x509.h, components/mbedtls/mbedtls/include/mbedtls/config_psa.h, components/mbedtls/mbedtls/include/mbedtls/ecdh.h, components/mbedtls/mbedtls/include/mbedtls/ecdsa.h, components/mbedtls/mbedtls/include/mbedtls/ecjpake.h, components/mbedtls/mbedtls/include/mbedtls/ecp.h, components/mbedtls/mbedtls/include/mbedtls/error.h, components/mbedtls/mbedtls/include/mbedtls/gcm.h, components/mbedtls/mbedtls/include/mbedtls/mbedtls_config.h, components/mbedtls/mbedtls/include/mbedtls/md.h, components/mbedtls/mbedtls/include/mbedtls/md5.h, components/mbedtls/mbedtls/include/mbedtls/pk.h, components/mbedtls/mbedtls/include/mbedtls/platform.h, components/mbedtls/mbedtls/include/mbedtls/platform_time.h, components/mbedtls/mbedtls/include/mbedtls/platform_util.h, components/mbedtls/mbedtls/include/mbedtls/poly1305.h, components/mbedtls/mbedtls/include/mbedtls/private_access.h, components/mbedtls/mbedtls/include/mbedtls/ripemd160.h, components/mbedtls/mbedtls/include/mbedtls/rsa.h, components/mbedtls/mbedtls/include/mbedtls/sha1.h, components/mbedtls/mbedtls/include/mbedtls/sha256.h, components/mbedtls/mbedtls/include/mbedtls/sha3.h, components/mbedtls/mbedtls/include/mbedtls/sha512.h, components/mbedtls/mbedtls/include/mbedtls/ssl.h, components/mbedtls/mbedtls/include/mbedtls/ssl_ciphersuites.h, components/mbedtls/mbedtls/include/mbedtls/threading.h, components/mbedtls/mbedtls/include/mbedtls/x509.h, components/mbedtls/mbedtls/include/mbedtls/x509_crl.h, components/mbedtls/mbedtls/include/mbedtls/x509_crt.h, components/mbedtls/mbedtls/include/psa/build_info.h, components/mbedtls/mbedtls/include/psa/crypto.h, components/mbedtls/mbedtls/include/psa/crypto_adjust_auto_enabled.h, components/mbedtls/mbedtls/include/psa/crypto_adjust_config_dependencies.h, components/mbedtls/mbedtls/include/psa/crypto_adjust_config_key_pair_types.h, components/mbedtls/mbedtls/include/psa/crypto_adjust_config_synonyms.h, components/mbedtls/mbedtls/include/psa/crypto_builtin_composites.h, components/mbedtls/mbedtls/include/psa/crypto_builtin_key_derivation.h, components/mbedtls/mbedtls/include/psa/crypto_builtin_primitives.h, components/mbedtls/mbedtls/include/psa/crypto_compat.h, components/mbedtls/mbedtls/include/psa/crypto_driver_common.h, components/mbedtls/mbedtls/include/psa/crypto_extra.h, components/mbedtls/mbedtls/include/psa/crypto_legacy.h, components/mbedtls/mbedtls/include/psa/crypto_platform.h, components/mbedtls/mbedtls/include/psa/crypto_sizes.h, components/mbedtls/mbedtls/include/psa/crypto_struct.h, components/mbedtls/mbedtls/include/psa/crypto_types.h, components/mbedtls/mbedtls/include/psa/crypto_values.h, components/mbedtls/mbedtls/library/alignment.h, components/mbedtls/mbedtls/library/common.h
+
+/*
+ *  Copyright The Mbed TLS Contributors
+ *  SPDX-License-Identifier: Apache-2.0 OR GPL-2.0-or-later
+ */
+
+========================================================================
+Source: components/mbedtls/mbedtls/include/mbedtls/mbedtls_config.h
+
+/**
+ * Enable the verified implementations of ECDH primitives from Project Everest
+ * (currently only Curve25519). This feature changes the layout of ECDH
+ * contexts and therefore is a compatibility break for applications that access
+ * fields of a mbedtls_ecdh_context structure directly. See also
+ * MBEDTLS_ECDH_LEGACY_CONTEXT in include/mbedtls/ecdh.h.
+ *
+ * The Everest code is provided under the Apache 2.0 license only; therefore enabling this
+ * option is not compatible with taking the library under the GPL v2.0-or-later license.
+ */
+
+========================================================================
+Source: components/mbedtls/mbedtls/include/mbedtls/pk.h
+
+/**
+ * \brief           Determine valid PSA attributes that can be used to
+ *                  import a key into PSA.
+ *
+ * The attributes determined by this function are suitable
+ * for calling mbedtls_pk_import_into_psa() to create
+ * a PSA key with the same key material.
+ *
+ * The typical flow of operations involving this function is
+ * ```
+ * psa_key_attributes_t attributes = PSA_KEY_ATTRIBUTES_INIT;
+ * int ret = mbedtls_pk_get_psa_attributes(pk, &attributes);
+ * if (ret != 0) ...; // error handling omitted
+ * // Tweak attributes if desired
+ * psa_key_id_t key_id = 0;
+ * ret = mbedtls_pk_import_into_psa(pk, &attributes, &key_id);
+ * if (ret != 0) ...; // error handling omitted
+ * ```
+ *
+ * \note            This function does not support RSA-alt contexts
+ *                  (set up with mbedtls_pk_setup_rsa_alt()).
+ *
+ * \param[in] pk    The PK context to use. It must have been set up.
+ *                  It can either contain a key pair or just a public key.
+ * \param usage     A single `PSA_KEY_USAGE_xxx` flag among the following:
+ *                  - #PSA_KEY_USAGE_DECRYPT: \p pk must contain a
+ *                    key pair. The output \p attributes will contain a
+ *                    key pair type, and the usage policy will allow
+ *                    #PSA_KEY_USAGE_ENCRYPT as well as
+ *                    #PSA_KEY_USAGE_DECRYPT.
+ *                  - #PSA_KEY_USAGE_DERIVE: \p pk must contain a
+ *                    key pair. The output \p attributes will contain a
+ *                    key pair type.
+ *                  - #PSA_KEY_USAGE_ENCRYPT: The output
+ *                    \p attributes will contain a public key type.
+ *                  - #PSA_KEY_USAGE_SIGN_HASH: \p pk must contain a
+ *                    key pair. The output \p attributes will contain a
+ *                    key pair type, and the usage policy will allow
+ *                    #PSA_KEY_USAGE_VERIFY_HASH as well as
+ *                    #PSA_KEY_USAGE_SIGN_HASH.
+ *                  - #PSA_KEY_USAGE_SIGN_MESSAGE: \p pk must contain a
+ *                    key pair. The output \p attributes will contain a
+ *                    key pair type, and the usage policy will allow
+ *                    #PSA_KEY_USAGE_VERIFY_MESSAGE as well as
+ *                    #PSA_KEY_USAGE_SIGN_MESSAGE.
+ *                  - #PSA_KEY_USAGE_VERIFY_HASH: The output
+ *                    \p attributes will contain a public key type.
+ *                  - #PSA_KEY_USAGE_VERIFY_MESSAGE: The output
+ *                    \p attributes will contain a public key type.
+ * \param[out] attributes
+ *                  On success, valid attributes to import the key into PSA.
+ *                  - The lifetime and key identifier are unchanged. If the
+ *                    attribute structure was initialized or reset before
+ *                    calling this function, this will result in a volatile
+ *                    key. Call psa_set_key_identifier() before or after this
+ *                    function if you wish to create a persistent key. Call
+ *                    psa_set_key_lifetime() before or after this function if
+ *                    you wish to import the key in a secure element.
+ *                  - The key type and bit-size are determined by the contents
+ *                    of the PK context. If the PK context contains a key
+ *                    pair, the key type can be either a key pair type or
+ *                    the corresponding public key type, depending on
+ *                    \p usage. If the PK context contains a public key,
+ *                    the key type is a public key type.
+ *                  - The key's policy is determined by the key type and
+ *                    the \p usage parameter. The usage always allows
+ *                    \p usage, exporting and copying the key, and
+ *                    possibly other permissions as documented for the
+ *                    \p usage parameter.
+ *                    The permitted algorithm policy is determined as follows
+ *                    based on the #mbedtls_pk_type_t type of \p pk,
+ *                    the chosen \p usage and other factors:
+ *                      - #MBEDTLS_PK_RSA whose underlying
+ *                        #mbedtls_rsa_context has the padding mode
+ *                        #MBEDTLS_RSA_PKCS_V15:
+ *                        #PSA_ALG_RSA_PKCS1V15_SIGN(#PSA_ALG_ANY_HASH)
+ *                        if \p usage is SIGN/VERIFY, and
+ *                        #PSA_ALG_RSA_PKCS1V15_CRYPT
+ *                        if \p usage is ENCRYPT/DECRYPT.
+ *                      - #MBEDTLS_PK_RSA whose underlying
+ *                        #mbedtls_rsa_context has the padding mode
+ *                        #MBEDTLS_RSA_PKCS_V21 and the digest type
+ *                        corresponding to the PSA algorithm \c hash:
+ *                        #PSA_ALG_RSA_PSS_ANY_SALT(#PSA_ALG_ANY_HASH)
+ *                        if \p usage is SIGN/VERIFY, and
+ *                        #PSA_ALG_RSA_OAEP(\c hash)
+ *                        if \p usage is ENCRYPT/DECRYPT.
+ *                      - #MBEDTLS_PK_RSA_ALT: not supported.
+ *                      - #MBEDTLS_PK_ECDSA or #MBEDTLS_PK_ECKEY
+ *                        if \p usage is SIGN/VERIFY:
+ *                        #PSA_ALG_DETERMINISTIC_ECDSA(#PSA_ALG_ANY_HASH)
+ *                        if #MBEDTLS_ECDSA_DETERMINISTIC is enabled,
+ *                        otherwise #PSA_ALG_ECDSA(#PSA_ALG_ANY_HASH).
+ *                      - #MBEDTLS_PK_ECKEY_DH or #MBEDTLS_PK_ECKEY
+ *                        if \p usage is DERIVE:
+ *                        #PSA_ALG_ECDH.
+ *                      - #MBEDTLS_PK_OPAQUE: same as the primary algorithm
+ *                        set for the underlying PSA key, except that
+ *                        sign/decrypt flags are removed if the type is
+ *                        set to a public key type.
+ *                        The underlying key must allow \p usage.
+ *                        Note that the enrollment algorithm set with
+ *                        psa_set_key_enrollment_algorithm() is not copied.
+ *
+ * \return          0 on success.
+ *                  #MBEDTLS_ERR_PK_TYPE_MISMATCH if \p pk does not contain
+ *                  a key of the type identified in \p attributes.
+ *                  Another error code on other failures.
+ */
+
+========================================================================
+Source: components/mbedtls/mbedtls/include/psa/crypto_compat.h
+
+/** Open a handle to an existing persistent key.
+ *
+ * Open a handle to a persistent key. A key is persistent if it was created
+ * with a lifetime other than #PSA_KEY_LIFETIME_VOLATILE. A persistent key
+ * always has a nonzero key identifier, set with psa_set_key_id() when
+ * creating the key. Implementations may provide additional pre-provisioned
+ * keys that can be opened with psa_open_key(). Such keys have an application
+ * key identifier in the vendor range, as documented in the description of
+ * #psa_key_id_t.
+ *
+ * The application must eventually close the handle with psa_close_key() or
+ * psa_destroy_key() to release associated resources. If the application dies
+ * without calling one of these functions, the implementation should perform
+ * the equivalent of a call to psa_close_key().
+ *
+ * Some implementations permit an application to open the same key multiple
+ * times. If this is successful, each call to psa_open_key() will return a
+ * different key handle.
+ *
+ * \note This API is not part of the PSA Cryptography API Release 1.0.0
+ * specification. It was defined in the 1.0 Beta 3 version of the
+ * specification but was removed in the 1.0.0 released version. This API is
+ * kept for the time being to not break applications relying on it. It is not
+ * deprecated yet but will be in the near future.
+ *
+ * \note Applications that rely on opening a key multiple times will not be
+ * portable to implementations that only permit a single key handle to be
+ * opened. See also :ref:\`key-handles\`.
+ *
+ *
+ * \param key           The persistent identifier of the key.
+ * \param[out] handle   On success, a handle to the key.
+ *
+ * \retval #PSA_SUCCESS
+ *         Success. The application can now use the value of `*handle`
+ *         to access the key.
+ * \retval #PSA_ERROR_INSUFFICIENT_MEMORY
+ *         The implementation does not have sufficient resources to open the
+ *         key. This can be due to reaching an implementation limit on the
+ *         number of open keys, the number of open key handles, or available
+ *         memory.
+ * \retval #PSA_ERROR_DOES_NOT_EXIST
+ *         There is no persistent key with key identifier \p key.
+ * \retval #PSA_ERROR_INVALID_ARGUMENT
+ *         \p key is not a valid persistent key identifier.
+ * \retval #PSA_ERROR_NOT_PERMITTED
+ *         The specified key exists, but the application does not have the
+ *         permission to access it. Note that this specification does not
+ *         define any way to create such a key, but it may be possible
+ *         through implementation-specific means.
+ * \retval #PSA_ERROR_COMMUNICATION_FAILURE \emptydescription
+ * \retval #PSA_ERROR_CORRUPTION_DETECTED \emptydescription
+ * \retval #PSA_ERROR_STORAGE_FAILURE \emptydescription
+ * \retval #PSA_ERROR_DATA_INVALID \emptydescription
+ * \retval #PSA_ERROR_DATA_CORRUPT \emptydescription
+ * \retval #PSA_ERROR_BAD_STATE
+ *         The library has not been previously initialized by psa_crypto_init().
+ *         It is implementation-dependent whether a failure to initialize
+ *         results in this error code.
+ */
+
+========================================================================
+Source: components/mbedtls/mbedtls/include/psa/crypto_driver_contexts_composites.h, components/mbedtls/mbedtls/include/psa/crypto_driver_contexts_key_derivation.h, components/mbedtls/mbedtls/include/psa/crypto_driver_contexts_primitives.h
+
+/*  Copyright The Mbed TLS Contributors
+ *  SPDX-License-Identifier: Apache-2.0 OR GPL-2.0-or-later
+ */
+
+========================================================================
+Source: components/mbedtls/mbedtls/library/platform.c
+
+/*
+ *  Platform abstraction layer
+ *
+ *  Copyright The Mbed TLS Contributors
+ *  SPDX-License-Identifier: Apache-2.0 OR GPL-2.0-or-later
+ */
+
+========================================================================
+Source: components/mbedtls/mbedtls/library/platform_util.c
+
+/*
+ * Common and shared functions used by multiple modules in the Mbed TLS
+ * library.
+ *
+ *  Copyright The Mbed TLS Contributors
+ *  SPDX-License-Identifier: Apache-2.0 OR GPL-2.0-or-later
+ */
+
+========================================================================
+Source: components/mbedtls/port/aes/dma/esp_aes.c
+
+/**
+ * \brief AES block cipher, ESP DMA hardware accelerated version
+ * Based on mbedTLS FIPS-197 compliant version.
+ *
+ *  Copyright (C) 2006-2015, ARM Limited, All Rights Reserved
+ *  Additions Copyright (C) 2016-2020, Espressif Systems (Shanghai) PTE Ltd
+ *  SPDX-License-Identifier: Apache-2.0
+ *
+ *  Licensed under the Apache License, Version 2.0 (the "License"); you may
+ *  not use this file except in compliance with the License.
+ *  You may obtain a copy of the License at
+ *
+ *  http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *  Unless required by applicable law or agreed to in writing, software
+ *  distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+ *  WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *  See the License for the specific language governing permissions and
+ *  limitations under the License.
+ *
+ */
+
+========================================================================
+Source: components/mbedtls/port/aes/esp_aes_common.c
+
+/*
+ * AES block cipher, ESP hardware accelerated version, common
+ * Based on mbedTLS FIPS-197 compliant version.
+ *
+ * SPDX-FileCopyrightText: The Mbed TLS Contributors
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ *
+ * SPDX-FileContributor: 2016-2025 Espressif Systems (Shanghai) CO LTD
+ */
+
+========================================================================
+Source: components/mbedtls/port/aes/esp_aes_xts.c
+
+/**
+ * \brief AES block cipher, ESP32-S2 hardware accelerated version
+ * Based on mbedTLS FIPS-197 compliant version.
+ *
+ *  Copyright (C) 2006-2015, ARM Limited, All Rights Reserved
+ *  Additions Copyright (C) 2016-2020, Espressif Systems (Shanghai) PTE Ltd
+ *  SPDX-License-Identifier: Apache-2.0
+ *
+ *  Licensed under the Apache License, Version 2.0 (the "License"); you may
+ *  not use this file except in compliance with the License.
+ *  You may obtain a copy of the License at
+ *
+ *  http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *  Unless required by applicable law or agreed to in writing, software
+ *  distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+ *  WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *  See the License for the specific language governing permissions and
+ *  limitations under the License.
+ *
+ */
+
+========================================================================
+Source: components/mbedtls/port/include/aes/esp_aes.h
+
+/**
+ * \brief AES block cipher, ESP hardware accelerated version
+ * Based on mbedTLS FIPS-197 compliant version.
+ *
+ *  Copyright (C) 2006-2015, ARM Limited, All Rights Reserved
+ *  Additions Copyright (C) 2016, Espressif Systems (Shanghai) PTE Ltd
+ *  SPDX-License-Identifier: Apache-2.0
+ *
+ *  Licensed under the Apache License, Version 2.0 (the "License"); you may
+ *  not use this file except in compliance with the License.
+ *  You may obtain a copy of the License at
+ *
+ *  http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *  Unless required by applicable law or agreed to in writing, software
+ *  distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+ *  WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *  See the License for the specific language governing permissions and
+ *  limitations under the License.
+ *
+ *
+ */
+
+========================================================================
+Source: components/mbedtls/port/include/aes/esp_aes_gcm.h
+
+/*
+ * GCM block cipher, ESP DMA hardware accelerated version
+ * Based on mbedTLS FIPS-197 compliant version.
+ *
+ * SPDX-FileCopyrightText: The Mbed TLS Contributors
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ *
+ * SPDX-FileContributor: 2016-2024 Espressif Systems (Shanghai) CO LTD
+ */
+
+========================================================================
+Source: components/mbedtls/port/include/aes_alt.h
+
+/**
+ * \file aes_alt.h
+ *
+ * \brief AES block cipher
+ *
+ *  Copyright (C) 2006-2015, ARM Limited, All Rights Reserved
+ *  SPDX-License-Identifier: Apache-2.0
+ *
+ *  Licensed under the Apache License, Version 2.0 (the "License"); you may
+ *  not use this file except in compliance with the License.
+ *  You may obtain a copy of the License at
+ *
+ *  http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *  Unless required by applicable law or agreed to in writing, software
+ *  distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+ *  WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *  See the License for the specific language governing permissions and
+ *  limitations under the License.
+ *
+ *
+ */
+
+========================================================================
+Source: components/mbedtls/port/include/gcm_alt.h
+
+/*
+ * gcm_alt.h: AES block cipher
+ *
+ * SPDX-FileCopyrightText: The Mbed TLS Contributors
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ *
+ * SPDX-FileContributor: 2016-2022 Espressif Systems (Shanghai) CO LTD
+ */
+
+========================================================================
+Source: components/mbedtls/port/include/mbedtls/esp_config.h
+
+/*
+ *  Copyright The Mbed TLS Contributors
+ *  SPDX-License-Identifier: Apache-2.0
+ *
+ * This set of compile-time options may be used to enable
+ * or disable features selectively, and reduce the global
+ * memory footprint.
+ *
+ * SPDX-FileCopyrightText: The Mbed TLS Contributors
+ *
+ *  Unless required by applicable law or agreed to in writing, software
+ *  distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+ *  WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *  See the License for the specific language governing permissions and
+ *  limitations under the License.
+ */
+
+========================================================================
+Source: components/mbedtls/port/include/md5_alt.h
+
+/*
+ * md5_alt.h: MD5 block cipher
+ *
+ * SPDX-FileCopyrightText: The Mbed TLS Contributors
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ *
+ * SPDX-FileContributor: 2016-2022 Espressif Systems (Shanghai) CO LTD
+ */
+
+========================================================================
+Source: components/mbedtls/port/include/sha1_alt.h
+
+/*
+ *  SHA-1 implementation with hardware ESP32 support added.
+ *  Uses mbedTLS software implementation for failover when concurrent
+ *  SHA operations are in use.
+ *
+ *  Copyright (C) 2006-2015, ARM Limited, All Rights Reserved
+ *  Additions Copyright (C) 2016, Espressif Systems (Shanghai) PTE LTD
+ *  SPDX-License-Identifier: Apache-2.0
+ *
+ *  Licensed under the Apache License, Version 2.0 (the "License"); you may
+ *  not use this file except in compliance with the License.
+ *  You may obtain a copy of the License at
+ *
+ *  http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *  Unless required by applicable law or agreed to in writing, software
+ *  distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+ *  WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *  See the License for the specific language governing permissions and
+ *  limitations under the License.
+ *
+ */
+
+========================================================================
+Source: components/mbedtls/port/include/sha256_alt.h
+
+/*
+ *  SHA-256 implementation with hardware ESP32 support added.
+ *  Uses mbedTLS software implementation for failover when concurrent
+ *  SHA operations are in use.
+ *
+ *  Copyright (C) 2006-2015, ARM Limited, All Rights Reserved
+ *  Additions Copyright (C) 2016, Espressif Systems (Shanghai) PTE LTD
+ *  SPDX-License-Identifier: Apache-2.0
+ *
+ *  Licensed under the Apache License, Version 2.0 (the "License"); you may
+ *  not use this file except in compliance with the License.
+ *  You may obtain a copy of the License at
+ *
+ *  http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *  Unless required by applicable law or agreed to in writing, software
+ *  distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+ *  WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *  See the License for the specific language governing permissions and
+ *  limitations under the License.
+ *
+ */
+
+========================================================================
+Source: components/mbedtls/port/include/sha512_alt.h
+
+/*
+ *  SHA-512 implementation with hardware ESP32 support added.
+ *  Uses mbedTLS software implementation for failover when concurrent
+ *  SHA operations are in use.
+ *
+ *  Copyright (C) 2006-2015, ARM Limited, All Rights Reserved
+ *  Additions Copyright (C) 2016, Espressif Systems (Shanghai) PTE LTD
+ *  SPDX-License-Identifier: Apache-2.0
+ *
+ *  Licensed under the Apache License, Version 2.0 (the "License"); you may
+ *  not use this file except in compliance with the License.
+ *  You may obtain a copy of the License at
+ *
+ *  http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *  Unless required by applicable law or agreed to in writing, software
+ *  distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+ *  WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *  See the License for the specific language governing permissions and
+ *  limitations under the License.
+ *
+ */
+
+========================================================================
+Source: components/mbedtls/port/sha/dma/esp_sha256.c
+
+/*
+ * SHA-256 implementation with hardware ESP support added.
+ *
+ * SPDX-FileCopyrightText: The Mbed TLS Contributors
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ *
+ * SPDX-FileContributor: 2016-2024 Espressif Systems (Shanghai) CO LTD
+ */
+
+========================================================================
+Source: components/mbedtls/port/sha/dma/sha.c
+
+/*
+ *  ESP hardware accelerated SHA1/256/512 implementation
+ *  based on mbedTLS FIPS-197 compliant version.
+ *
+ *  Copyright (C) 2006-2015, ARM Limited, All Rights Reserved
+ *  Additions Copyright (C) 2016-2020, Espressif Systems (Shanghai) PTE Ltd
+ *  SPDX-License-Identifier: Apache-2.0
+ *
+ *  Licensed under the Apache License, Version 2.0 (the "License"); you may
+ *  not use this file except in compliance with the License.
+ *  You may obtain a copy of the License at
+ *
+ *  http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *  Unless required by applicable law or agreed to in writing, software
+ *  distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+ *  WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *  See the License for the specific language governing permissions and
+ *  limitations under the License.
+ *
+ */
+
+========================================================================
+Source: components/newlib/platform_include/sys/termios.h
+
+//
+// This header file is based on the termios header of
+// "The Single UNIX (r) Specification, Version 2, Copyright (c)  1997 The Open Group".
+
+========================================================================
+Source: components/nvs_flash/src/nvs_encrypted_partition.hpp
+
+// Copyright 2019 Espressif Systems (Shanghai) PTE LTD
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//         http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
+========================================================================
+Source: components/sdmmc/include/esp_private/sdmmc_common.h, components/sdmmc/sdmmc_common.c, components/sdmmc/sdmmc_init.c, components/sdmmc/sdmmc_io.c, components/sdmmc/sdmmc_mmc.c, components/sdmmc/sdmmc_sd.c
+
+/*
+ * Copyright (c) 2006 Uwe Stuehler <uwe@openbsd.org>
+ * Adaptations to ESP-IDF Copyright (c) 2016-2024 Espressif Systems (Shanghai) PTE LTD
+ *
+ * Permission to use, copy, modify, and distribute this software for any
+ * purpose with or without fee is hereby granted, provided that the above
+ * copyright notice and this permission notice appear in all copies.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
+ * WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
+ * MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
+ * ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+ * WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
+ * ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
+ * OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+ */
+
+========================================================================
+Source: components/sdmmc/include/sd_protocol_defs.h, components/sdmmc/include/sd_protocol_types.h
+
+/*
+ * SPDX-FileCopyrightText: 2006 Uwe Stuehler <uwe@openbsd.org>
+ *
+ * SPDX-License-Identifier: ISC
+ *
+ * SPDX-FileContributor: 2016-2024 Espressif Systems (Shanghai) CO LTD
+ */
+
+========================================================================
+Source: components/sdmmc/include/sd_protocol_defs.h, components/sdmmc/include/sd_protocol_types.h
+
+/*
+ * Copyright (c) 2006 Uwe Stuehler <uwe@openbsd.org>
+ *
+ * Permission to use, copy, modify, and distribute this software for any
+ * purpose with or without fee is hereby granted, provided that the above
+ * copyright notice and this permission notice appear in all copies.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
+ * WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
+ * MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
+ * ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+ * WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
+ * ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
+ * OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+ */
+
+========================================================================
+Source: components/soc/esp32s3/include/soc/efuse_defs.h, components/soc/esp32s3/register/soc/lcd_cam_reg.h, components/soc/esp32s3/register/soc/lcd_cam_struct.h
+
+/**
+ * SPDX-FileCopyrightText: 2023 Espressif Systems (Shanghai) CO LTD
+ *
+ *  SPDX-License-Identifier: Apache-2.0
+ */
+
+========================================================================
+Source: components/soc/esp32s3/include/soc/fe_reg.h, components/soc/esp32s3/include/soc/nrx_reg.h, components/soc/esp32s3/ledc_periph.c, components/spi_flash/include/spi_flash_chip_winbond.h
+
+// Copyright 2015-2020 Espressif Systems (Shanghai) PTE LTD
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//     http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
+========================================================================
+Source: components/soc/esp32s3/include/soc/mpu_caps.h
+
+// Copyright 2020 Espressif Systems (Shanghai) PTE LTD
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//     http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
+========================================================================
+Source: components/soc/esp32s3/include/soc/reset_reasons.h
+
+// Copyright 2021 Espressif Systems (Shanghai) PTE LTD
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//     http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
+========================================================================
+Source: components/soc/esp32s3/include/soc/sdmmc_pins.h
+
+// Copyright 2015-2020 Espressif Systems (Shanghai) PTE LTD
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+
+========================================================================
+Source: components/soc/esp32s3/include/soc/uart_pins.h, components/spi_flash/include/spi_flash_chip_boya.h, components/spi_flash/spi_flash_chip_boya.c
+
+// Copyright 2015-2021 Espressif Systems (Shanghai) PTE LTD
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//     http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
+========================================================================
+Source: components/soc/esp32s3/register/soc/efuse_reg.h, components/soc/esp32s3/register/soc/efuse_struct.h
+
+/**
+ * SPDX-FileCopyrightText: 2023-2024 Espressif Systems (Shanghai) CO LTD
+ *
+ *  SPDX-License-Identifier: Apache-2.0
+ */
+
+========================================================================
+Source: components/soc/esp32s3/register/soc/gdma_struct.h
+
+/*The raw interrupt bit turns to high level when accessing external RAM is rejected by permission control.*/
+
+========================================================================
+Source: components/soc/esp32s3/register/soc/syscon_reg.h, components/soc/esp32s3/register/soc/timer_group_struct.h
+
+/**
+ * SPDX-FileCopyrightText: 2021-2022 Espressif Systems (Shanghai) CO LTD
+ *
+ *  SPDX-License-Identifier: Apache-2.0
+ */
+
+========================================================================
+Source: components/soc/include/soc/gpio_periph.h
+
+// Copyright 2018 Espressif Systems (Shanghai) PTE LTD
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//     http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
+========================================================================
+Source: components/vfs/include/esp_vfs_common.h
+
+// Copyright 2015-2017 Espressif Systems (Shanghai) PTE LTD
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//     http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
+========================================================================
+Source: components/xtensa/esp32s3/include/xtensa/config/core-isa.h
+
+/* Xtensa processor core configuration information.
+
+   Customer ID=15128; Build=0x90f1f; Copyright (c) 1999-2021 Tensilica Inc.
+
+   Permission is hereby granted, free of charge, to any person obtaining
+   a copy of this software and associated documentation files (the
+   "Software"), to deal in the Software without restriction, including
+   without limitation the rights to use, copy, modify, merge, publish,
+   distribute, sublicense, and/or sell copies of the Software, and to
+   permit persons to whom the Software is furnished to do so, subject to
+   the following conditions:
+
+   The above copyright notice and this permission notice shall be included
+   in all copies or substantial portions of the Software.
+
+   THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+   EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+   MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+   IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+   CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+   TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+   SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.  */
+
+========================================================================
+Source: components/xtensa/esp32s3/include/xtensa/config/core-matmap.h
+
+/* Customer ID=15128; Build=0x90f1f; Copyright (c) 1999-2021 Tensilica Inc.
+
+   Permission is hereby granted, free of charge, to any person obtaining
+   a copy of this software and associated documentation files (the
+   "Software"), to deal in the Software without restriction, including
+   without limitation the rights to use, copy, modify, merge, publish,
+   distribute, sublicense, and/or sell copies of the Software, and to
+   permit persons to whom the Software is furnished to do so, subject to
+   the following conditions:
+
+   The above copyright notice and this permission notice shall be included
+   in all copies or substantial portions of the Software.
+
+   THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+   EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+   MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+   IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+   CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+   TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+   SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.  */
+
+========================================================================
+Source: components/xtensa/esp32s3/include/xtensa/config/core.h
+
+/*
+ * Copyright (c) 2005-2015 Cadence Design Systems, Inc.
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining
+ * a copy of this software and associated documentation files (the
+ * "Software"), to deal in the Software without restriction, including
+ * without limitation the rights to use, copy, modify, merge, publish,
+ * distribute, sublicense, and/or sell copies of the Software, and to
+ * permit persons to whom the Software is furnished to do so, subject to
+ * the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included
+ * in all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+ * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+ * IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+ * CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+ * TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+ * SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ */
+
+========================================================================
+Source: components/xtensa/esp32s3/include/xtensa/config/extreg.h
+
+// Copyright 2020 Espressif Systems (Shanghai) PTE LTD
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+
+========================================================================
+Source: components/xtensa/esp32s3/include/xtensa/config/specreg.h
+
+/* Customer ID=15128; Build=0x90f1f; Copyright (c) 1998-2002 Tensilica Inc.
+
+   Permission is hereby granted, free of charge, to any person obtaining
+   a copy of this software and associated documentation files (the
+   "Software"), to deal in the Software without restriction, including
+   without limitation the rights to use, copy, modify, merge, publish,
+   distribute, sublicense, and/or sell copies of the Software, and to
+   permit persons to whom the Software is furnished to do so, subject to
+   the following conditions:
+
+   The above copyright notice and this permission notice shall be included
+   in all copies or substantial portions of the Software.
+
+   THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+   EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+   MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+   IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+   CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+   TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+   SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.  */
+
+========================================================================
+Source: components/xtensa/esp32s3/include/xtensa/config/system.h
+
+/* Customer ID=15128; Build=0x90f1f; Copyright (c) 2000-2010 Tensilica Inc.
+
+   Permission is hereby granted, free of charge, to any person obtaining
+   a copy of this software and associated documentation files (the
+   "Software"), to deal in the Software without restriction, including
+   without limitation the rights to use, copy, modify, merge, publish,
+   distribute, sublicense, and/or sell copies of the Software, and to
+   permit persons to whom the Software is furnished to do so, subject to
+   the following conditions:
+
+   The above copyright notice and this permission notice shall be included
+   in all copies or substantial portions of the Software.
+
+   THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+   EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+   MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+   IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+   CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+   TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+   SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.  */
+
+========================================================================
+Source: components/xtensa/esp32s3/include/xtensa/config/tie-asm.h
+
+/* This header file contains assembly-language definitions (assembly
+   macros, etc.) for this specific Xtensa processor's TIE extensions
+   and options.  It is customized to this Xtensa processor configuration.
+
+   Customer ID=15128; Build=0x90f1f; Copyright (c) 1999-2021 Cadence Design Systems Inc.
+
+   Permission is hereby granted, free of charge, to any person obtaining
+   a copy of this software and associated documentation files (the
+   "Software"), to deal in the Software without restriction, including
+   without limitation the rights to use, copy, modify, merge, publish,
+   distribute, sublicense, and/or sell copies of the Software, and to
+   permit persons to whom the Software is furnished to do so, subject to
+   the following conditions:
+
+   The above copyright notice and this permission notice shall be included
+   in all copies or substantial portions of the Software.
+
+   THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+   EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+   MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+   IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+   CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+   TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+   SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.  */
+
+========================================================================
+Source: components/xtensa/esp32s3/include/xtensa/config/tie.h
+
+/* This header file describes this specific Xtensa processor's TIE extensions
+   that extend basic Xtensa core functionality.  It is customized to this
+   Xtensa processor configuration.
+
+   Customer ID=15128; Build=0x90f1f; Copyright (c) 1999-2021 Cadence Design Systems Inc.
+
+   Permission is hereby granted, free of charge, to any person obtaining
+   a copy of this software and associated documentation files (the
+   "Software"), to deal in the Software without restriction, including
+   without limitation the rights to use, copy, modify, merge, publish,
+   distribute, sublicense, and/or sell copies of the Software, and to
+   permit persons to whom the Software is furnished to do so, subject to
+   the following conditions:
+
+   The above copyright notice and this permission notice shall be included
+   in all copies or substantial portions of the Software.
+
+   THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+   EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+   MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+   IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+   CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+   TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+   SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.  */
+
+========================================================================
+Source: components/xtensa/include/xt_asm_utils.h
+
+/*
+ * SPDX-FileCopyrightText: 2017, Intel Corporation
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ *
+ * SPDX-FileContributor: 2016-2022 Espressif Systems (Shanghai) CO LTD
+ */
+
+========================================================================
+Source: components/xtensa/include/xtensa/coreasm.h
+
+/*
+ * Copyright (c) 2000-2014 Tensilica Inc.
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining
+ * a copy of this software and associated documentation files (the
+ * "Software"), to deal in the Software without restriction, including
+ * without limitation the rights to use, copy, modify, merge, publish,
+ * distribute, sublicense, and/or sell copies of the Software, and to
+ * permit persons to whom the Software is furnished to do so, subject to
+ * the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included
+ * in all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+ * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+ * IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+ * CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+ * TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+ * SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ */
+
+========================================================================
+Source: components/xtensa/include/xtensa/corebits.h
+
+/*
+ * Copyright (c) 2005-2011 Tensilica Inc.
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining
+ * a copy of this software and associated documentation files (the
+ * "Software"), to deal in the Software without restriction, including
+ * without limitation the rights to use, copy, modify, merge, publish,
+ * distribute, sublicense, and/or sell copies of the Software, and to
+ * permit persons to whom the Software is furnished to do so, subject to
+ * the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included
+ * in all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+ * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+ * IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+ * CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+ * TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+ * SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ */
+
+========================================================================
+Source: components/xtensa/include/xtensa/hal.h
+
+/*
+   xtensa/hal.h -- contains a definition of the Core HAL interface
+
+   All definitions in this header file are independent of any specific
+   Xtensa processor configuration.  Thus software (eg. OS, application,
+   etc) can include this header file and be compiled into configuration-
+   independent objects that can be distributed and eventually linked
+   to the HAL library (libhal.a) to create a configuration-specific
+   final executable.
+
+   Certain definitions, however, are release/version-specific -- such as
+   the XTHAL_RELEASE_xxx macros (or additions made in later versions).
+
+
+   $Id: //depot/rel/Foxhill/dot.9/Xtensa/OS/target-os-src/hal.h.tpp#1 $
+
+   Copyright (c) 1999-2015 Cadence Design Systems, Inc.
+
+   Permission is hereby granted, free of charge, to any person obtaining
+   a copy of this software and associated documentation files (the
+   "Software"), to deal in the Software without restriction, including
+   without limitation the rights to use, copy, modify, merge, publish,
+   distribute, sublicense, and/or sell copies of the Software, and to
+   permit persons to whom the Software is furnished to do so, subject to
+   the following conditions:
+
+   The above copyright notice and this permission notice shall be included
+   in all copies or substantial portions of the Software.
+
+   THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+   EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+   MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+   IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+   CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+   TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+   SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+*/
+
+========================================================================
+Source: components/xtensa/include/xtensa/xtensa-versions.h
+
+/*
+   Copyright (c) 2006-2018 Tensilica Inc.
+
+   Permission is hereby granted, free of charge, to any person obtaining
+   a copy of this software and associated documentation files (the
+   "Software"), to deal in the Software without restriction, including
+   without limitation the rights to use, copy, modify, merge, publish,
+   distribute, sublicense, and/or sell copies of the Software, and to
+   permit persons to whom the Software is furnished to do so, subject to
+   the following conditions:
+
+   The above copyright notice and this permission notice shall be included
+   in all copies or substantial portions of the Software.
+
+   THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+   EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+   MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+   IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+   CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+   TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+   SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+*/
+
+========================================================================
+Source: components/xtensa/include/xtensa/xtruntime-core-state.h
+
+/*
+ * Copyright (c) 2012-2013 Tensilica Inc.
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining
+ * a copy of this software and associated documentation files (the
+ * "Software"), to deal in the Software without restriction, including
+ * without limitation the rights to use, copy, modify, merge, publish,
+ * distribute, sublicense, and/or sell copies of the Software, and to
+ * permit persons to whom the Software is furnished to do so, subject to
+ * the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included
+ * in all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+ * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+ * IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+ * CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+ * TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+ * SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ */
+
+========================================================================
+Source: components/xtensa/include/xtensa/xtruntime-frames.h
+
+/*
+ * Copyright (c) 2002-2012 Tensilica Inc.
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining
+ * a copy of this software and associated documentation files (the
+ * "Software"), to deal in the Software without restriction, including
+ * without limitation the rights to use, copy, modify, merge, publish,
+ * distribute, sublicense, and/or sell copies of the Software, and to
+ * permit persons to whom the Software is furnished to do so, subject to
+ * the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included
+ * in all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+ * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+ * IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+ * CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+ * TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+ * SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ */
+
+========================================================================
+Source: components/xtensa/include/xtensa/xtruntime.h
+
+/*
+ * xtruntime.h  --  general C definitions for single-threaded run-time
+ *
+ * Copyright (c) 2002-2013 Tensilica Inc.
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining
+ * a copy of this software and associated documentation files (the
+ * "Software"), to deal in the Software without restriction, including
+ * without limitation the rights to use, copy, modify, merge, publish,
+ * distribute, sublicense, and/or sell copies of the Software, and to
+ * permit persons to whom the Software is furnished to do so, subject to
+ * the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included
+ * in all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+ * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+ * IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+ * CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+ * TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+ * SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ */
+
+========================================================================
+Source: components/xtensa/include/xtensa_api.h
+
+/*******************************************************************************
+Copyright (c) 2006-2015 Cadence Design Systems Inc.
+
+Permission is hereby granted, free of charge, to any person obtaining
+a copy of this software and associated documentation files (the
+"Software"), to deal in the Software without restriction, including
+without limitation the rights to use, copy, modify, merge, publish,
+distribute, sublicense, and/or sell copies of the Software, and to
+permit persons to whom the Software is furnished to do so, subject to
+the following conditions:
+
+The above copyright notice and this permission notice shall be included
+in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+******************************************************************************/

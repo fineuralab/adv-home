@@ -1,0 +1,19 @@
+{
+  "M5GFX": {
+    "version": "0.2.15",
+    "url": "https://github.com/m5stack/M5GFX",
+    "tree_sha256": "e63f019ae5e3631d6a6da30c93a5d8e23d97319baab1a8aa23b86d7765998635",
+    "tree_algorithm": "SHA256 of sorted UTF-8 relative path + NUL + hex file SHA256 + newline",
+    "variant": "ADV Home local default-font subset",
+    "upstream_tag": "0.2.15",
+    "upstream_commit": "c6f92dc03226cdc04d67c705a2020f62ad21ad01",
+    "upstream_tree_sha256": "cf249f6dccb996f5291558e7de9953b9dd2ca6218c29c3cfedec4ffe082beaea",
+    "modifications": "docs/m5gfx-subset.json"
+  },
+  "sdk": {
+    "name": "ESP-IDF",
+    "version": "5.4.2",
+    "image": "sha256:1ef0a017195d5e6a9bde3d46ce6b1cf228647c067a5dbd1f034f95b803ce55fb"
+  },
+  "notices_inventory": "docs/license-inventory.json"
+}

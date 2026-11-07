@@ -1,0 +1,43 @@
+name: Checks
+
+on: [push, pull_request, workflow_dispatch]
+
+permissions:
+  contents: read
+
+jobs:
+  host-tests:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - name: Install host compiler
+        run: sudo apt-get update && sudo apt-get install -y clang
+      - name: Core and boot policy tests
+        run: |
+          python3 tools/check_notices.py
+          python3 tools/test.py
+          python3 tools/test_bootloader.py
+
+  firmware:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    container: espressif/idf:v5.4.2
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - name: Build and validate ESP32-S3 images
+        run: |
+          . /opt/esp/idf/export.sh
+          idf.py build
+          python3 tools/check_stack.py --check
+          # Relative merge output is resolved inside the build directory.
+          idf.py merge-bin -o ADV-Home-v0.1_0x0.bin -f raw
+          python3 tools/verify_images.py --full build/ADV-Home-v0.1_0x0.bin --app build/adv-home.bin
+          python3 tools/make_release.py --build build --out dist

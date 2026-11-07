@@ -1,0 +1,1614 @@
+GCC 14.2 C++ runtime/header notices
+
+Original copyright/license comment blocks, retained verbatim.
+Sources follow the archive-extraction map; headers follow compiler dependency logs.
+Linker garbage collection can remove optional code; this is a conservative notice inventory.
+
+========================================================================
+Source: lib/gcc/xtensa-esp-elf/14.2.0/include/limits.h
+
+/* Copyright (C) 1992-2024 Free Software Foundation, Inc.
+
+This file is part of GCC.
+
+GCC is free software; you can redistribute it and/or modify it under
+the terms of the GNU General Public License as published by the Free
+Software Foundation; either version 3, or (at your option) any later
+version.
+
+GCC is distributed in the hope that it will be useful, but WITHOUT ANY
+WARRANTY; without even the implied warranty of MERCHANTABILITY or
+FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
+for more details.
+
+Under Section 7 of GPL version 3, you are granted additional
+permissions described in the GCC Runtime Library Exception, version
+3.1, as published by the Free Software Foundation.
+
+You should have received a copy of the GNU General Public License and
+a copy of the GCC Runtime Library Exception along with this program;
+see the files COPYING3 and COPYING.RUNTIME respectively.  If not, see
+<http://www.gnu.org/licenses/>.  */
+
+========================================================================
+Source: lib/gcc/xtensa-esp-elf/14.2.0/include/limits.h
+
+/* Copyright (C) 1991-2024 Free Software Foundation, Inc.
+
+This file is part of GCC.
+
+GCC is free software; you can redistribute it and/or modify it under
+the terms of the GNU General Public License as published by the Free
+Software Foundation; either version 3, or (at your option) any later
+version.
+
+GCC is distributed in the hope that it will be useful, but WITHOUT ANY
+WARRANTY; without even the implied warranty of MERCHANTABILITY or
+FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
+for more details.
+
+Under Section 7 of GPL version 3, you are granted additional
+permissions described in the GCC Runtime Library Exception, version
+3.1, as published by the Free Software Foundation.
+
+You should have received a copy of the GNU General Public License and
+a copy of the GCC Runtime Library Exception along with this program;
+see the files COPYING3 and COPYING.RUNTIME respectively.  If not, see
+<http://www.gnu.org/licenses/>.  */
+
+========================================================================
+Source: lib/gcc/xtensa-esp-elf/14.2.0/include/stdarg.h, lib/gcc/xtensa-esp-elf/14.2.0/include/stddef.h
+
+/* Copyright (C) 1989-2024 Free Software Foundation, Inc.
+
+This file is part of GCC.
+
+GCC is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation; either version 3, or (at your option)
+any later version.
+
+GCC is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+Under Section 7 of GPL version 3, you are granted additional
+permissions described in the GCC Runtime Library Exception, version
+3.1, as published by the Free Software Foundation.
+
+You should have received a copy of the GNU General Public License and
+a copy of the GCC Runtime Library Exception along with this program;
+see the files COPYING3 and COPYING.RUNTIME respectively.  If not, see
+<http://www.gnu.org/licenses/>.  */
+
+========================================================================
+Source: lib/gcc/xtensa-esp-elf/14.2.0/include/stdatomic.h
+
+/* Copyright (C) 2013-2024 Free Software Foundation, Inc.
+
+This file is part of GCC.
+
+GCC is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation; either version 3, or (at your option)
+any later version.
+
+GCC is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+Under Section 7 of GPL version 3, you are granted additional
+permissions described in the GCC Runtime Library Exception, version
+3.1, as published by the Free Software Foundation.
+
+You should have received a copy of the GNU General Public License and
+a copy of the GCC Runtime Library Exception along with this program;
+see the files COPYING3 and COPYING.RUNTIME respectively.  If not, see
+<http://www.gnu.org/licenses/>.  */
+
+========================================================================
+Source: lib/gcc/xtensa-esp-elf/14.2.0/include/stdbool.h
+
+/* Copyright (C) 1998-2024 Free Software Foundation, Inc.
+
+This file is part of GCC.
+
+GCC is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation; either version 3, or (at your option)
+any later version.
+
+GCC is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+Under Section 7 of GPL version 3, you are granted additional
+permissions described in the GCC Runtime Library Exception, version
+3.1, as published by the Free Software Foundation.
+
+You should have received a copy of the GNU General Public License and
+a copy of the GCC Runtime Library Exception along with this program;
+see the files COPYING3 and COPYING.RUNTIME respectively.  If not, see
+<http://www.gnu.org/licenses/>.  */
+
+========================================================================
+Source: xtensa-esp-elf/include/c++/14.2.0/algorithm, xtensa-esp-elf/include/c++/14.2.0/backward/binders.h, xtensa-esp-elf/include/c++/14.2.0/bits/allocator.h, xtensa-esp-elf/include/c++/14.2.0/bits/concept_check.h, xtensa-esp-elf/include/c++/14.2.0/bits/exception_defines.h, xtensa-esp-elf/include/c++/14.2.0/bits/functexcept.h, xtensa-esp-elf/include/c++/14.2.0/bits/list.tcc, xtensa-esp-elf/include/c++/14.2.0/bits/memoryfwd.h, xtensa-esp-elf/include/c++/14.2.0/bits/new_allocator.h, xtensa-esp-elf/include/c++/14.2.0/bits/stl_algo.h, xtensa-esp-elf/include/c++/14.2.0/bits/stl_algobase.h, xtensa-esp-elf/include/c++/14.2.0/bits/stl_bvector.h, xtensa-esp-elf/include/c++/14.2.0/bits/stl_construct.h, xtensa-esp-elf/include/c++/14.2.0/bits/stl_function.h, xtensa-esp-elf/include/c++/14.2.0/bits/stl_heap.h, xtensa-esp-elf/include/c++/14.2.0/bits/stl_iterator.h, xtensa-esp-elf/include/c++/14.2.0/bits/stl_iterator_base_funcs.h, xtensa-esp-elf/include/c++/14.2.0/bits/stl_iterator_base_types.h, xtensa-esp-elf/include/c++/14.2.0/bits/stl_pair.h, xtensa-esp-elf/include/c++/14.2.0/bits/stl_raw_storage_iter.h, xtensa-esp-elf/include/c++/14.2.0/bits/stl_relops.h, xtensa-esp-elf/include/c++/14.2.0/bits/stl_tempbuf.h, xtensa-esp-elf/include/c++/14.2.0/bits/stl_uninitialized.h, xtensa-esp-elf/include/c++/14.2.0/bits/stl_vector.h, xtensa-esp-elf/include/c++/14.2.0/bits/stringfwd.h, xtensa-esp-elf/include/c++/14.2.0/bits/vector.tcc, xtensa-esp-elf/include/c++/14.2.0/functional, xtensa-esp-elf/include/c++/14.2.0/list, xtensa-esp-elf/include/c++/14.2.0/memory, xtensa-esp-elf/include/c++/14.2.0/stdexcept, xtensa-esp-elf/include/c++/14.2.0/utility, xtensa-esp-elf/include/c++/14.2.0/vector, xtensa-esp-elf/include/c++/14.2.0/xtensa-esp-elf/esp32s3/no-rtti/bits/c++locale.h, xtensa-esp-elf/include/c++/14.2.0/xtensa-esp-elf/esp32s3/no-rtti/bits/messages_members.h, xtensa-esp-elf/include/c++/14.2.0/xtensa-esp-elf/esp32s3/no-rtti/bits/time_members.h
+
+// Copyright (C) 2001-2024 Free Software Foundation, Inc.
+//
+// This file is part of the GNU ISO C++ Library.  This library is free
+// software; you can redistribute it and/or modify it under the
+// terms of the GNU General Public License as published by the
+// Free Software Foundation; either version 3, or (at your option)
+// any later version.
+
+========================================================================
+Source: xtensa-esp-elf/include/c++/14.2.0/algorithm, xtensa-esp-elf/include/c++/14.2.0/array, xtensa-esp-elf/include/c++/14.2.0/backward/auto_ptr.h, xtensa-esp-elf/include/c++/14.2.0/backward/binders.h, xtensa-esp-elf/include/c++/14.2.0/bit, xtensa-esp-elf/include/c++/14.2.0/bits/algorithmfwd.h, xtensa-esp-elf/include/c++/14.2.0/bits/align.h, xtensa-esp-elf/include/c++/14.2.0/bits/alloc_traits.h, xtensa-esp-elf/include/c++/14.2.0/bits/allocated_ptr.h, xtensa-esp-elf/include/c++/14.2.0/bits/allocator.h, xtensa-esp-elf/include/c++/14.2.0/bits/atomic_base.h, xtensa-esp-elf/include/c++/14.2.0/bits/atomic_lockfree_defines.h, xtensa-esp-elf/include/c++/14.2.0/bits/atomic_wait.h, xtensa-esp-elf/include/c++/14.2.0/bits/basic_ios.h, xtensa-esp-elf/include/c++/14.2.0/bits/basic_ios.tcc, xtensa-esp-elf/include/c++/14.2.0/bits/basic_string.h, xtensa-esp-elf/include/c++/14.2.0/bits/basic_string.tcc, xtensa-esp-elf/include/c++/14.2.0/bits/char_traits.h, xtensa-esp-elf/include/c++/14.2.0/bits/charconv.h, xtensa-esp-elf/include/c++/14.2.0/bits/codecvt.h, xtensa-esp-elf/include/c++/14.2.0/bits/concept_check.h, xtensa-esp-elf/include/c++/14.2.0/bits/cpp_type_traits.h, xtensa-esp-elf/include/c++/14.2.0/bits/enable_special_members.h, xtensa-esp-elf/include/c++/14.2.0/bits/erase_if.h, xtensa-esp-elf/include/c++/14.2.0/bits/exception_defines.h, xtensa-esp-elf/include/c++/14.2.0/bits/functexcept.h, xtensa-esp-elf/include/c++/14.2.0/bits/functional_hash.h, xtensa-esp-elf/include/c++/14.2.0/bits/hash_bytes.h, xtensa-esp-elf/include/c++/14.2.0/bits/hashtable.h, xtensa-esp-elf/include/c++/14.2.0/bits/hashtable_policy.h, xtensa-esp-elf/include/c++/14.2.0/bits/invoke.h, xtensa-esp-elf/include/c++/14.2.0/bits/ios_base.h, xtensa-esp-elf/include/c++/14.2.0/bits/iterator_concepts.h, xtensa-esp-elf/include/c++/14.2.0/bits/list.tcc, xtensa-esp-elf/include/c++/14.2.0/bits/locale_classes.h, xtensa-esp-elf/include/c++/14.2.0/bits/locale_classes.tcc, xtensa-esp-elf/include/c++/14.2.0/bits/locale_conv.h, xtensa-esp-elf/include/c++/14.2.0/bits/locale_facets.h, xtensa-esp-elf/include/c++/14.2.0/bits/locale_facets.tcc, xtensa-esp-elf/include/c++/14.2.0/bits/locale_facets_nonio.h, xtensa-esp-elf/include/c++/14.2.0/bits/locale_facets_nonio.tcc, xtensa-esp-elf/include/c++/14.2.0/bits/localefwd.h, xtensa-esp-elf/include/c++/14.2.0/bits/max_size_type.h, xtensa-esp-elf/include/c++/14.2.0/bits/memory_resource.h, xtensa-esp-elf/include/c++/14.2.0/bits/memoryfwd.h, xtensa-esp-elf/include/c++/14.2.0/bits/mofunc_impl.h, xtensa-esp-elf/include/c++/14.2.0/bits/move.h, xtensa-esp-elf/include/c++/14.2.0/bits/move_only_function.h, xtensa-esp-elf/include/c++/14.2.0/bits/nested_exception.h, xtensa-esp-elf/include/c++/14.2.0/bits/new_allocator.h, xtensa-esp-elf/include/c++/14.2.0/bits/node_handle.h, xtensa-esp-elf/include/c++/14.2.0/bits/ostream.tcc, xtensa-esp-elf/include/c++/14.2.0/bits/ostream_insert.h, xtensa-esp-elf/include/c++/14.2.0/bits/out_ptr.h, xtensa-esp-elf/include/c++/14.2.0/bits/parse_numbers.h, xtensa-esp-elf/include/c++/14.2.0/bits/postypes.h, xtensa-esp-elf/include/c++/14.2.0/bits/predefined_ops.h, xtensa-esp-elf/include/c++/14.2.0/bits/ptr_traits.h, xtensa-esp-elf/include/c++/14.2.0/bits/range_access.h, xtensa-esp-elf/include/c++/14.2.0/bits/ranges_algo.h, xtensa-esp-elf/include/c++/14.2.0/bits/ranges_algobase.h, xtensa-esp-elf/include/c++/14.2.0/bits/ranges_base.h, xtensa-esp-elf/include/c++/14.2.0/bits/ranges_cmp.h, xtensa-esp-elf/include/c++/14.2.0/bits/ranges_uninitialized.h, xtensa-esp-elf/include/c++/14.2.0/bits/ranges_util.h, xtensa-esp-elf/include/c++/14.2.0/bits/refwrap.h, xtensa-esp-elf/include/c++/14.2.0/bits/requires_hosted.h, xtensa-esp-elf/include/c++/14.2.0/bits/shared_ptr.h, xtensa-esp-elf/include/c++/14.2.0/bits/shared_ptr_atomic.h, xtensa-esp-elf/include/c++/14.2.0/bits/shared_ptr_base.h, xtensa-esp-elf/include/c++/14.2.0/bits/specfun.h, xtensa-esp-elf/include/c++/14.2.0/bits/std_abs.h, xtensa-esp-elf/include/c++/14.2.0/bits/std_function.h, xtensa-esp-elf/include/c++/14.2.0/bits/std_mutex.h, xtensa-esp-elf/include/c++/14.2.0/bits/stl_algo.h, xtensa-esp-elf/include/c++/14.2.0/bits/stl_algobase.h, xtensa-esp-elf/include/c++/14.2.0/bits/stl_bvector.h, xtensa-esp-elf/include/c++/14.2.0/bits/stl_construct.h, xtensa-esp-elf/include/c++/14.2.0/bits/stl_function.h, xtensa-esp-elf/include/c++/14.2.0/bits/stl_heap.h, xtensa-esp-elf/include/c++/14.2.0/bits/stl_iterator.h, xtensa-esp-elf/include/c++/14.2.0/bits/stl_iterator_base_funcs.h, xtensa-esp-elf/include/c++/14.2.0/bits/stl_iterator_base_types.h, xtensa-esp-elf/include/c++/14.2.0/bits/stl_list.h, xtensa-esp-elf/include/c++/14.2.0/bits/stl_pair.h, xtensa-esp-elf/include/c++/14.2.0/bits/stl_raw_storage_iter.h, xtensa-esp-elf/include/c++/14.2.0/bits/stl_relops.h, xtensa-esp-elf/include/c++/14.2.0/bits/stl_tempbuf.h, xtensa-esp-elf/include/c++/14.2.0/bits/stl_uninitialized.h, xtensa-esp-elf/include/c++/14.2.0/bits/stl_vector.h, xtensa-esp-elf/include/c++/14.2.0/bits/streambuf.tcc, xtensa-esp-elf/include/c++/14.2.0/bits/streambuf_iterator.h, xtensa-esp-elf/include/c++/14.2.0/bits/string_view.tcc, xtensa-esp-elf/include/c++/14.2.0/bits/stringfwd.h, xtensa-esp-elf/include/c++/14.2.0/bits/unicode-data.h, xtensa-esp-elf/include/c++/14.2.0/bits/unicode.h, xtensa-esp-elf/include/c++/14.2.0/bits/uniform_int_dist.h, xtensa-esp-elf/include/c++/14.2.0/bits/unique_ptr.h, xtensa-esp-elf/include/c++/14.2.0/bits/unordered_map.h, xtensa-esp-elf/include/c++/14.2.0/bits/uses_allocator.h, xtensa-esp-elf/include/c++/14.2.0/bits/uses_allocator_args.h, xtensa-esp-elf/include/c++/14.2.0/bits/utility.h, xtensa-esp-elf/include/c++/14.2.0/bits/vector.tcc, xtensa-esp-elf/include/c++/14.2.0/bits/version.h, xtensa-esp-elf/include/c++/14.2.0/cassert, xtensa-esp-elf/include/c++/14.2.0/cctype, xtensa-esp-elf/include/c++/14.2.0/cerrno, xtensa-esp-elf/include/c++/14.2.0/charconv, xtensa-esp-elf/include/c++/14.2.0/clocale, xtensa-esp-elf/include/c++/14.2.0/cmath, xtensa-esp-elf/include/c++/14.2.0/concepts, xtensa-esp-elf/include/c++/14.2.0/cstddef, xtensa-esp-elf/include/c++/14.2.0/cstdint, xtensa-esp-elf/include/c++/14.2.0/cstdio, xtensa-esp-elf/include/c++/14.2.0/cstdlib, xtensa-esp-elf/include/c++/14.2.0/cstring, xtensa-esp-elf/include/c++/14.2.0/ctime, xtensa-esp-elf/include/c++/14.2.0/cwchar, xtensa-esp-elf/include/c++/14.2.0/cwctype, xtensa-esp-elf/include/c++/14.2.0/debug/assertions.h, xtensa-esp-elf/include/c++/14.2.0/debug/debug.h, xtensa-esp-elf/include/c++/14.2.0/ext/aligned_buffer.h, xtensa-esp-elf/include/c++/14.2.0/ext/alloc_traits.h, xtensa-esp-elf/include/c++/14.2.0/ext/atomicity.h, xtensa-esp-elf/include/c++/14.2.0/ext/concurrence.h, xtensa-esp-elf/include/c++/14.2.0/ext/string_conversions.h, xtensa-esp-elf/include/c++/14.2.0/format, xtensa-esp-elf/include/c++/14.2.0/functional, xtensa-esp-elf/include/c++/14.2.0/ios, xtensa-esp-elf/include/c++/14.2.0/iosfwd, xtensa-esp-elf/include/c++/14.2.0/limits, xtensa-esp-elf/include/c++/14.2.0/list, xtensa-esp-elf/include/c++/14.2.0/locale, xtensa-esp-elf/include/c++/14.2.0/math.h, xtensa-esp-elf/include/c++/14.2.0/memory, xtensa-esp-elf/include/c++/14.2.0/numbers, xtensa-esp-elf/include/c++/14.2.0/optional, xtensa-esp-elf/include/c++/14.2.0/ostream, xtensa-esp-elf/include/c++/14.2.0/span, xtensa-esp-elf/include/c++/14.2.0/stdexcept, xtensa-esp-elf/include/c++/14.2.0/stdlib.h, xtensa-esp-elf/include/c++/14.2.0/streambuf, xtensa-esp-elf/include/c++/14.2.0/string, xtensa-esp-elf/include/c++/14.2.0/string_view, xtensa-esp-elf/include/c++/14.2.0/system_error, xtensa-esp-elf/include/c++/14.2.0/tr1/special_function_util.h, xtensa-esp-elf/include/c++/14.2.0/tuple, xtensa-esp-elf/include/c++/14.2.0/type_traits, xtensa-esp-elf/include/c++/14.2.0/unordered_map, xtensa-esp-elf/include/c++/14.2.0/utility, xtensa-esp-elf/include/c++/14.2.0/variant, xtensa-esp-elf/include/c++/14.2.0/vector, xtensa-esp-elf/include/c++/14.2.0/xtensa-esp-elf/esp32s3/no-rtti/bits/atomic_word.h, xtensa-esp-elf/include/c++/14.2.0/xtensa-esp-elf/esp32s3/no-rtti/bits/c++allocator.h, xtensa-esp-elf/include/c++/14.2.0/xtensa-esp-elf/esp32s3/no-rtti/bits/c++config.h, xtensa-esp-elf/include/c++/14.2.0/xtensa-esp-elf/esp32s3/no-rtti/bits/c++locale.h, xtensa-esp-elf/include/c++/14.2.0/xtensa-esp-elf/esp32s3/no-rtti/bits/cpu_defines.h, xtensa-esp-elf/include/c++/14.2.0/xtensa-esp-elf/esp32s3/no-rtti/bits/ctype_base.h, xtensa-esp-elf/include/c++/14.2.0/xtensa-esp-elf/esp32s3/no-rtti/bits/ctype_inline.h, xtensa-esp-elf/include/c++/14.2.0/xtensa-esp-elf/esp32s3/no-rtti/bits/cxxabi_tweaks.h, xtensa-esp-elf/include/c++/14.2.0/xtensa-esp-elf/esp32s3/no-rtti/bits/error_constants.h, xtensa-esp-elf/include/c++/14.2.0/xtensa-esp-elf/esp32s3/no-rtti/bits/messages_members.h, xtensa-esp-elf/include/c++/14.2.0/xtensa-esp-elf/esp32s3/no-rtti/bits/os_defines.h, xtensa-esp-elf/include/c++/14.2.0/xtensa-esp-elf/esp32s3/no-rtti/bits/time_members.h
+
+// This library is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+
+========================================================================
+Source: xtensa-esp-elf/include/c++/14.2.0/algorithm, xtensa-esp-elf/include/c++/14.2.0/array, xtensa-esp-elf/include/c++/14.2.0/backward/auto_ptr.h, xtensa-esp-elf/include/c++/14.2.0/backward/binders.h, xtensa-esp-elf/include/c++/14.2.0/bit, xtensa-esp-elf/include/c++/14.2.0/bits/algorithmfwd.h, xtensa-esp-elf/include/c++/14.2.0/bits/align.h, xtensa-esp-elf/include/c++/14.2.0/bits/alloc_traits.h, xtensa-esp-elf/include/c++/14.2.0/bits/allocated_ptr.h, xtensa-esp-elf/include/c++/14.2.0/bits/allocator.h, xtensa-esp-elf/include/c++/14.2.0/bits/atomic_base.h, xtensa-esp-elf/include/c++/14.2.0/bits/atomic_lockfree_defines.h, xtensa-esp-elf/include/c++/14.2.0/bits/atomic_wait.h, xtensa-esp-elf/include/c++/14.2.0/bits/basic_ios.h, xtensa-esp-elf/include/c++/14.2.0/bits/basic_ios.tcc, xtensa-esp-elf/include/c++/14.2.0/bits/basic_string.h, xtensa-esp-elf/include/c++/14.2.0/bits/basic_string.tcc, xtensa-esp-elf/include/c++/14.2.0/bits/char_traits.h, xtensa-esp-elf/include/c++/14.2.0/bits/charconv.h, xtensa-esp-elf/include/c++/14.2.0/bits/codecvt.h, xtensa-esp-elf/include/c++/14.2.0/bits/concept_check.h, xtensa-esp-elf/include/c++/14.2.0/bits/cpp_type_traits.h, xtensa-esp-elf/include/c++/14.2.0/bits/enable_special_members.h, xtensa-esp-elf/include/c++/14.2.0/bits/erase_if.h, xtensa-esp-elf/include/c++/14.2.0/bits/exception_defines.h, xtensa-esp-elf/include/c++/14.2.0/bits/functexcept.h, xtensa-esp-elf/include/c++/14.2.0/bits/functional_hash.h, xtensa-esp-elf/include/c++/14.2.0/bits/hash_bytes.h, xtensa-esp-elf/include/c++/14.2.0/bits/hashtable.h, xtensa-esp-elf/include/c++/14.2.0/bits/hashtable_policy.h, xtensa-esp-elf/include/c++/14.2.0/bits/invoke.h, xtensa-esp-elf/include/c++/14.2.0/bits/ios_base.h, xtensa-esp-elf/include/c++/14.2.0/bits/iterator_concepts.h, xtensa-esp-elf/include/c++/14.2.0/bits/list.tcc, xtensa-esp-elf/include/c++/14.2.0/bits/locale_classes.h, xtensa-esp-elf/include/c++/14.2.0/bits/locale_classes.tcc, xtensa-esp-elf/include/c++/14.2.0/bits/locale_conv.h, xtensa-esp-elf/include/c++/14.2.0/bits/locale_facets.h, xtensa-esp-elf/include/c++/14.2.0/bits/locale_facets.tcc, xtensa-esp-elf/include/c++/14.2.0/bits/locale_facets_nonio.h, xtensa-esp-elf/include/c++/14.2.0/bits/locale_facets_nonio.tcc, xtensa-esp-elf/include/c++/14.2.0/bits/localefwd.h, xtensa-esp-elf/include/c++/14.2.0/bits/max_size_type.h, xtensa-esp-elf/include/c++/14.2.0/bits/memory_resource.h, xtensa-esp-elf/include/c++/14.2.0/bits/memoryfwd.h, xtensa-esp-elf/include/c++/14.2.0/bits/mofunc_impl.h, xtensa-esp-elf/include/c++/14.2.0/bits/move.h, xtensa-esp-elf/include/c++/14.2.0/bits/move_only_function.h, xtensa-esp-elf/include/c++/14.2.0/bits/nested_exception.h, xtensa-esp-elf/include/c++/14.2.0/bits/new_allocator.h, xtensa-esp-elf/include/c++/14.2.0/bits/node_handle.h, xtensa-esp-elf/include/c++/14.2.0/bits/ostream.tcc, xtensa-esp-elf/include/c++/14.2.0/bits/ostream_insert.h, xtensa-esp-elf/include/c++/14.2.0/bits/out_ptr.h, xtensa-esp-elf/include/c++/14.2.0/bits/parse_numbers.h, xtensa-esp-elf/include/c++/14.2.0/bits/postypes.h, xtensa-esp-elf/include/c++/14.2.0/bits/predefined_ops.h, xtensa-esp-elf/include/c++/14.2.0/bits/ptr_traits.h, xtensa-esp-elf/include/c++/14.2.0/bits/range_access.h, xtensa-esp-elf/include/c++/14.2.0/bits/ranges_algo.h, xtensa-esp-elf/include/c++/14.2.0/bits/ranges_algobase.h, xtensa-esp-elf/include/c++/14.2.0/bits/ranges_base.h, xtensa-esp-elf/include/c++/14.2.0/bits/ranges_cmp.h, xtensa-esp-elf/include/c++/14.2.0/bits/ranges_uninitialized.h, xtensa-esp-elf/include/c++/14.2.0/bits/ranges_util.h, xtensa-esp-elf/include/c++/14.2.0/bits/refwrap.h, xtensa-esp-elf/include/c++/14.2.0/bits/requires_hosted.h, xtensa-esp-elf/include/c++/14.2.0/bits/shared_ptr.h, xtensa-esp-elf/include/c++/14.2.0/bits/shared_ptr_atomic.h, xtensa-esp-elf/include/c++/14.2.0/bits/shared_ptr_base.h, xtensa-esp-elf/include/c++/14.2.0/bits/specfun.h, xtensa-esp-elf/include/c++/14.2.0/bits/std_abs.h, xtensa-esp-elf/include/c++/14.2.0/bits/std_function.h, xtensa-esp-elf/include/c++/14.2.0/bits/std_mutex.h, xtensa-esp-elf/include/c++/14.2.0/bits/stl_algo.h, xtensa-esp-elf/include/c++/14.2.0/bits/stl_algobase.h, xtensa-esp-elf/include/c++/14.2.0/bits/stl_bvector.h, xtensa-esp-elf/include/c++/14.2.0/bits/stl_construct.h, xtensa-esp-elf/include/c++/14.2.0/bits/stl_function.h, xtensa-esp-elf/include/c++/14.2.0/bits/stl_heap.h, xtensa-esp-elf/include/c++/14.2.0/bits/stl_iterator.h, xtensa-esp-elf/include/c++/14.2.0/bits/stl_iterator_base_funcs.h, xtensa-esp-elf/include/c++/14.2.0/bits/stl_iterator_base_types.h, xtensa-esp-elf/include/c++/14.2.0/bits/stl_list.h, xtensa-esp-elf/include/c++/14.2.0/bits/stl_pair.h, xtensa-esp-elf/include/c++/14.2.0/bits/stl_raw_storage_iter.h, xtensa-esp-elf/include/c++/14.2.0/bits/stl_tempbuf.h, xtensa-esp-elf/include/c++/14.2.0/bits/stl_uninitialized.h, xtensa-esp-elf/include/c++/14.2.0/bits/stl_vector.h, xtensa-esp-elf/include/c++/14.2.0/bits/streambuf.tcc, xtensa-esp-elf/include/c++/14.2.0/bits/streambuf_iterator.h, xtensa-esp-elf/include/c++/14.2.0/bits/string_view.tcc, xtensa-esp-elf/include/c++/14.2.0/bits/stringfwd.h, xtensa-esp-elf/include/c++/14.2.0/bits/unicode-data.h, xtensa-esp-elf/include/c++/14.2.0/bits/unicode.h, xtensa-esp-elf/include/c++/14.2.0/bits/uniform_int_dist.h, xtensa-esp-elf/include/c++/14.2.0/bits/unique_ptr.h, xtensa-esp-elf/include/c++/14.2.0/bits/unordered_map.h, xtensa-esp-elf/include/c++/14.2.0/bits/uses_allocator.h, xtensa-esp-elf/include/c++/14.2.0/bits/uses_allocator_args.h, xtensa-esp-elf/include/c++/14.2.0/bits/utility.h, xtensa-esp-elf/include/c++/14.2.0/bits/vector.tcc, xtensa-esp-elf/include/c++/14.2.0/bits/version.h, xtensa-esp-elf/include/c++/14.2.0/cassert, xtensa-esp-elf/include/c++/14.2.0/cctype, xtensa-esp-elf/include/c++/14.2.0/cerrno, xtensa-esp-elf/include/c++/14.2.0/charconv, xtensa-esp-elf/include/c++/14.2.0/clocale, xtensa-esp-elf/include/c++/14.2.0/cmath, xtensa-esp-elf/include/c++/14.2.0/concepts, xtensa-esp-elf/include/c++/14.2.0/cstddef, xtensa-esp-elf/include/c++/14.2.0/cstdint, xtensa-esp-elf/include/c++/14.2.0/cstdio, xtensa-esp-elf/include/c++/14.2.0/cstdlib, xtensa-esp-elf/include/c++/14.2.0/cstring, xtensa-esp-elf/include/c++/14.2.0/ctime, xtensa-esp-elf/include/c++/14.2.0/cwchar, xtensa-esp-elf/include/c++/14.2.0/cwctype, xtensa-esp-elf/include/c++/14.2.0/debug/assertions.h, xtensa-esp-elf/include/c++/14.2.0/debug/debug.h, xtensa-esp-elf/include/c++/14.2.0/ext/aligned_buffer.h, xtensa-esp-elf/include/c++/14.2.0/ext/alloc_traits.h, xtensa-esp-elf/include/c++/14.2.0/ext/atomicity.h, xtensa-esp-elf/include/c++/14.2.0/ext/concurrence.h, xtensa-esp-elf/include/c++/14.2.0/ext/numeric_traits.h, xtensa-esp-elf/include/c++/14.2.0/ext/string_conversions.h, xtensa-esp-elf/include/c++/14.2.0/ext/type_traits.h, xtensa-esp-elf/include/c++/14.2.0/format, xtensa-esp-elf/include/c++/14.2.0/functional, xtensa-esp-elf/include/c++/14.2.0/ios, xtensa-esp-elf/include/c++/14.2.0/iosfwd, xtensa-esp-elf/include/c++/14.2.0/limits, xtensa-esp-elf/include/c++/14.2.0/list, xtensa-esp-elf/include/c++/14.2.0/locale, xtensa-esp-elf/include/c++/14.2.0/math.h, xtensa-esp-elf/include/c++/14.2.0/memory, xtensa-esp-elf/include/c++/14.2.0/numbers, xtensa-esp-elf/include/c++/14.2.0/optional, xtensa-esp-elf/include/c++/14.2.0/ostream, xtensa-esp-elf/include/c++/14.2.0/span, xtensa-esp-elf/include/c++/14.2.0/stdexcept, xtensa-esp-elf/include/c++/14.2.0/stdlib.h, xtensa-esp-elf/include/c++/14.2.0/streambuf, xtensa-esp-elf/include/c++/14.2.0/string, xtensa-esp-elf/include/c++/14.2.0/string_view, xtensa-esp-elf/include/c++/14.2.0/system_error, xtensa-esp-elf/include/c++/14.2.0/tr1/special_function_util.h, xtensa-esp-elf/include/c++/14.2.0/tuple, xtensa-esp-elf/include/c++/14.2.0/type_traits, xtensa-esp-elf/include/c++/14.2.0/unordered_map, xtensa-esp-elf/include/c++/14.2.0/utility, xtensa-esp-elf/include/c++/14.2.0/variant, xtensa-esp-elf/include/c++/14.2.0/vector, xtensa-esp-elf/include/c++/14.2.0/xtensa-esp-elf/esp32s3/no-rtti/bits/atomic_word.h, xtensa-esp-elf/include/c++/14.2.0/xtensa-esp-elf/esp32s3/no-rtti/bits/c++allocator.h, xtensa-esp-elf/include/c++/14.2.0/xtensa-esp-elf/esp32s3/no-rtti/bits/c++config.h, xtensa-esp-elf/include/c++/14.2.0/xtensa-esp-elf/esp32s3/no-rtti/bits/c++locale.h, xtensa-esp-elf/include/c++/14.2.0/xtensa-esp-elf/esp32s3/no-rtti/bits/cpu_defines.h, xtensa-esp-elf/include/c++/14.2.0/xtensa-esp-elf/esp32s3/no-rtti/bits/ctype_base.h, xtensa-esp-elf/include/c++/14.2.0/xtensa-esp-elf/esp32s3/no-rtti/bits/ctype_inline.h, xtensa-esp-elf/include/c++/14.2.0/xtensa-esp-elf/esp32s3/no-rtti/bits/cxxabi_tweaks.h, xtensa-esp-elf/include/c++/14.2.0/xtensa-esp-elf/esp32s3/no-rtti/bits/error_constants.h, xtensa-esp-elf/include/c++/14.2.0/xtensa-esp-elf/esp32s3/no-rtti/bits/messages_members.h, xtensa-esp-elf/include/c++/14.2.0/xtensa-esp-elf/esp32s3/no-rtti/bits/os_defines.h, xtensa-esp-elf/include/c++/14.2.0/xtensa-esp-elf/esp32s3/no-rtti/bits/time_members.h
+
+// Under Section 7 of GPL version 3, you are granted additional
+// permissions described in the GCC Runtime Library Exception, version
+// 3.1, as published by the Free Software Foundation.
+
+========================================================================
+Source: xtensa-esp-elf/include/c++/14.2.0/algorithm, xtensa-esp-elf/include/c++/14.2.0/array, xtensa-esp-elf/include/c++/14.2.0/backward/auto_ptr.h, xtensa-esp-elf/include/c++/14.2.0/backward/binders.h, xtensa-esp-elf/include/c++/14.2.0/bit, xtensa-esp-elf/include/c++/14.2.0/bits/algorithmfwd.h, xtensa-esp-elf/include/c++/14.2.0/bits/align.h, xtensa-esp-elf/include/c++/14.2.0/bits/alloc_traits.h, xtensa-esp-elf/include/c++/14.2.0/bits/allocated_ptr.h, xtensa-esp-elf/include/c++/14.2.0/bits/allocator.h, xtensa-esp-elf/include/c++/14.2.0/bits/atomic_base.h, xtensa-esp-elf/include/c++/14.2.0/bits/atomic_lockfree_defines.h, xtensa-esp-elf/include/c++/14.2.0/bits/atomic_wait.h, xtensa-esp-elf/include/c++/14.2.0/bits/basic_ios.h, xtensa-esp-elf/include/c++/14.2.0/bits/basic_ios.tcc, xtensa-esp-elf/include/c++/14.2.0/bits/basic_string.h, xtensa-esp-elf/include/c++/14.2.0/bits/basic_string.tcc, xtensa-esp-elf/include/c++/14.2.0/bits/char_traits.h, xtensa-esp-elf/include/c++/14.2.0/bits/charconv.h, xtensa-esp-elf/include/c++/14.2.0/bits/codecvt.h, xtensa-esp-elf/include/c++/14.2.0/bits/concept_check.h, xtensa-esp-elf/include/c++/14.2.0/bits/cpp_type_traits.h, xtensa-esp-elf/include/c++/14.2.0/bits/cxxabi_forced.h, xtensa-esp-elf/include/c++/14.2.0/bits/cxxabi_init_exception.h, xtensa-esp-elf/include/c++/14.2.0/bits/enable_special_members.h, xtensa-esp-elf/include/c++/14.2.0/bits/erase_if.h, xtensa-esp-elf/include/c++/14.2.0/bits/exception.h, xtensa-esp-elf/include/c++/14.2.0/bits/exception_defines.h, xtensa-esp-elf/include/c++/14.2.0/bits/exception_ptr.h, xtensa-esp-elf/include/c++/14.2.0/bits/functexcept.h, xtensa-esp-elf/include/c++/14.2.0/bits/functional_hash.h, xtensa-esp-elf/include/c++/14.2.0/bits/hash_bytes.h, xtensa-esp-elf/include/c++/14.2.0/bits/hashtable.h, xtensa-esp-elf/include/c++/14.2.0/bits/hashtable_policy.h, xtensa-esp-elf/include/c++/14.2.0/bits/invoke.h, xtensa-esp-elf/include/c++/14.2.0/bits/ios_base.h, xtensa-esp-elf/include/c++/14.2.0/bits/iterator_concepts.h, xtensa-esp-elf/include/c++/14.2.0/bits/list.tcc, xtensa-esp-elf/include/c++/14.2.0/bits/locale_classes.h, xtensa-esp-elf/include/c++/14.2.0/bits/locale_classes.tcc, xtensa-esp-elf/include/c++/14.2.0/bits/locale_conv.h, xtensa-esp-elf/include/c++/14.2.0/bits/locale_facets.h, xtensa-esp-elf/include/c++/14.2.0/bits/locale_facets.tcc, xtensa-esp-elf/include/c++/14.2.0/bits/locale_facets_nonio.h, xtensa-esp-elf/include/c++/14.2.0/bits/locale_facets_nonio.tcc, xtensa-esp-elf/include/c++/14.2.0/bits/localefwd.h, xtensa-esp-elf/include/c++/14.2.0/bits/max_size_type.h, xtensa-esp-elf/include/c++/14.2.0/bits/memory_resource.h, xtensa-esp-elf/include/c++/14.2.0/bits/memoryfwd.h, xtensa-esp-elf/include/c++/14.2.0/bits/mofunc_impl.h, xtensa-esp-elf/include/c++/14.2.0/bits/move.h, xtensa-esp-elf/include/c++/14.2.0/bits/move_only_function.h, xtensa-esp-elf/include/c++/14.2.0/bits/nested_exception.h, xtensa-esp-elf/include/c++/14.2.0/bits/new_allocator.h, xtensa-esp-elf/include/c++/14.2.0/bits/node_handle.h, xtensa-esp-elf/include/c++/14.2.0/bits/ostream.tcc, xtensa-esp-elf/include/c++/14.2.0/bits/ostream_insert.h, xtensa-esp-elf/include/c++/14.2.0/bits/out_ptr.h, xtensa-esp-elf/include/c++/14.2.0/bits/parse_numbers.h, xtensa-esp-elf/include/c++/14.2.0/bits/postypes.h, xtensa-esp-elf/include/c++/14.2.0/bits/predefined_ops.h, xtensa-esp-elf/include/c++/14.2.0/bits/ptr_traits.h, xtensa-esp-elf/include/c++/14.2.0/bits/range_access.h, xtensa-esp-elf/include/c++/14.2.0/bits/ranges_algo.h, xtensa-esp-elf/include/c++/14.2.0/bits/ranges_algobase.h, xtensa-esp-elf/include/c++/14.2.0/bits/ranges_base.h, xtensa-esp-elf/include/c++/14.2.0/bits/ranges_cmp.h, xtensa-esp-elf/include/c++/14.2.0/bits/ranges_uninitialized.h, xtensa-esp-elf/include/c++/14.2.0/bits/ranges_util.h, xtensa-esp-elf/include/c++/14.2.0/bits/refwrap.h, xtensa-esp-elf/include/c++/14.2.0/bits/requires_hosted.h, xtensa-esp-elf/include/c++/14.2.0/bits/shared_ptr.h, xtensa-esp-elf/include/c++/14.2.0/bits/shared_ptr_atomic.h, xtensa-esp-elf/include/c++/14.2.0/bits/shared_ptr_base.h, xtensa-esp-elf/include/c++/14.2.0/bits/specfun.h, xtensa-esp-elf/include/c++/14.2.0/bits/std_abs.h, xtensa-esp-elf/include/c++/14.2.0/bits/std_function.h, xtensa-esp-elf/include/c++/14.2.0/bits/std_mutex.h, xtensa-esp-elf/include/c++/14.2.0/bits/stl_algo.h, xtensa-esp-elf/include/c++/14.2.0/bits/stl_algobase.h, xtensa-esp-elf/include/c++/14.2.0/bits/stl_bvector.h, xtensa-esp-elf/include/c++/14.2.0/bits/stl_construct.h, xtensa-esp-elf/include/c++/14.2.0/bits/stl_function.h, xtensa-esp-elf/include/c++/14.2.0/bits/stl_heap.h, xtensa-esp-elf/include/c++/14.2.0/bits/stl_iterator.h, xtensa-esp-elf/include/c++/14.2.0/bits/stl_iterator_base_funcs.h, xtensa-esp-elf/include/c++/14.2.0/bits/stl_iterator_base_types.h, xtensa-esp-elf/include/c++/14.2.0/bits/stl_list.h, xtensa-esp-elf/include/c++/14.2.0/bits/stl_pair.h, xtensa-esp-elf/include/c++/14.2.0/bits/stl_raw_storage_iter.h, xtensa-esp-elf/include/c++/14.2.0/bits/stl_relops.h, xtensa-esp-elf/include/c++/14.2.0/bits/stl_tempbuf.h, xtensa-esp-elf/include/c++/14.2.0/bits/stl_uninitialized.h, xtensa-esp-elf/include/c++/14.2.0/bits/stl_vector.h, xtensa-esp-elf/include/c++/14.2.0/bits/streambuf.tcc, xtensa-esp-elf/include/c++/14.2.0/bits/streambuf_iterator.h, xtensa-esp-elf/include/c++/14.2.0/bits/string_view.tcc, xtensa-esp-elf/include/c++/14.2.0/bits/stringfwd.h, xtensa-esp-elf/include/c++/14.2.0/bits/unicode-data.h, xtensa-esp-elf/include/c++/14.2.0/bits/unicode.h, xtensa-esp-elf/include/c++/14.2.0/bits/uniform_int_dist.h, xtensa-esp-elf/include/c++/14.2.0/bits/unique_ptr.h, xtensa-esp-elf/include/c++/14.2.0/bits/unordered_map.h, xtensa-esp-elf/include/c++/14.2.0/bits/uses_allocator.h, xtensa-esp-elf/include/c++/14.2.0/bits/uses_allocator_args.h, xtensa-esp-elf/include/c++/14.2.0/bits/utility.h, xtensa-esp-elf/include/c++/14.2.0/bits/vector.tcc, xtensa-esp-elf/include/c++/14.2.0/bits/version.h, xtensa-esp-elf/include/c++/14.2.0/cassert, xtensa-esp-elf/include/c++/14.2.0/cctype, xtensa-esp-elf/include/c++/14.2.0/cerrno, xtensa-esp-elf/include/c++/14.2.0/charconv, xtensa-esp-elf/include/c++/14.2.0/clocale, xtensa-esp-elf/include/c++/14.2.0/cmath, xtensa-esp-elf/include/c++/14.2.0/compare, xtensa-esp-elf/include/c++/14.2.0/concepts, xtensa-esp-elf/include/c++/14.2.0/cstddef, xtensa-esp-elf/include/c++/14.2.0/cstdint, xtensa-esp-elf/include/c++/14.2.0/cstdio, xtensa-esp-elf/include/c++/14.2.0/cstdlib, xtensa-esp-elf/include/c++/14.2.0/cstring, xtensa-esp-elf/include/c++/14.2.0/ctime, xtensa-esp-elf/include/c++/14.2.0/cwchar, xtensa-esp-elf/include/c++/14.2.0/cwctype, xtensa-esp-elf/include/c++/14.2.0/cxxabi.h, xtensa-esp-elf/include/c++/14.2.0/debug/assertions.h, xtensa-esp-elf/include/c++/14.2.0/debug/debug.h, xtensa-esp-elf/include/c++/14.2.0/exception, xtensa-esp-elf/include/c++/14.2.0/ext/aligned_buffer.h, xtensa-esp-elf/include/c++/14.2.0/ext/alloc_traits.h, xtensa-esp-elf/include/c++/14.2.0/ext/atomicity.h, xtensa-esp-elf/include/c++/14.2.0/ext/concurrence.h, xtensa-esp-elf/include/c++/14.2.0/ext/numeric_traits.h, xtensa-esp-elf/include/c++/14.2.0/ext/string_conversions.h, xtensa-esp-elf/include/c++/14.2.0/ext/type_traits.h, xtensa-esp-elf/include/c++/14.2.0/format, xtensa-esp-elf/include/c++/14.2.0/functional, xtensa-esp-elf/include/c++/14.2.0/initializer_list, xtensa-esp-elf/include/c++/14.2.0/ios, xtensa-esp-elf/include/c++/14.2.0/iosfwd, xtensa-esp-elf/include/c++/14.2.0/limits, xtensa-esp-elf/include/c++/14.2.0/list, xtensa-esp-elf/include/c++/14.2.0/locale, xtensa-esp-elf/include/c++/14.2.0/math.h, xtensa-esp-elf/include/c++/14.2.0/memory, xtensa-esp-elf/include/c++/14.2.0/new, xtensa-esp-elf/include/c++/14.2.0/numbers, xtensa-esp-elf/include/c++/14.2.0/optional, xtensa-esp-elf/include/c++/14.2.0/ostream, xtensa-esp-elf/include/c++/14.2.0/span, xtensa-esp-elf/include/c++/14.2.0/stdexcept, xtensa-esp-elf/include/c++/14.2.0/stdlib.h, xtensa-esp-elf/include/c++/14.2.0/streambuf, xtensa-esp-elf/include/c++/14.2.0/string, xtensa-esp-elf/include/c++/14.2.0/string_view, xtensa-esp-elf/include/c++/14.2.0/system_error, xtensa-esp-elf/include/c++/14.2.0/tr1/bessel_function.tcc, xtensa-esp-elf/include/c++/14.2.0/tr1/beta_function.tcc, xtensa-esp-elf/include/c++/14.2.0/tr1/ell_integral.tcc, xtensa-esp-elf/include/c++/14.2.0/tr1/exp_integral.tcc, xtensa-esp-elf/include/c++/14.2.0/tr1/gamma.tcc, xtensa-esp-elf/include/c++/14.2.0/tr1/hypergeometric.tcc, xtensa-esp-elf/include/c++/14.2.0/tr1/legendre_function.tcc, xtensa-esp-elf/include/c++/14.2.0/tr1/modified_bessel_func.tcc, xtensa-esp-elf/include/c++/14.2.0/tr1/poly_hermite.tcc, xtensa-esp-elf/include/c++/14.2.0/tr1/poly_laguerre.tcc, xtensa-esp-elf/include/c++/14.2.0/tr1/riemann_zeta.tcc, xtensa-esp-elf/include/c++/14.2.0/tr1/special_function_util.h, xtensa-esp-elf/include/c++/14.2.0/tuple, xtensa-esp-elf/include/c++/14.2.0/type_traits, xtensa-esp-elf/include/c++/14.2.0/typeinfo, xtensa-esp-elf/include/c++/14.2.0/unordered_map, xtensa-esp-elf/include/c++/14.2.0/utility, xtensa-esp-elf/include/c++/14.2.0/variant, xtensa-esp-elf/include/c++/14.2.0/vector, xtensa-esp-elf/include/c++/14.2.0/xtensa-esp-elf/esp32s3/no-rtti/bits/atomic_word.h, xtensa-esp-elf/include/c++/14.2.0/xtensa-esp-elf/esp32s3/no-rtti/bits/c++allocator.h, xtensa-esp-elf/include/c++/14.2.0/xtensa-esp-elf/esp32s3/no-rtti/bits/c++config.h, xtensa-esp-elf/include/c++/14.2.0/xtensa-esp-elf/esp32s3/no-rtti/bits/c++locale.h, xtensa-esp-elf/include/c++/14.2.0/xtensa-esp-elf/esp32s3/no-rtti/bits/cpu_defines.h, xtensa-esp-elf/include/c++/14.2.0/xtensa-esp-elf/esp32s3/no-rtti/bits/ctype_base.h, xtensa-esp-elf/include/c++/14.2.0/xtensa-esp-elf/esp32s3/no-rtti/bits/ctype_inline.h, xtensa-esp-elf/include/c++/14.2.0/xtensa-esp-elf/esp32s3/no-rtti/bits/cxxabi_tweaks.h, xtensa-esp-elf/include/c++/14.2.0/xtensa-esp-elf/esp32s3/no-rtti/bits/error_constants.h, xtensa-esp-elf/include/c++/14.2.0/xtensa-esp-elf/esp32s3/no-rtti/bits/messages_members.h, xtensa-esp-elf/include/c++/14.2.0/xtensa-esp-elf/esp32s3/no-rtti/bits/os_defines.h, xtensa-esp-elf/include/c++/14.2.0/xtensa-esp-elf/esp32s3/no-rtti/bits/time_members.h
+
+// You should have received a copy of the GNU General Public License and
+// a copy of the GCC Runtime Library Exception along with this program;
+// see the files COPYING3 and COPYING.RUNTIME respectively.  If not, see
+// <http://www.gnu.org/licenses/>.
+
+========================================================================
+Source: xtensa-esp-elf/include/c++/14.2.0/algorithm, xtensa-esp-elf/include/c++/14.2.0/bits/list.tcc, xtensa-esp-elf/include/c++/14.2.0/bits/stl_construct.h, xtensa-esp-elf/include/c++/14.2.0/bits/stl_list.h, xtensa-esp-elf/include/c++/14.2.0/bits/stl_pair.h, xtensa-esp-elf/include/c++/14.2.0/bits/stl_tempbuf.h, xtensa-esp-elf/include/c++/14.2.0/bits/stl_uninitialized.h, xtensa-esp-elf/include/c++/14.2.0/list, xtensa-esp-elf/include/c++/14.2.0/utility
+
+/*
+ *
+ * Copyright (c) 1994
+ * Hewlett-Packard Company
+ *
+ * Permission to use, copy, modify, distribute and sell this software
+ * and its documentation for any purpose is hereby granted without fee,
+ * provided that the above copyright notice appear in all copies and
+ * that both that copyright notice and this permission notice appear
+ * in supporting documentation.  Hewlett-Packard Company makes no
+ * representations about the suitability of this software for any
+ * purpose.  It is provided "as is" without express or implied warranty.
+ *
+ *
+ * Copyright (c) 1996,1997
+ * Silicon Graphics Computer Systems, Inc.
+ *
+ * Permission to use, copy, modify, distribute and sell this software
+ * and its documentation for any purpose is hereby granted without fee,
+ * provided that the above copyright notice appear in all copies and
+ * that both that copyright notice and this permission notice appear
+ * in supporting documentation.  Silicon Graphics makes no
+ * representations about the suitability of this software for any
+ * purpose.  It is provided "as is" without express or implied warranty.
+ */
+
+========================================================================
+Source: xtensa-esp-elf/include/c++/14.2.0/array, xtensa-esp-elf/include/c++/14.2.0/backward/auto_ptr.h, xtensa-esp-elf/include/c++/14.2.0/bits/algorithmfwd.h, xtensa-esp-elf/include/c++/14.2.0/bits/functional_hash.h, xtensa-esp-elf/include/c++/14.2.0/bits/hashtable.h, xtensa-esp-elf/include/c++/14.2.0/bits/locale_classes.tcc, xtensa-esp-elf/include/c++/14.2.0/bits/locale_facets_nonio.h, xtensa-esp-elf/include/c++/14.2.0/bits/locale_facets_nonio.tcc, xtensa-esp-elf/include/c++/14.2.0/bits/move.h, xtensa-esp-elf/include/c++/14.2.0/bits/ostream_insert.h, xtensa-esp-elf/include/c++/14.2.0/bits/shared_ptr.h, xtensa-esp-elf/include/c++/14.2.0/bits/shared_ptr_base.h, xtensa-esp-elf/include/c++/14.2.0/cstdint, xtensa-esp-elf/include/c++/14.2.0/system_error, xtensa-esp-elf/include/c++/14.2.0/tuple, xtensa-esp-elf/include/c++/14.2.0/type_traits, xtensa-esp-elf/include/c++/14.2.0/unordered_map, xtensa-esp-elf/include/c++/14.2.0/xtensa-esp-elf/esp32s3/no-rtti/bits/error_constants.h
+
+// Copyright (C) 2007-2024 Free Software Foundation, Inc.
+//
+// This file is part of the GNU ISO C++ Library.  This library is free
+// software; you can redistribute it and/or modify it under the
+// terms of the GNU General Public License as published by the
+// Free Software Foundation; either version 3, or (at your option)
+// any later version.
+
+========================================================================
+Source: xtensa-esp-elf/include/c++/14.2.0/backward/binders.h, xtensa-esp-elf/include/c++/14.2.0/bits/stl_algobase.h, xtensa-esp-elf/include/c++/14.2.0/bits/stl_function.h, xtensa-esp-elf/include/c++/14.2.0/bits/stl_iterator.h, xtensa-esp-elf/include/c++/14.2.0/bits/stl_iterator_base_funcs.h, xtensa-esp-elf/include/c++/14.2.0/bits/stl_iterator_base_types.h
+
+/*
+ *
+ * Copyright (c) 1994
+ * Hewlett-Packard Company
+ *
+ * Permission to use, copy, modify, distribute and sell this software
+ * and its documentation for any purpose is hereby granted without fee,
+ * provided that the above copyright notice appear in all copies and
+ * that both that copyright notice and this permission notice appear
+ * in supporting documentation.  Hewlett-Packard Company makes no
+ * representations about the suitability of this software for any
+ * purpose.  It is provided "as is" without express or implied warranty.
+ *
+ *
+ * Copyright (c) 1996-1998
+ * Silicon Graphics Computer Systems, Inc.
+ *
+ * Permission to use, copy, modify, distribute and sell this software
+ * and its documentation for any purpose is hereby granted without fee,
+ * provided that the above copyright notice appear in all copies and
+ * that both that copyright notice and this permission notice appear
+ * in supporting documentation.  Silicon Graphics makes no
+ * representations about the suitability of this software for any
+ * purpose.  It is provided "as is" without express or implied warranty.
+ */
+
+========================================================================
+Source: xtensa-esp-elf/include/c++/14.2.0/bit, xtensa-esp-elf/include/c++/14.2.0/bits/memory_resource.h
+
+// Copyright (C) 2018-2024 Free Software Foundation, Inc.
+//
+// This file is part of the GNU ISO C++ Library.  This library is free
+// software; you can redistribute it and/or modify it under the
+// terms of the GNU General Public License as published by the
+// Free Software Foundation; either version 3, or (at your option)
+// any later version.
+
+========================================================================
+Source: xtensa-esp-elf/include/c++/14.2.0/bits/align.h, xtensa-esp-elf/include/c++/14.2.0/bits/allocated_ptr.h, xtensa-esp-elf/include/c++/14.2.0/bits/shared_ptr_atomic.h
+
+// Copyright (C) 2014-2024 Free Software Foundation, Inc.
+//
+// This file is part of the GNU ISO C++ Library.  This library is free
+// software; you can redistribute it and/or modify it under the
+// terms of the GNU General Public License as published by the
+// Free Software Foundation; either version 3, or (at your option)
+// any later version.
+
+========================================================================
+Source: xtensa-esp-elf/include/c++/14.2.0/bits/alloc_traits.h, xtensa-esp-elf/include/c++/14.2.0/bits/ptr_traits.h, xtensa-esp-elf/include/c++/14.2.0/ext/alloc_traits.h
+
+// Copyright (C) 2011-2024 Free Software Foundation, Inc.
+//
+// This file is part of the GNU ISO C++ Library.  This library is free
+// software; you can redistribute it and/or modify it under the
+// terms of the GNU General Public License as published by the
+// Free Software Foundation; either version 3, or (at your option)
+// any later version.
+
+========================================================================
+Source: xtensa-esp-elf/include/c++/14.2.0/bits/allocator.h, xtensa-esp-elf/include/c++/14.2.0/bits/memoryfwd.h
+
+/*
+ * Copyright (c) 1996-1997
+ * Silicon Graphics Computer Systems, Inc.
+ *
+ * Permission to use, copy, modify, distribute and sell this software
+ * and its documentation for any purpose is hereby granted without fee,
+ * provided that the above copyright notice appear in all copies and
+ * that both that copyright notice and this permission notice appear
+ * in supporting documentation.  Silicon Graphics makes no
+ * representations about the suitability of this software for any
+ * purpose.  It is provided "as is" without express or implied warranty.
+ */
+
+========================================================================
+Source: xtensa-esp-elf/include/c++/14.2.0/bits/atomic_base.h, xtensa-esp-elf/include/c++/14.2.0/bits/atomic_lockfree_defines.h, xtensa-esp-elf/include/c++/14.2.0/bits/unique_ptr.h, xtensa-esp-elf/include/c++/14.2.0/ext/string_conversions.h
+
+// Copyright (C) 2008-2024 Free Software Foundation, Inc.
+//
+// This file is part of the GNU ISO C++ Library.  This library is free
+// software; you can redistribute it and/or modify it under the
+// terms of the GNU General Public License as published by the
+// Free Software Foundation; either version 3, or (at your option)
+// any later version.
+
+========================================================================
+Source: xtensa-esp-elf/include/c++/14.2.0/bits/atomic_wait.h, xtensa-esp-elf/include/c++/14.2.0/bits/ranges_algo.h, xtensa-esp-elf/include/c++/14.2.0/bits/ranges_algobase.h, xtensa-esp-elf/include/c++/14.2.0/bits/ranges_uninitialized.h
+
+// Copyright (C) 2020-2024 Free Software Foundation, Inc.
+//
+// This file is part of the GNU ISO C++ Library.  This library is free
+// software; you can redistribute it and/or modify it under the
+// terms of the GNU General Public License as published by the
+// Free Software Foundation; either version 3, or (at your option)
+// any later version.
+
+========================================================================
+Source: xtensa-esp-elf/include/c++/14.2.0/bits/basic_ios.h, xtensa-esp-elf/include/c++/14.2.0/bits/basic_string.h, xtensa-esp-elf/include/c++/14.2.0/bits/basic_string.tcc, xtensa-esp-elf/include/c++/14.2.0/bits/char_traits.h, xtensa-esp-elf/include/c++/14.2.0/bits/ios_base.h, xtensa-esp-elf/include/c++/14.2.0/bits/locale_classes.h, xtensa-esp-elf/include/c++/14.2.0/bits/locale_facets.h, xtensa-esp-elf/include/c++/14.2.0/bits/locale_facets.tcc, xtensa-esp-elf/include/c++/14.2.0/bits/localefwd.h, xtensa-esp-elf/include/c++/14.2.0/bits/ostream.tcc, xtensa-esp-elf/include/c++/14.2.0/bits/postypes.h, xtensa-esp-elf/include/c++/14.2.0/bits/streambuf.tcc, xtensa-esp-elf/include/c++/14.2.0/bits/streambuf_iterator.h, xtensa-esp-elf/include/c++/14.2.0/cassert, xtensa-esp-elf/include/c++/14.2.0/cctype, xtensa-esp-elf/include/c++/14.2.0/cerrno, xtensa-esp-elf/include/c++/14.2.0/clocale, xtensa-esp-elf/include/c++/14.2.0/cmath, xtensa-esp-elf/include/c++/14.2.0/cstddef, xtensa-esp-elf/include/c++/14.2.0/cstdio, xtensa-esp-elf/include/c++/14.2.0/cstdlib, xtensa-esp-elf/include/c++/14.2.0/cstring, xtensa-esp-elf/include/c++/14.2.0/ctime, xtensa-esp-elf/include/c++/14.2.0/cwchar, xtensa-esp-elf/include/c++/14.2.0/cwctype, xtensa-esp-elf/include/c++/14.2.0/ios, xtensa-esp-elf/include/c++/14.2.0/iosfwd, xtensa-esp-elf/include/c++/14.2.0/locale, xtensa-esp-elf/include/c++/14.2.0/ostream, xtensa-esp-elf/include/c++/14.2.0/streambuf, xtensa-esp-elf/include/c++/14.2.0/string, xtensa-esp-elf/include/c++/14.2.0/xtensa-esp-elf/esp32s3/no-rtti/bits/c++config.h
+
+// Copyright (C) 1997-2024 Free Software Foundation, Inc.
+//
+// This file is part of the GNU ISO C++ Library.  This library is free
+// software; you can redistribute it and/or modify it under the
+// terms of the GNU General Public License as published by the
+// Free Software Foundation; either version 3, or (at your option)
+// any later version.
+
+========================================================================
+Source: xtensa-esp-elf/include/c++/14.2.0/bits/basic_ios.tcc, xtensa-esp-elf/include/c++/14.2.0/limits
+
+// Copyright (C) 1999-2024 Free Software Foundation, Inc.
+//
+// This file is part of the GNU ISO C++ Library.  This library is free
+// software; you can redistribute it and/or modify it under the
+// terms of the GNU General Public License as published by the
+// Free Software Foundation; either version 3, or (at your option)
+// any later version.
+
+========================================================================
+Source: xtensa-esp-elf/include/c++/14.2.0/bits/charconv.h, xtensa-esp-elf/include/c++/14.2.0/charconv
+
+// Copyright (C) 2017-2024 Free Software Foundation, Inc.
+//
+// This file is part of the GNU ISO C++ Library.  This library is free
+// software; you can redistribute it and/or modify it under the
+// terms of the GNU General Public License as published by the
+// Free Software Foundation; either version 3, or (at your option)
+// any later version.
+
+========================================================================
+Source: xtensa-esp-elf/include/c++/14.2.0/bits/codecvt.h, xtensa-esp-elf/include/c++/14.2.0/bits/cpp_type_traits.h, xtensa-esp-elf/include/c++/14.2.0/xtensa-esp-elf/esp32s3/no-rtti/bits/ctype_base.h, xtensa-esp-elf/include/c++/14.2.0/xtensa-esp-elf/esp32s3/no-rtti/bits/ctype_inline.h, xtensa-esp-elf/include/c++/14.2.0/xtensa-esp-elf/esp32s3/no-rtti/bits/os_defines.h
+
+// Copyright (C) 2000-2024 Free Software Foundation, Inc.
+//
+// This file is part of the GNU ISO C++ Library.  This library is free
+// software; you can redistribute it and/or modify it under the
+// terms of the GNU General Public License as published by the
+// Free Software Foundation; either version 3, or (at your option)
+// any later version.
+
+========================================================================
+Source: xtensa-esp-elf/include/c++/14.2.0/bits/cxxabi_forced.h
+
+// Copyright (C) 2007-2024 Free Software Foundation, Inc.
+//
+// This file is part of GCC.
+//
+// GCC is free software; you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation; either version 3, or (at your option)
+// any later version.
+// 
+// GCC is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+// 
+// Under Section 7 of GPL version 3, you are granted additional
+// permissions described in the GCC Runtime Library Exception, version
+// 3.1, as published by the Free Software Foundation.
+
+========================================================================
+Source: xtensa-esp-elf/include/c++/14.2.0/bits/cxxabi_init_exception.h, xtensa-esp-elf/include/c++/14.2.0/bits/exception.h
+
+// Copyright (C) 2016-2024 Free Software Foundation, Inc.
+//
+// This file is part of GCC.
+//
+// GCC is free software; you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation; either version 3, or (at your option)
+// any later version.
+//
+// GCC is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+//
+// Under Section 7 of GPL version 3, you are granted additional
+// permissions described in the GCC Runtime Library Exception, version
+// 3.1, as published by the Free Software Foundation.
+
+========================================================================
+Source: xtensa-esp-elf/include/c++/14.2.0/bits/enable_special_members.h, xtensa-esp-elf/include/c++/14.2.0/bits/parse_numbers.h, xtensa-esp-elf/include/c++/14.2.0/bits/predefined_ops.h, xtensa-esp-elf/include/c++/14.2.0/bits/string_view.tcc, xtensa-esp-elf/include/c++/14.2.0/ext/aligned_buffer.h, xtensa-esp-elf/include/c++/14.2.0/string_view
+
+// Copyright (C) 2013-2024 Free Software Foundation, Inc.
+//
+// This file is part of the GNU ISO C++ Library.  This library is free
+// software; you can redistribute it and/or modify it under the
+// terms of the GNU General Public License as published by the
+// Free Software Foundation; either version 3, or (at your option)
+// any later version.
+
+========================================================================
+Source: xtensa-esp-elf/include/c++/14.2.0/bits/erase_if.h, xtensa-esp-elf/include/c++/14.2.0/bits/locale_conv.h
+
+// Copyright (C) 2015-2024 Free Software Foundation, Inc.
+//
+// This file is part of the GNU ISO C++ Library.  This library is free
+// software; you can redistribute it and/or modify it under the
+// terms of the GNU General Public License as published by the
+// Free Software Foundation; either version 3, or (at your option)
+// any later version.
+
+========================================================================
+Source: xtensa-esp-elf/include/c++/14.2.0/bits/exception_ptr.h
+
+// Copyright (C) 2008-2024 Free Software Foundation, Inc.
+//
+// This file is part of GCC.
+//
+// GCC is free software; you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation; either version 3, or (at your option)
+// any later version.
+// 
+// GCC is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+// 
+// Under Section 7 of GPL version 3, you are granted additional
+// permissions described in the GCC Runtime Library Exception, version
+// 3.1, as published by the Free Software Foundation.
+
+========================================================================
+Source: xtensa-esp-elf/include/c++/14.2.0/bits/hash_bytes.h, xtensa-esp-elf/include/c++/14.2.0/bits/hashtable_policy.h, xtensa-esp-elf/include/c++/14.2.0/bits/range_access.h, xtensa-esp-elf/include/c++/14.2.0/bits/unordered_map.h, xtensa-esp-elf/include/c++/14.2.0/bits/uses_allocator.h
+
+// Copyright (C) 2010-2024 Free Software Foundation, Inc.
+//
+// This file is part of the GNU ISO C++ Library.  This library is free
+// software; you can redistribute it and/or modify it under the
+// terms of the GNU General Public License as published by the
+// Free Software Foundation; either version 3, or (at your option)
+// any later version.
+
+========================================================================
+Source: xtensa-esp-elf/include/c++/14.2.0/bits/invoke.h, xtensa-esp-elf/include/c++/14.2.0/bits/node_handle.h, xtensa-esp-elf/include/c++/14.2.0/bits/std_abs.h, xtensa-esp-elf/include/c++/14.2.0/variant
+
+// Copyright (C) 2016-2024 Free Software Foundation, Inc.
+//
+// This file is part of the GNU ISO C++ Library.  This library is free
+// software; you can redistribute it and/or modify it under the
+// terms of the GNU General Public License as published by the
+// Free Software Foundation; either version 3, or (at your option)
+// any later version.
+
+========================================================================
+Source: xtensa-esp-elf/include/c++/14.2.0/bits/iterator_concepts.h, xtensa-esp-elf/include/c++/14.2.0/bits/max_size_type.h, xtensa-esp-elf/include/c++/14.2.0/bits/ranges_base.h, xtensa-esp-elf/include/c++/14.2.0/bits/ranges_cmp.h, xtensa-esp-elf/include/c++/14.2.0/bits/ranges_util.h, xtensa-esp-elf/include/c++/14.2.0/bits/uses_allocator_args.h, xtensa-esp-elf/include/c++/14.2.0/concepts, xtensa-esp-elf/include/c++/14.2.0/numbers, xtensa-esp-elf/include/c++/14.2.0/span
+
+// Copyright (C) 2019-2024 Free Software Foundation, Inc.
+//
+// This file is part of the GNU ISO C++ Library.  This library is free
+// software; you can redistribute it and/or modify it under the
+// terms of the GNU General Public License as published by the
+// Free Software Foundation; either version 3, or (at your option)
+// any later version.
+
+========================================================================
+Source: xtensa-esp-elf/include/c++/14.2.0/bits/mofunc_impl.h, xtensa-esp-elf/include/c++/14.2.0/bits/move_only_function.h, xtensa-esp-elf/include/c++/14.2.0/bits/out_ptr.h, xtensa-esp-elf/include/c++/14.2.0/bits/requires_hosted.h, xtensa-esp-elf/include/c++/14.2.0/bits/unicode-data.h, xtensa-esp-elf/include/c++/14.2.0/bits/unicode.h, xtensa-esp-elf/include/c++/14.2.0/format
+
+// Copyright The GNU Toolchain Authors.
+//
+// This file is part of the GNU ISO C++ Library.  This library is free
+// software; you can redistribute it and/or modify it under the
+// terms of the GNU General Public License as published by the
+// Free Software Foundation; either version 3, or (at your option)
+// any later version.
+
+========================================================================
+Source: xtensa-esp-elf/include/c++/14.2.0/bits/nested_exception.h, xtensa-esp-elf/include/c++/14.2.0/bits/uniform_int_dist.h
+
+// Copyright (C) 2009-2024 Free Software Foundation, Inc.
+//
+// This file is part of the GNU ISO C++ Library.  This library is free
+// software; you can redistribute it and/or modify it under the
+// terms of the GNU General Public License as published by the
+// Free Software Foundation; either version 3, or (at your option)
+// any later version.
+
+========================================================================
+Source: xtensa-esp-elf/include/c++/14.2.0/bits/refwrap.h, xtensa-esp-elf/include/c++/14.2.0/bits/std_function.h, xtensa-esp-elf/include/c++/14.2.0/bits/utility.h, xtensa-esp-elf/include/c++/14.2.0/ext/atomicity.h, xtensa-esp-elf/include/c++/14.2.0/xtensa-esp-elf/esp32s3/no-rtti/bits/atomic_word.h, xtensa-esp-elf/include/c++/14.2.0/xtensa-esp-elf/esp32s3/no-rtti/bits/c++allocator.h, xtensa-esp-elf/include/c++/14.2.0/xtensa-esp-elf/esp32s3/no-rtti/bits/cxxabi_tweaks.h
+
+// Copyright (C) 2004-2024 Free Software Foundation, Inc.
+//
+// This file is part of the GNU ISO C++ Library.  This library is free
+// software; you can redistribute it and/or modify it under the
+// terms of the GNU General Public License as published by the
+// Free Software Foundation; either version 3, or (at your option)
+// any later version.
+
+========================================================================
+Source: xtensa-esp-elf/include/c++/14.2.0/bits/shared_ptr.h, xtensa-esp-elf/include/c++/14.2.0/bits/shared_ptr_base.h
+
+//  shared_count.hpp
+//  Copyright (c) 2001, 2002, 2003 Peter Dimov and Multi Media Ltd.
+
+========================================================================
+Source: xtensa-esp-elf/include/c++/14.2.0/bits/shared_ptr.h, xtensa-esp-elf/include/c++/14.2.0/bits/shared_ptr_base.h
+
+//  shared_ptr.hpp
+//  Copyright (C) 1998, 1999 Greg Colvin and Beman Dawes.
+//  Copyright (C) 2001, 2002, 2003 Peter Dimov
+
+========================================================================
+Source: xtensa-esp-elf/include/c++/14.2.0/bits/shared_ptr.h, xtensa-esp-elf/include/c++/14.2.0/bits/shared_ptr_base.h
+
+//  weak_ptr.hpp
+//  Copyright (C) 2001, 2002, 2003 Peter Dimov
+
+========================================================================
+Source: xtensa-esp-elf/include/c++/14.2.0/bits/shared_ptr.h, xtensa-esp-elf/include/c++/14.2.0/bits/shared_ptr_base.h
+
+//  enable_shared_from_this.hpp
+//  Copyright (C) 2002 Peter Dimov
+
+========================================================================
+Source: xtensa-esp-elf/include/c++/14.2.0/bits/shared_ptr.h, xtensa-esp-elf/include/c++/14.2.0/bits/shared_ptr_base.h
+
+// Distributed under the Boost Software License, Version 1.0. (See
+// accompanying file LICENSE_1_0.txt or copy at
+// http://www.boost.org/LICENSE_1_0.txt)
+
+========================================================================
+Source: xtensa-esp-elf/include/c++/14.2.0/bits/specfun.h, xtensa-esp-elf/include/c++/14.2.0/tr1/special_function_util.h
+
+// Copyright (C) 2006-2024 Free Software Foundation, Inc.
+//
+// This file is part of the GNU ISO C++ Library.  This library is free
+// software; you can redistribute it and/or modify it under the
+// terms of the GNU General Public License as published by the
+// Free Software Foundation; either version 3, or (at your option)
+// any later version.
+
+========================================================================
+Source: xtensa-esp-elf/include/c++/14.2.0/bits/std_mutex.h, xtensa-esp-elf/include/c++/14.2.0/debug/assertions.h, xtensa-esp-elf/include/c++/14.2.0/debug/debug.h, xtensa-esp-elf/include/c++/14.2.0/ext/concurrence.h
+
+// Copyright (C) 2003-2024 Free Software Foundation, Inc.
+//
+// This file is part of the GNU ISO C++ Library.  This library is free
+// software; you can redistribute it and/or modify it under the
+// terms of the GNU General Public License as published by the
+// Free Software Foundation; either version 3, or (at your option)
+// any later version.
+
+========================================================================
+Source: xtensa-esp-elf/include/c++/14.2.0/bits/stl_algo.h, xtensa-esp-elf/include/c++/14.2.0/bits/stl_raw_storage_iter.h, xtensa-esp-elf/include/c++/14.2.0/vector
+
+/*
+ *
+ * Copyright (c) 1994
+ * Hewlett-Packard Company
+ *
+ * Permission to use, copy, modify, distribute and sell this software
+ * and its documentation for any purpose is hereby granted without fee,
+ * provided that the above copyright notice appear in all copies and
+ * that both that copyright notice and this permission notice appear
+ * in supporting documentation.  Hewlett-Packard Company makes no
+ * representations about the suitability of this software for any
+ * purpose.  It is provided "as is" without express or implied warranty.
+ *
+ *
+ * Copyright (c) 1996
+ * Silicon Graphics Computer Systems, Inc.
+ *
+ * Permission to use, copy, modify, distribute and sell this software
+ * and its documentation for any purpose is hereby granted without fee,
+ * provided that the above copyright notice appear in all copies and
+ * that both that copyright notice and this permission notice appear
+ * in supporting documentation.  Silicon Graphics makes no
+ * representations about the suitability of this software for any
+ * purpose.  It is provided "as is" without express or implied warranty.
+ */
+
+========================================================================
+Source: xtensa-esp-elf/include/c++/14.2.0/bits/stl_bvector.h
+
+/*
+ *
+ * Copyright (c) 1994
+ * Hewlett-Packard Company
+ *
+ * Permission to use, copy, modify, distribute and sell this software
+ * and its documentation for any purpose is hereby granted without fee,
+ * provided that the above copyright notice appear in all copies and
+ * that both that copyright notice and this permission notice appear
+ * in supporting documentation.  Hewlett-Packard Company makes no
+ * representations about the suitability of this software for any
+ * purpose.  It is provided "as is" without express or implied warranty.
+ *
+ *
+ * Copyright (c) 1996-1999
+ * Silicon Graphics Computer Systems, Inc.
+ *
+ * Permission to use, copy, modify, distribute and sell this software
+ * and its documentation for any purpose is hereby granted without fee,
+ * provided that the above copyright notice appear in all copies and
+ * that both that copyright notice and this permission notice appear
+ * in supporting documentation.  Silicon Graphics makes no
+ * representations about the suitability of this software for any
+ * purpose.  It is provided "as is" without express or implied warranty.
+ */
+
+========================================================================
+Source: xtensa-esp-elf/include/c++/14.2.0/bits/stl_heap.h
+
+/*
+ *
+ * Copyright (c) 1994
+ * Hewlett-Packard Company
+ *
+ * Permission to use, copy, modify, distribute and sell this software
+ * and its documentation for any purpose is hereby granted without fee,
+ * provided that the above copyright notice appear in all copies and
+ * that both that copyright notice and this permission notice appear
+ * in supporting documentation.  Hewlett-Packard Company makes no
+ * representations about the suitability of this software for any
+ * purpose.  It is provided "as is" without express or implied warranty.
+ *
+ * Copyright (c) 1997
+ * Silicon Graphics Computer Systems, Inc.
+ *
+ * Permission to use, copy, modify, distribute and sell this software
+ * and its documentation for any purpose is hereby granted without fee,
+ * provided that the above copyright notice appear in all copies and
+ * that both that copyright notice and this permission notice appear
+ * in supporting documentation.  Silicon Graphics makes no
+ * representations about the suitability of this software for any
+ * purpose.  It is provided "as is" without express or implied warranty.
+ */
+
+========================================================================
+Source: xtensa-esp-elf/include/c++/14.2.0/bits/stl_list.h
+
+// Copyright (C) 2001-2024 Free Software Foundation, Inc.
+// Copyright The GNU Toolchain Authors.
+//
+// This file is part of the GNU ISO C++ Library.  This library is free
+// software; you can redistribute it and/or modify it under the
+// terms of the GNU General Public License as published by the
+// Free Software Foundation; either version 3, or (at your option)
+// any later version.
+
+========================================================================
+Source: xtensa-esp-elf/include/c++/14.2.0/bits/stl_relops.h
+
+// Under Section 7 of GPL version 3, you are granted additional
+// permissions described in the GCC Runtime Library Exception, version
+// 3.1, as published by the, 2009 Free Software Foundation.
+
+========================================================================
+Source: xtensa-esp-elf/include/c++/14.2.0/bits/stl_relops.h
+
+/*
+ *
+ * Copyright (c) 1994
+ * Hewlett-Packard Company
+ *
+ * Permission to use, copy, modify, distribute and sell this software
+ * and its documentation for any purpose is hereby granted without fee,
+ * provided that the above copyright notice appear in all copies and
+ * that both that copyright notice and this permission notice appear
+ * in supporting documentation.  Hewlett-Packard Company makes no
+ * representations about the suitability of this software for any
+ * purpose.  It is provided "as is" without express or implied warranty.
+ *
+ * Copyright (c) 1996,1997
+ * Silicon Graphics
+ *
+ * Permission to use, copy, modify, distribute and sell this software
+ * and its documentation for any purpose is hereby granted without fee,
+ * provided that the above copyright notice appear in all copies and
+ * that both that copyright notice and this permission notice appear
+ * in supporting documentation.  Silicon Graphics makes no
+ * representations about the suitability of this software for any
+ * purpose.  It is provided "as is" without express or implied warranty.
+ *
+ */
+
+========================================================================
+Source: xtensa-esp-elf/include/c++/14.2.0/bits/stl_vector.h, xtensa-esp-elf/include/c++/14.2.0/bits/vector.tcc
+
+/*
+ *
+ * Copyright (c) 1994
+ * Hewlett-Packard Company
+ *
+ * Permission to use, copy, modify, distribute and sell this software
+ * and its documentation for any purpose is hereby granted without fee,
+ * provided that the above copyright notice appear in all copies and
+ * that both that copyright notice and this permission notice appear
+ * in supporting documentation.  Hewlett-Packard Company makes no
+ * representations about the suitability of this software for any
+ * purpose.  It is provided "as is" without express or implied warranty.
+ *
+ *
+ * Copyright (c) 1996
+ * Silicon Graphics Computer Systems, Inc.
+ *
+ * Permission to use, copy, modify, distribute and sell this software
+ * and its documentation for any purpose is hereby granted without fee,
+ * provided that the above copyright notice appear in all copies and
+ * that both that copyright notice and this permission notice appear
+ * in supporting documentation.  Silicon Graphics makes no
+ * representations about the suitability of this  software for any
+ * purpose.  It is provided "as is" without express or implied warranty.
+ */
+
+========================================================================
+Source: xtensa-esp-elf/include/c++/14.2.0/bits/version.h
+
+// Copyright (C) 2023-2024 Free Software Foundation, Inc.
+
+========================================================================
+Source: xtensa-esp-elf/include/c++/14.2.0/bits/version.h
+
+// This file is part of the GNU ISO C++ Library.  This library is free
+// software; you can redistribute it and/or modify it under the
+// terms of the GNU General Public License as published by the
+// Free Software Foundation; either version 3, or (at your option)
+// any later version.
+
+========================================================================
+Source: xtensa-esp-elf/include/c++/14.2.0/compare
+
+// Copyright (C) 2019-2024 Free Software Foundation, Inc.
+//
+// This file is part of GCC.
+//
+// GCC is free software; you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation; either version 3, or (at your option)
+// any later version.
+//
+// GCC is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+//
+// Under Section 7 of GPL version 3, you are granted additional
+// permissions described in the GCC Runtime Library Exception, version
+// 3.1, as published by the Free Software Foundation.
+
+========================================================================
+Source: xtensa-esp-elf/include/c++/14.2.0/cxxabi.h
+
+// Copyright (C) 2000-2024 Free Software Foundation, Inc.
+//
+// This file is part of GCC.
+//
+// GCC is free software; you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation; either version 3, or (at your option)
+// any later version.
+//
+// GCC is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+//
+// Under Section 7 of GPL version 3, you are granted additional
+// permissions described in the GCC Runtime Library Exception, version
+// 3.1, as published by the Free Software Foundation.
+
+========================================================================
+Source: xtensa-esp-elf/include/c++/14.2.0/exception
+
+// Copyright (C) 1995-2024 Free Software Foundation, Inc.
+//
+// This file is part of GCC.
+//
+// GCC is free software; you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation; either version 3, or (at your option)
+// any later version.
+//
+// GCC is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+//
+// Under Section 7 of GPL version 3, you are granted additional
+// permissions described in the GCC Runtime Library Exception, version
+// 3.1, as published by the Free Software Foundation.
+
+========================================================================
+Source: xtensa-esp-elf/include/c++/14.2.0/ext/numeric_traits.h
+
+// Copyright (C) 2007-2024 Free Software Foundation, Inc.
+//
+// This file is part of the GNU ISO C++ Library.  This library is free
+// software; you can redistribute it and/or modify it under the terms
+// of the GNU General Public License as published by the Free Software
+// Foundation; either version 3, or (at your option) any later
+// version.
+
+========================================================================
+Source: xtensa-esp-elf/include/c++/14.2.0/ext/numeric_traits.h, xtensa-esp-elf/include/c++/14.2.0/ext/type_traits.h
+
+// This library is distributed in the hope that it will be useful, but
+// WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+// General Public License for more details.
+
+========================================================================
+Source: xtensa-esp-elf/include/c++/14.2.0/ext/type_traits.h
+
+// Copyright (C) 2005-2024 Free Software Foundation, Inc.
+//
+// This file is part of the GNU ISO C++ Library.  This library is free
+// software; you can redistribute it and/or modify it under the terms
+// of the GNU General Public License as published by the Free Software
+// Foundation; either version 3, or (at your option) any later
+// version.
+
+========================================================================
+Source: xtensa-esp-elf/include/c++/14.2.0/functional
+
+/*
+ * Copyright (c) 1997
+ * Silicon Graphics Computer Systems, Inc.
+ *
+ * Permission to use, copy, modify, distribute and sell this software
+ * and its documentation for any purpose is hereby granted without fee,
+ * provided that the above copyright notice appear in all copies and
+ * that both that copyright notice and this permission notice appear
+ * in supporting documentation.  Silicon Graphics makes no
+ * representations about the suitability of this software for any
+ * purpose.  It is provided "as is" without express or implied warranty.
+ *
+ */
+
+========================================================================
+Source: xtensa-esp-elf/include/c++/14.2.0/initializer_list
+
+// Copyright (C) 2008-2024 Free Software Foundation, Inc.
+//
+// This file is part of GCC.
+//
+// GCC is free software; you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation; either version 3, or (at your option)
+// any later version.
+//
+// GCC is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+//
+// Under Section 7 of GPL version 3, you are granted additional
+// permissions described in the GCC Runtime Library Exception, version
+// 3.1, as published by the Free Software Foundation.
+
+========================================================================
+Source: xtensa-esp-elf/include/c++/14.2.0/math.h, xtensa-esp-elf/include/c++/14.2.0/stdlib.h
+
+// Copyright (C) 2002-2024 Free Software Foundation, Inc.
+//
+// This file is part of the GNU ISO C++ Library.  This library is free
+// software; you can redistribute it and/or modify it under the
+// terms of the GNU General Public License as published by the
+// Free Software Foundation; either version 3, or (at your option)
+// any later version.
+
+========================================================================
+Source: xtensa-esp-elf/include/c++/14.2.0/memory
+
+/*
+ * Copyright (c) 1997-1999
+ * Silicon Graphics Computer Systems, Inc.
+ *
+ * Permission to use, copy, modify, distribute and sell this software
+ * and its documentation for any purpose is hereby granted without fee,
+ * provided that the above copyright notice appear in all copies and
+ * that both that copyright notice and this permission notice appear
+ * in supporting documentation.  Silicon Graphics makes no
+ * representations about the suitability of this software for any
+ * purpose.  It is provided "as is" without express or implied warranty.
+ *
+ */
+
+========================================================================
+Source: xtensa-esp-elf/include/c++/14.2.0/new
+
+// Copyright (C) 1994-2024 Free Software Foundation, Inc.
+
+========================================================================
+Source: xtensa-esp-elf/include/c++/14.2.0/new
+
+// This file is part of GCC.
+//
+// GCC is free software; you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation; either version 3, or (at your option)
+// any later version.
+// 
+// GCC is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+// 
+// Under Section 7 of GPL version 3, you are granted additional
+// permissions described in the GCC Runtime Library Exception, version
+// 3.1, as published by the Free Software Foundation.
+
+========================================================================
+Source: xtensa-esp-elf/include/c++/14.2.0/optional
+
+// Copyright (C) 2013-2024 Free Software Foundation, Inc.
+// Copyright The GNU Toolchain Authors.
+//
+// This file is part of the GNU ISO C++ Library.  This library is free
+// software; you can redistribute it and/or modify it under the
+// terms of the GNU General Public License as published by the
+// Free Software Foundation; either version 3, or (at your option)
+// any later version.
+
+========================================================================
+Source: xtensa-esp-elf/include/c++/14.2.0/pstl/execution_defs.h
+
+// -*- C++ -*-
+//===-- execution_defs.h --------------------------------------------------===//
+//
+// Part of the LLVM Project, under the Apache License v2.0 with LLVM Exceptions.
+// See https://llvm.org/LICENSE.txt for license information.
+// SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception
+//
+//===----------------------------------------------------------------------===//
+
+========================================================================
+Source: xtensa-esp-elf/include/c++/14.2.0/pstl/glue_algorithm_defs.h
+
+// -*- C++ -*-
+//===-- glue_algorithm_defs.h ---------------------------------------------===//
+//
+// Part of the LLVM Project, under the Apache License v2.0 with LLVM Exceptions.
+// See https://llvm.org/LICENSE.txt for license information.
+// SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception
+//
+//===----------------------------------------------------------------------===//
+
+========================================================================
+Source: xtensa-esp-elf/include/c++/14.2.0/pstl/glue_memory_defs.h
+
+// -*- C++ -*-
+//===-- glue_memory_defs.h ------------------------------------------------===//
+//
+// Part of the LLVM Project, under the Apache License v2.0 with LLVM Exceptions.
+// See https://llvm.org/LICENSE.txt for license information.
+// SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception
+//
+//===----------------------------------------------------------------------===//
+
+========================================================================
+Source: xtensa-esp-elf/include/c++/14.2.0/pstl/pstl_config.h
+
+// -*- C++ -*-
+//===-- pstl_config.h -----------------------------------------------------===//
+//
+// Part of the LLVM Project, under the Apache License v2.0 with LLVM Exceptions.
+// See https://llvm.org/LICENSE.txt for license information.
+// SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception
+//
+//===----------------------------------------------------------------------===//
+
+========================================================================
+Source: xtensa-esp-elf/include/c++/14.2.0/tr1/bessel_function.tcc, xtensa-esp-elf/include/c++/14.2.0/tr1/beta_function.tcc, xtensa-esp-elf/include/c++/14.2.0/tr1/ell_integral.tcc, xtensa-esp-elf/include/c++/14.2.0/tr1/exp_integral.tcc, xtensa-esp-elf/include/c++/14.2.0/tr1/gamma.tcc, xtensa-esp-elf/include/c++/14.2.0/tr1/hypergeometric.tcc, xtensa-esp-elf/include/c++/14.2.0/tr1/legendre_function.tcc, xtensa-esp-elf/include/c++/14.2.0/tr1/modified_bessel_func.tcc, xtensa-esp-elf/include/c++/14.2.0/tr1/poly_hermite.tcc, xtensa-esp-elf/include/c++/14.2.0/tr1/poly_laguerre.tcc, xtensa-esp-elf/include/c++/14.2.0/tr1/riemann_zeta.tcc
+
+// Copyright (C) 2006-2024 Free Software Foundation, Inc.
+//
+// This file is part of the GNU ISO C++ Library.  This library is free
+// software; you can redistribute it and/or modify it under the
+// terms of the GNU General Public License as published by the
+// Free Software Foundation; either version 3, or (at your option)
+// any later version.
+//
+// This library is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+//
+// Under Section 7 of GPL version 3, you are granted additional
+// permissions described in the GCC Runtime Library Exception, version
+// 3.1, as published by the Free Software Foundation.
+
+========================================================================
+Source: xtensa-esp-elf/include/c++/14.2.0/tr1/bessel_function.tcc
+
+/* __cyl_bessel_jn_asymp adapted from GNU GSL version 2.4 specfunc/bessel_j.c
+ * Copyright (C) 1996-2003 Gerard Jungman
+ */
+
+========================================================================
+Source: xtensa-esp-elf/include/c++/14.2.0/typeinfo
+
+// RTTI support for -*- C++ -*-
+// Copyright (C) 1994-2024 Free Software Foundation, Inc.
+//
+// This file is part of GCC.
+//
+// GCC is free software; you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation; either version 3, or (at your option)
+// any later version.
+//
+// GCC is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+//
+// Under Section 7 of GPL version 3, you are granted additional
+// permissions described in the GCC Runtime Library Exception, version
+// 3.1, as published by the Free Software Foundation.
+
+========================================================================
+Source: xtensa-esp-elf/include/c++/14.2.0/xtensa-esp-elf/esp32s3/no-rtti/bits/cpu_defines.h
+
+// Copyright (C) 2005-2024 Free Software Foundation, Inc.
+//
+// This file is part of the GNU ISO C++ Library.  This library is free
+// software; you can redistribute it and/or modify it under the
+// terms of the GNU General Public License as published by the
+// Free Software Foundation; either version 3, or (at your option)
+// any later version.
+
+========================================================================
+Source: xtensa-esp-elf/include/c++/14.2.0/xtensa-esp-elf/esp32s3/no-rtti/bits/gthr-default.h, xtensa-esp-elf/include/c++/14.2.0/xtensa-esp-elf/esp32s3/no-rtti/bits/gthr.h
+
+/* Copyright (C) 1997-2024 Free Software Foundation, Inc.
+
+This file is part of GCC.
+
+GCC is free software; you can redistribute it and/or modify it under
+the terms of the GNU General Public License as published by the Free
+Software Foundation; either version 3, or (at your option) any later
+version.
+
+GCC is distributed in the hope that it will be useful, but WITHOUT ANY
+WARRANTY; without even the implied warranty of MERCHANTABILITY or
+FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
+for more details.
+
+Under Section 7 of GPL version 3, you are granted additional
+permissions described in the GCC Runtime Library Exception, version
+3.1, as published by the Free Software Foundation.
+
+You should have received a copy of the GNU General Public License and
+a copy of the GCC Runtime Library Exception along with this program;
+see the files COPYING3 and COPYING.RUNTIME respectively.  If not, see
+<http://www.gnu.org/licenses/>.  */
+
+========================================================================
+Source: xtensa-esp-elf/include/dirent.h
+
+/*-
+ * SPDX-License-Identifier: BSD-3-Clause
+ *
+ * Copyright (c) 1989, 1993
+ *	The Regents of the University of California.  All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ * 1. Redistributions of source code must retain the above copyright
+ *    notice, this list of conditions and the following disclaimer.
+ * 2. Redistributions in binary form must reproduce the above copyright
+ *    notice, this list of conditions and the following disclaimer in the
+ *    documentation and/or other materials provided with the distribution.
+ * 3. Neither the name of the University nor the names of its contributors
+ *    may be used to endorse or promote products derived from this software
+ *    without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE REGENTS AND CONTRIBUTORS ``AS IS'' AND
+ * ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+ * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+ * ARE DISCLAIMED.  IN NO EVENT SHALL THE REGENTS OR CONTRIBUTORS BE LIABLE
+ * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+ * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+ * OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+ * HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+ * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+ * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+ * SUCH DAMAGE.
+ *
+ *	@(#)dirent.h	8.3 (Berkeley) 8/10/94
+ * $FreeBSD: head/include/dirent.h 326024 2017-11-20 19:45:28Z pfg $
+ */
+
+========================================================================
+Source: xtensa-esp-elf/include/inttypes.h, xtensa-esp-elf/include/stdint.h, xtensa-esp-elf/include/sys/_intsup.h, xtensa-esp-elf/include/sys/_stdint.h
+
+/*
+ * Copyright (c) 2004, 2005 by
+ * Ralf Corsepius, Ulm/Germany. All rights reserved.
+ *
+ * Permission to use, copy, modify, and distribute this software
+ * is freely granted, provided that this notice is preserved.
+ */
+
+========================================================================
+Source: xtensa-esp-elf/include/pthread.h, xtensa-esp-elf/include/sys/_pthreadtypes.h
+
+/*
+ *  Written by Joel Sherrill <joel.sherrill@OARcorp.com>.
+ *
+ *  COPYRIGHT (c) 1989-2013, 2015.
+ *  On-Line Applications Research Corporation (OAR).
+ *
+ *  Permission to use, copy, modify, and distribute this software for any
+ *  purpose without fee is hereby granted, provided that this entire notice
+ *  is included in all copies of any software which is or includes a copy
+ *  or modification of this software.
+ *
+ *  THIS SOFTWARE IS BEING PROVIDED "AS IS", WITHOUT ANY EXPRESS OR IMPLIED
+ *  WARRANTY.  IN PARTICULAR,  THE AUTHOR MAKES NO REPRESENTATION
+ *  OR WARRANTY OF ANY KIND CONCERNING THE MERCHANTABILITY OF THIS
+ *  SOFTWARE OR ITS FITNESS FOR ANY PARTICULAR PURPOSE.
+ */
+
+========================================================================
+Source: xtensa-esp-elf/include/sched.h, xtensa-esp-elf/include/sys/sched.h
+
+/*
+ *  Written by Joel Sherrill <joel@OARcorp.com>.
+ *
+ *  COPYRIGHT (c) 1989-2010.
+ *  On-Line Applications Research Corporation (OAR).
+ *
+ *  Permission to use, copy, modify, and distribute this software for any
+ *  purpose without fee is hereby granted, provided that this entire notice
+ *  is included in all copies of any software which is or includes a copy
+ *  or modification of this software.
+ *
+ *  THIS SOFTWARE IS BEING PROVIDED "AS IS", WITHOUT ANY EXPRESS OR IMPLIED
+ *  WARRANTY.  IN PARTICULAR,  THE AUTHOR MAKES NO REPRESENTATION
+ *  OR WARRANTY OF ANY KIND CONCERNING THE MERCHANTABILITY OF THIS
+ *  SOFTWARE OR ITS FITNESS FOR ANY PARTICULAR PURPOSE.
+ *
+ *  $Id$
+ */
+
+========================================================================
+Source: xtensa-esp-elf/include/stdio.h
+
+/*
+ * Copyright (c) 1990 The Regents of the University of California.
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms are permitted
+ * provided that the above copyright notice and this paragraph are
+ * duplicated in all such forms and that any documentation,
+ * and/or other materials related to such
+ * distribution and use acknowledge that the software was developed
+ * by the University of California, Berkeley.  The name of the
+ * University may not be used to endorse or promote products derived
+ * from this software without specific prior written permission.
+ * THIS SOFTWARE IS PROVIDED ``AS IS'' AND WITHOUT ANY EXPRESS OR
+ * IMPLIED WARRANTIES, INCLUDING, WITHOUT LIMITATION, THE IMPLIED
+ * WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+ *
+ *	@(#)stdio.h	5.3 (Berkeley) 3/15/86
+ */
+
+========================================================================
+Source: xtensa-esp-elf/include/strings.h
+
+/*-
+ * Copyright (c) 2002 Mike Barcroft <mike@FreeBSD.org>
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ * 1. Redistributions of source code must retain the above copyright
+ *    notice, this list of conditions and the following disclaimer.
+ * 2. Redistributions in binary form must reproduce the above copyright
+ *    notice, this list of conditions and the following disclaimer in the
+ *    documentation and/or other materials provided with the distribution.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE AUTHOR AND CONTRIBUTORS ``AS IS'' AND
+ * ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+ * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+ * ARE DISCLAIMED.  IN NO EVENT SHALL THE AUTHOR OR CONTRIBUTORS BE LIABLE
+ * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+ * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+ * OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+ * HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+ * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+ * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+ * SUCH DAMAGE.
+ *
+ * $FreeBSD: head/include/strings.h 272673 2014-10-07 04:54:11Z delphij $
+ */
+
+========================================================================
+Source: xtensa-esp-elf/include/sys/_sigset.h
+
+/*-
+ * Copyright (c) 1982, 1986, 1989, 1991, 1993
+ *	The Regents of the University of California.  All rights reserved.
+ * (c) UNIX System Laboratories, Inc.
+ * All or some portions of this file are derived from material licensed
+ * to the University of California by American Telephone and Telegraph
+ * Co. or Unix System Laboratories, Inc. and are reproduced herein with
+ * the permission of UNIX System Laboratories, Inc.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ * 1. Redistributions of source code must retain the above copyright
+ *    notice, this list of conditions and the following disclaimer.
+ * 2. Redistributions in binary form must reproduce the above copyright
+ *    notice, this list of conditions and the following disclaimer in the
+ *    documentation and/or other materials provided with the distribution.
+ * 4. Neither the name of the University nor the names of its contributors
+ *    may be used to endorse or promote products derived from this software
+ *    without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE REGENTS AND CONTRIBUTORS ``AS IS'' AND
+ * ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+ * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+ * ARE DISCLAIMED.  IN NO EVENT SHALL THE REGENTS OR CONTRIBUTORS BE LIABLE
+ * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+ * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+ * OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+ * HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+ * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+ * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+ * SUCH DAMAGE.
+ *
+ *	@(#)signal.h	8.4 (Berkeley) 5/4/95
+ * $FreeBSD$
+ */
+
+========================================================================
+Source: xtensa-esp-elf/include/sys/_timespec.h
+
+/*-
+ * SPDX-License-Identifier: BSD-3-Clause
+ *
+ * Copyright (c) 1982, 1986, 1993
+ *	The Regents of the University of California.  All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ * 1. Redistributions of source code must retain the above copyright
+ *    notice, this list of conditions and the following disclaimer.
+ * 2. Redistributions in binary form must reproduce the above copyright
+ *    notice, this list of conditions and the following disclaimer in the
+ *    documentation and/or other materials provided with the distribution.
+ * 3. Neither the name of the University nor the names of its contributors
+ *    may be used to endorse or promote products derived from this software
+ *    without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE REGENTS AND CONTRIBUTORS ``AS IS'' AND
+ * ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+ * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+ * ARE DISCLAIMED.  IN NO EVENT SHALL THE REGENTS OR CONTRIBUTORS BE LIABLE
+ * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+ * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+ * OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+ * HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+ * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+ * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+ * SUCH DAMAGE.
+ *
+ *	@(#)time.h	8.5 (Berkeley) 5/4/95
+ * from: FreeBSD: src/sys/sys/time.h,v 1.43 2000/03/20 14:09:05 phk Exp
+ *	$FreeBSD: head/sys/sys/_timespec.h 326023 2017-11-20 19:43:44Z pfg $
+ */
+
+========================================================================
+Source: xtensa-esp-elf/include/sys/_timeval.h
+
+/*-
+ * SPDX-License-Identifier: BSD-2-Clause-FreeBSD
+ *
+ * Copyright (c) 2002 Mike Barcroft <mike@FreeBSD.org>
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ * 1. Redistributions of source code must retain the above copyright
+ *    notice, this list of conditions and the following disclaimer.
+ * 2. Redistributions in binary form must reproduce the above copyright
+ *    notice, this list of conditions and the following disclaimer in the
+ *    documentation and/or other materials provided with the distribution.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE AUTHOR AND CONTRIBUTORS ``AS IS'' AND
+ * ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+ * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+ * ARE DISCLAIMED.  IN NO EVENT SHALL THE AUTHOR OR CONTRIBUTORS BE LIABLE
+ * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+ * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+ * OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+ * HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+ * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+ * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+ * SUCH DAMAGE.
+ *
+ * $FreeBSD: head/sys/sys/_timeval.h 326256 2017-11-27 15:01:59Z pfg $
+ */
+
+========================================================================
+Source: xtensa-esp-elf/include/sys/cdefs.h
+
+/*-
+ * SPDX-License-Identifier: BSD-3-Clause
+ *
+ * Copyright (c) 1991, 1993
+ *	The Regents of the University of California.  All rights reserved.
+ *
+ * This code is derived from software contributed to Berkeley by
+ * Berkeley Software Design, Inc.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ * 1. Redistributions of source code must retain the above copyright
+ *    notice, this list of conditions and the following disclaimer.
+ * 2. Redistributions in binary form must reproduce the above copyright
+ *    notice, this list of conditions and the following disclaimer in the
+ *    documentation and/or other materials provided with the distribution.
+ * 3. Neither the name of the University nor the names of its contributors
+ *    may be used to endorse or promote products derived from this software
+ *    without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE REGENTS AND CONTRIBUTORS ``AS IS'' AND
+ * ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+ * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+ * ARE DISCLAIMED.  IN NO EVENT SHALL THE REGENTS OR CONTRIBUTORS BE LIABLE
+ * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+ * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+ * OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+ * HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+ * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+ * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+ * SUCH DAMAGE.
+ *
+ *	@(#)cdefs.h	8.8 (Berkeley) 1/9/95
+ * $FreeBSD$
+ */
+
+========================================================================
+Source: xtensa-esp-elf/include/sys/errno.h
+
+/* Permission denied */
+
+========================================================================
+Source: xtensa-esp-elf/include/sys/features.h
+
+/*
+ *  Written by Joel Sherrill <joel@OARcorp.com>.
+ *
+ *  COPYRIGHT (c) 1989-2014.
+ *
+ *  On-Line Applications Research Corporation (OAR).
+ *
+ *  Permission to use, copy, modify, and distribute this software for any
+ *  purpose without fee is hereby granted, provided that this entire notice
+ *  is included in all copies of any software which is or includes a copy
+ *  or modification of this software.
+ *
+ *  THIS SOFTWARE IS BEING PROVIDED "AS IS", WITHOUT ANY EXPRESS OR IMPLIED
+ *  WARRANTY.  IN PARTICULAR,  THE AUTHOR MAKES NO REPRESENTATION
+ *  OR WARRANTY OF ANY KIND CONCERNING THE MERCHANTABILITY OF THIS
+ *  SOFTWARE OR ITS FITNESS FOR ANY PARTICULAR PURPOSE.
+ *
+ *  $Id$
+ */
+
+========================================================================
+Source: xtensa-esp-elf/include/sys/queue.h
+
+/*-
+ * Copyright (c) 1991, 1993
+ *	The Regents of the University of California.  All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ * 1. Redistributions of source code must retain the above copyright
+ *    notice, this list of conditions and the following disclaimer.
+ * 2. Redistributions in binary form must reproduce the above copyright
+ *    notice, this list of conditions and the following disclaimer in the
+ *    documentation and/or other materials provided with the distribution.
+ * 3. Neither the name of the University nor the names of its contributors
+ *    may be used to endorse or promote products derived from this software
+ *    without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE REGENTS AND CONTRIBUTORS ``AS IS'' AND
+ * ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+ * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+ * ARE DISCLAIMED.  IN NO EVENT SHALL THE REGENTS OR CONTRIBUTORS BE LIABLE
+ * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+ * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+ * OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+ * HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+ * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+ * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+ * SUCH DAMAGE.
+ *
+ *	@(#)queue.h	8.5 (Berkeley) 8/20/94
+ * $FreeBSD$
+ */
+
+========================================================================
+Source: xtensa-esp-elf/include/sys/reent.h
+
+/*
+ * rand48 family support
+ *
+ * Copyright (c) 1993 Martin Birgmeier
+ * All rights reserved.
+ *
+ * You may redistribute unmodified or modified versions of this source
+ * code provided that the above copyright notice and this and the
+ * following conditions are retained.
+ *
+ * This software is provided ``as is'', and comes with no warranties
+ * of any kind. I shall in no event be liable for anything that happens
+ * to anyone/anything when using this software.
+ */
+
+========================================================================
+Source: xtensa-esp-elf/include/sys/stat.h, xtensa-esp-elf/include/sys/stat.h
+
+/* read permission, owner */
+
+========================================================================
+Source: xtensa-esp-elf/include/sys/stat.h, xtensa-esp-elf/include/sys/stat.h
+
+/* write permission, owner */
+
+========================================================================
+Source: xtensa-esp-elf/include/sys/stat.h, xtensa-esp-elf/include/sys/stat.h
+
+/* execute/search permission, owner */
+
+========================================================================
+Source: xtensa-esp-elf/include/sys/stat.h
+
+/* read permission, group */
+
+========================================================================
+Source: xtensa-esp-elf/include/sys/stat.h
+
+/* write permission, grougroup */
+
+========================================================================
+Source: xtensa-esp-elf/include/sys/stat.h
+
+/* execute/search permission, group */
+
+========================================================================
+Source: xtensa-esp-elf/include/sys/stat.h
+
+/* read permission, other */
+
+========================================================================
+Source: xtensa-esp-elf/include/sys/stat.h
+
+/* write permission, other */
+
+========================================================================
+Source: xtensa-esp-elf/include/sys/stat.h
+
+/* execute/search permission, other */
+
+========================================================================
+Source: xtensa-esp-elf/include/sys/syslimits.h
+
+/*
+ * Copyright (c) 1988, 1993
+ *	The Regents of the University of California.  All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ * 1. Redistributions of source code must retain the above copyright
+ *    notice, this list of conditions and the following disclaimer.
+ * 2. Redistributions in binary form must reproduce the above copyright
+ *    notice, this list of conditions and the following disclaimer in the
+ *    documentation and/or other materials provided with the distribution.
+ * 3. Neither the name of the University nor the names of its contributors
+ *    may be used to endorse or promote products derived from this software
+ *    without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE REGENTS AND CONTRIBUTORS ``AS IS'' AND
+ * ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+ * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+ * ARE DISCLAIMED.  IN NO EVENT SHALL THE REGENTS OR CONTRIBUTORS BE LIABLE
+ * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+ * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+ * OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+ * HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+ * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+ * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+ * SUCH DAMAGE.
+ *
+ *	@(#)syslimits.h	8.1 (Berkeley) 6/2/93
+ * $FreeBSD: src/sys/sys/syslimits.h,v 1.10 2001/06/18 20:24:54 wollman Exp $
+ */
+
+========================================================================
+Source: xtensa-esp-elf/include/sys/time.h
+
+/* time.h -- An implementation of the standard Unix <sys/time.h> file.
+   Written by Geoffrey Noer <noer@cygnus.com>
+   Public domain; no rights reserved. */
+
+========================================================================
+Source: xtensa-esp-elf/include/sys/time.h
+
+/*-
+ * SPDX-License-Identifier: BSD-3-Clause
+ *
+ * Copyright (c) 1982, 1986, 1993
+ *	The Regents of the University of California.  All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ * 1. Redistributions of source code must retain the above copyright
+ *    notice, this list of conditions and the following disclaimer.
+ * 2. Redistributions in binary form must reproduce the above copyright
+ *    notice, this list of conditions and the following disclaimer in the
+ *    documentation and/or other materials provided with the distribution.
+ * 3. Neither the name of the University nor the names of its contributors
+ *    may be used to endorse or promote products derived from this software
+ *    without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE REGENTS AND CONTRIBUTORS ``AS IS'' AND
+ * ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+ * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+ * ARE DISCLAIMED.  IN NO EVENT SHALL THE REGENTS OR CONTRIBUTORS BE LIABLE
+ * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+ * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+ * OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+ * HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+ * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+ * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+ * SUCH DAMAGE.
+ *
+ *	@(#)time.h	8.5 (Berkeley) 5/4/95
+ * $FreeBSD: head/sys/sys/time.h 346176 2019-04-13 04:46:35Z imp $
+ */
+
+========================================================================
+Source: xtensa-esp-elf/include/sys/timespec.h
+
+/*-
+ * Copyright (c) 1982, 1986, 1993
+ *	The Regents of the University of California.  All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ * 1. Redistributions of source code must retain the above copyright
+ *    notice, this list of conditions and the following disclaimer.
+ * 2. Redistributions in binary form must reproduce the above copyright
+ *    notice, this list of conditions and the following disclaimer in the
+ *    documentation and/or other materials provided with the distribution.
+ * 4. Neither the name of the University nor the names of its contributors
+ *    may be used to endorse or promote products derived from this software
+ *    without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE REGENTS AND CONTRIBUTORS ``AS IS'' AND
+ * ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+ * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+ * ARE DISCLAIMED.  IN NO EVENT SHALL THE REGENTS OR CONTRIBUTORS BE LIABLE
+ * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+ * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+ * OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+ * HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+ * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+ * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+ * SUCH DAMAGE.
+ *
+ *	@(#)time.h	8.5 (Berkeley) 5/4/95
+ * from: FreeBSD: src/sys/sys/time.h,v 1.43 2000/03/20 14:09:05 phk Exp
+ *	$FreeBSD$
+ */
+
+========================================================================
+Source: xtensa-esp-elf/include/sys/types.h
+
+/* permissions */
+
+========================================================================
+Source: xtensa-esp-elf/include/sys/unistd.h
+
+/* Ask for POSIX permission bits support. */
+
+========================================================================
+Source: xtensa-esp-elf/include/sys/unistd.h
+
+/* Ask for full POSIX permission support including uid/gid settings. */

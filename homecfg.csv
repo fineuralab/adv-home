@@ -1,0 +1,6 @@
+key,type,encoding,value
+home,namespace,,
+version,data,u32,1
+bright,data,u8,30
+autostart,data,u8,0
+selected,data,u8,0
